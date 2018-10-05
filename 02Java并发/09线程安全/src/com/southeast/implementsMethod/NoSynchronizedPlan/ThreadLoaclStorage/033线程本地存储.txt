@@ -1,0 +1,46 @@
+1、线程本地存储
+如果一段代码中所需要的数据必须与其他代码共享，
+那就看看这些共享数据的代码是否能保证在同一个线程中执行。
+
+如果能保证，我们就可以把###共享数据的可见范围限制在同一个线程之内###，
+这样，无须同步也能保证线程之间不出现数据争用的问题。
+
+符合这种特点的应用并不少见，大部分使用消费队列的架构模式（如“生产者-消费者”模式）
+都会将产品的消费过程尽量在一个线程中消费完。
+其中最重要的一个应用实例就是经典 Web 交互模型中的“一个请求对应一个服务器线程”（Thread-per-Request）的处理方式，
+这种处理方式的广泛应用使得很多 Web 服务端应用都可以使用###线程本地存储###来解决线程安全问题。
+
+2、ThreadLocal的解析
+每个 Thread 都有一个 ThreadLocal.ThreadLocalMap 对象，
+Thread 类中就定义了 ThreadLocal.ThreadLocalMap 成员。
+
+ThreadLocal.ThreadLocalMap threadLocals = null;
+
+public void set(T value) {
+    Thread t = Thread.currentThread();
+    ThreadLocalMap map = getMap(t);//1、先得到当前线程的 ThreadLocalMap 对象
+    if (map != null)
+        map.set(this, value);//2、将<ThreadLocal,value>键值对插入到该 Map 中
+    else
+        createMap(t, value);
+}
+
+public T get() {
+    Thread t = Thread.currentThread();
+    ThreadLocalMap map = getMap(t);//1、先得到当前线程的 ThreadLocalMap 对象
+    if (map != null) {
+        ThreadLocalMap.Entry e = map.getEntry(this);//2、根据ThreadLocal获取值 value
+        if (e != null) {
+            @SuppressWarnings("unchecked")
+            T result = (T)e.value;
+            return result;
+        }
+    }
+    return setInitialValue();
+}
+
+ThreadLocal 从理论上讲并不是用来解决多线程并发问题的，因为根本不存在多线程竞争。
+注意：
+在一些场景 (尤其是使用线程池) 下，由于 ThreadLocal.ThreadLocalMap 的底层数据结构导致 ThreadLocal 有内存泄漏的情况，
+应该尽可能在每次使用 ThreadLocal 后手动调用 remove()，
+以避免出现 ThreadLocal 经典的内存泄漏甚至是造成自身业务混乱的风险。

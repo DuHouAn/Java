@@ -1,0 +1,93 @@
+CopyOnWriteArrayList
+在写操作的同时允许读操作，大大提高了读操作的性能，因
+此很适合读多写少的应用场景。
+
+1、读写分离
+（1）写操作在一个复制的数组上进行，读操作还是在原始数组中进行，读写分离，互不影响。
+（2）写操作需要加锁，防止同时并发写入时导致的写入数据丢失。
+    写操作结束后，需要把原始数组指向新的复制数组。
+
+//TODO:写操作
+       public void add(int index, E element) {
+                final ReentrantLock lock = l.lock;
+                lock.lock(); //写操作需要加锁
+                try {
+                    checkForComodification();
+                    if (index<0 || index>size)
+                        throw new IndexOutOfBoundsException();
+                    l.add(index+offset, element);
+                    expectedArray = l.getArray();
+                    size++;
+                } finally {
+                    lock.unlock();
+                }
+            }
+
+        private void checkForComodification() {
+                  if (l.getArray() != expectedArray)
+                      throw new ConcurrentModificationException();
+              }
+
+
+         public void add(int index, E element) {
+                final ReentrantLock lock = this.lock;
+                lock.lock(); //TODO:写操作需要加锁
+                try {
+                    Object[] elements = getArray();
+                    int len = elements.length;
+                    if (index > len || index < 0)
+                        throw new IndexOutOfBoundsException("Index: "+index+
+                                                            ", Size: "+len);
+                    Object[] newElements;
+                    int numMoved = len - index;
+                    if (numMoved == 0)
+                        newElements = Arrays.copyOf(elements, len + 1); //TODO:写操作是在在一个复制的数组上进行
+                    else {
+                        newElements = new Object[len + 1];
+                        System.arraycopy(elements, 0, newElements, 0, index);//复制数据 从0开始index个
+                        System.arraycopy(elements, index, newElements, index + 1, numMoved);
+                        //复制数组从 elemtens的index开始到从newElements的（index+1）的位置开始
+                        //TODO:以上两步可以看出 newElements的index位置是空的
+
+                         /*
+                         public static void arraycopy(Object src,int srcPos, Object dest, int destPos,int length)
+                         其中：src表示源数组，
+                         srcPos表示源数组要复制的起始位置，
+                         desc表示目标数组，
+                         length表示要复制的长度。
+                         */
+                    }
+                    newElements[index] = element;//在index位置插入数据
+                    // TODO:写操作是在在一个复制的数组（newElements）上进行
+                    setArray(newElements); // TODO: 写操作结束后，需要把原始数组指向新的复制数组。
+                } finally {
+                    lock.unlock();//
+                }
+            }
+
+       final void setArray(Object[] a) {
+                this.array = a;
+           }
+
+      final Object[] getArray() {
+               return this.array;
+           }
+
+//TODO:读操作
+private E get(Object[] a, int index) {
+        return (E) a[index];
+    }
+
+public E get(int index) {
+        return get(getArray(), index);
+        //TODO:getArray()获得是this.array 。换句话说，读操作还是在原始数组中进行。
+    }
+
+2、适用场景
+CopyOnWriteArrayList在写操作的同时允许读操作，大大提高了读操作的性能，
+因此很适合读多写少应用的场景。
+
+缺陷：
+（1）内存占用：在写操作时要复制一个新的数组，使得内存占用为原来的两倍左右；
+（2）数据不一致：读操作不能读取实时性的数据（拷贝数组、新增元素都需要时间），因为部分写操作的数据还未同步到读数组中。
+所以，CopyOnWriteArrayList不适合内存敏感以及对实时性要求很高的场景。

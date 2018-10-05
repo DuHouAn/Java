@@ -1,0 +1,27 @@
+调用wait()使得线程等待某个条件满足，
+线程在等待时会被挂起，当其他线程的运行使得这个条件满足时，
+其他线程会调用 notify()或者notifyAll()来唤醒挂起的线程。
+
+注意：
+wait()、notify()、notifyAll()都属于Object,而不属于Thread.
+只能在同步方法或者同步代码块中使用，否则会抛出IllegalMonitorStateExeception.
+
+使用wait()释放锁期间，线程会释放锁。
+这是因为如果没有释放锁，那么其他线程就无法进入对象的同步方法或者同步控制块中，
+那么就无法执行notify()或者notifyAll()来唤醒挂起的线程，造成死锁。
+
+面试题：
+1、wait()和sleep()的区别？
+(1)sleep()必须指定时间；wait()可以不指定时间，也可以指定时间
+(2)sleep()不释放锁；wait()释放锁
+(3)sleep()是Thread的静态方法；wait()是Object的方法
+
+2、启动一个线程是run()还是start()?它们的区别?
+	start();
+run():封装了被线程执行的代码,直接调用仅仅是普通方法的调用
+start():启动线程，并由JVM自动调用run()方法
+
+
+3、为什么wait(),notify(),notifyAll()等方法都定义在Object类中
+	因为这些方法的调用是依赖于锁对象的，而同步代码块的锁对象是任意锁。
+	而Object代表任意的对象，所以，定义在这里面。

@@ -1,0 +1,4 @@
+ublic synchronized static void fun() {
+    // ...
+}
+作用于整个类。

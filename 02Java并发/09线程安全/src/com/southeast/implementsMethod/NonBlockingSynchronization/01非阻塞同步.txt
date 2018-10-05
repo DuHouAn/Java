@@ -1,0 +1,48 @@
+互斥同步最主要的问题就是线程阻塞和唤醒所带来的性能问题，因此这种同步也称为阻塞同步。
+
+互斥同步属于一种悲观的并发策略，总是认为只要不去做正确的同步措施，那就肯定会出现问题。
+无论共享数据是否真的会出现竞争，它都要进行加锁
+（这里讨论的是概念模型，实际上虚拟机会优化掉很大一部分不必要的加锁）、用户态核心态转换、
+维护锁计数器和检查是否有被阻塞的线程需要唤醒等操作。
+
+1、CAS (Compare and Swap) 比较并交换 -->原子性操作，有硬件完成。
+随着硬件指令集的发展，我们可以使用基于冲突检测的乐观并发策略：
+先进行操作，如果没有其它线程争用共享数据，那操作就成功了，否则采取补偿措施（不断地重试，直到成功为止）。
+这种乐观的并发策略的许多实现都不需要将线程阻塞，因此这种同步操作称为非阻塞同步。
+##乐观锁需要操作和冲突检测这两个步骤具备原子性，这里就不能再使用互斥同步来保证了，只能靠硬件来完成。##
+硬件支持的原子性操作最典型的是：比较并交换（Compare-and-Swap，CAS）。
+CAS 指令需要有 3 个操作数，分别是内存地址 V、旧的预期值 A 和新值 B。当执行操作时，只有当 V 的值等于 A，才将 V 的值更新为 B。
+
+2、AtomicInteger
+J.U.C 包里面的整数原子类 AtomicInteger，
+其中的 compareAndSet() 和 getAndIncrement() 等方法都使用了 Unsafe 类的 CAS 操作。
+
+以下代码使用了 AtomicInteger 执行了自增的操作。
+private AtomicInteger cnt = new AtomicInteger();
+
+public void add() {
+    cnt.incrementAndGet();
+}
+
+public final int incrementAndGet() {
+    return unsafe.getAndAddInt(this, valueOffset, 1) + 1;
+}
+
+public final int getAndAddInt(Object var1, long var2, int var4) {
+//var1 指示对象内存地址，var2 指示该字段相对对象内存地址的偏移，var4 指示操作需要加的数值，这里为 1。
+    int var5;
+    do {
+        var5 = this.getIntVolatile(var1, var2); //通过 getIntVolatile(var1, var2) 得到旧的预期值
+    } while(!this.compareAndSwapInt(var1, var2, var5, var5 + var4));
+    //通过调用 compareAndSwapInt() 来进行 CAS 比较，
+    //如果var2的值等于 var5，那么就更新var1为的变量为 var5+var4。
+    return var5;
+}
+
+可以看到 getAndAddInt() 在一个循环中进行，发生冲突的做法是不断的进行重试。
+
+3、ABA
+如果一个变量初次读取的时候是 A 值，它的值被改成了 B，后来又被改回为 A，那 CAS 操作就会误认为它从来没有被改变过。
+J.U.C 包提供了一个带有标记的原子引用类 AtomicStampedReference 来解决这个问题，
+它可以通过控制变量值的版本来保证 CAS 的正确性。
+大部分情况下 ABA 问题不会影响程序并发的正确性，如果需要解决 ABA 问题，改用传统的互斥同步可能会比原子类更高效。

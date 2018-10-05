@@ -1,0 +1,5 @@
+java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，
+可以在Condition上调用await()方式使线程等待，
+其他线程用singnal或者singalAll()方法唤醒等待的线程。
+
+相比于wait()这种等待方式，await()可以指定等待的条件，因此更加灵活。

@@ -1,0 +1,24 @@
+1、概览
+基于双向链表实现，内部使用Node来存储链表结点信息。
+
+   private static class Node<E> {
+        E item;
+        Node<E> next; //前驱
+        Node<E> prev; //后驱
+
+        Node(Node<E> prev, E element, Node<E> next) {
+            this.item = element;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+每个链表都存储了first和last指针：
+
+ transient Node<E> first;
+
+ transient Node<E> last;
+
+2、LinkedList与ArrayList的区别
+（1）ArrayList是基于动态数组实现，LinkedList是基于双向链表实现
+（2）ArrayList支持随机访问，LinkedList不支持随机访问
+（3）LinkedList在任意文职添加删除元素更快

@@ -1,0 +1,5 @@
+public synchronized void func () {
+    // ...
+}
+
+和同步代码块一样，作用于同一个对象。
