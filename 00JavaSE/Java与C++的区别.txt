@@ -1,0 +1,21 @@
+（1）Java是纯粹的面向对象的语言，所有对象都继承自 java.lang.object
+	C++为了兼容C既支持面向对象由支持面向过程。
+（2）Java通过JVM从而实现跨平台特性，
+	C++依赖于特定的平台。
+（3）Java没有指针，它的引用可以理解为安全指针，
+	C++具有和C一样的指针。
+（4）Java支持自动垃圾回收，
+	C++需要手动回收。
+（5）Java不支持多继承，只能通过多个接口来达到相同目的，
+	C++支持多继承。
+（6）Java不支持操作符重载，虽然两个String对象执行加法运算，但是这是语言内置支持的操作，不属于操作符重载，
+	C++支持运算符重载。
+（7）Java的goto是保留字，但是不可用，
+	C++可以使用goto
+（8）Java不支持条件编译，C++通过 #ifdef #ifndef 等预处理命令从而实现条件编译。
+
+JRE(Java Runtime Environment) or JDK(Java Development Kit)
+（1）JRE is the JVM program, Java application need to run on JRE.
+（）
+JDK is a superset of JRE, 
+JRE + tools for developing java programs. e.g, it provides the compiler "javac"

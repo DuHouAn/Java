@@ -1,0 +1,47 @@
+1、概述
+String被声明为final,因此不可被继承。
+
+内部使用char数组存储数据，该数据也被声明为final，
+这意味着value初始化之后就不能再引用其他数组。
+并且String内部没有改变vlaue数组的方法，因此可以保证String不可变。
+
+public final class String //String被声明为final,因此不可被继承。
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final char value[];//内部使用char数组存储数据，该数据也被声明为final，可以保证String不可变。
+
+2、不可变的好处
+（1）可缓存hash值
+不可变的特性可以使得 hash 值也不可变，因此只需要进行一次计算。
+（2）String Pool的需要
+如果一个 String 对象已经被创建过了，那么就会从 String Pool 中取得引用。
+只有 String 是不可变的，才可能使用 String Pool。
+（3）安全性
+String 经常作为参数，String 不可变性可以保证参数不可变。
+例如在作为网络连接参数的情况下如果 String 是可变的，
+那么在网络连接过程中，String 被改变，改变 String 对象的那一方以为现在连接的是其它主机，而实际情况却不一定是。
+（4）线程安全
+String 不可变性天生具备线程安全，可以在多个线程中安全地使用。
+
+3、String、StringBuffer和StringBuilder
+(1)可变性
+String不可变
+StringBUffer和StringBuilder可变
+(2)线程安全
+String不可变，因此是线程安全的
+StringBuilder不是线程安全的
+StringBuffer是线程安全的，内部使用synchronized进行同步
+
+4、String和StringBuffer的相互转换
+（1）String --> StringBuffer
+方式一：构造方法 StringBuffer sb=new StringBuffer(s);
+方式二：通过append()方法 StringBuffer sb=new StringBuffer(); sb.append(s);
+（2）StringBuffer --> String
+方式一：构造方法 String s=new String(buffer);
+方式二：通过toString()方法 String s=buffer.toString();
+
+5、字符串常量
+字符串常量池（String Pool）保存着所有字符串字面量（literal strings），这些字面量在编译时期就确定。
+不仅如此，还可以使用 String 的 intern() 方法在运行过程中将字符串添加到 String Poll 中。
+
+看看 javaSE--day12

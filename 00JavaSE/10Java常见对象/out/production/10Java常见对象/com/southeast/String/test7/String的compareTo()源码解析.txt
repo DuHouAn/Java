@@ -1,0 +1,28 @@
+    private final char value[];
+    字符串会自动转换为一个字符数组。
+
+  public int compareTo(String anotherString) {
+        int len1 = value.length;
+        int len2 = anotherString.value.length;
+
+        int lim = Math.min(len1, len2); //lim=3
+        char v1[] = value; //v1[h e l l o]
+        char v2[] = anotherString.value;//v2[x y z]
+
+        int k = 0;
+        while (k < lim) {
+            char c1 = v1[k];//h
+            char c2 = v2[k];//x
+            if (c1 != c2) { //先比较的是对应的字符是否相等
+                return c1 - c2; //h=104  x=120   104-120=-16
+            }
+            k++;
+        }
+        //如果在指定位置，字符都相同，则长度相减
+        return len1 - len2;
+    }
+
+举例
+String s6 = "hello";
+String s9 = "xyz";
+ System.out.println(s6.compareTo(s9));// -16
