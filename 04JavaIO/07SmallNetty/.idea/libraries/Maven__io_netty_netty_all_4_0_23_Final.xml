@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.netty:netty-all:4.0.23.Final">
+    <CLASSES>
+      <root url="jar://F:/java/apache-maven-3.5.4/respority/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/java/apache-maven-3.5.4/respority/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://F:/java/apache-maven-3.5.4/respority/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

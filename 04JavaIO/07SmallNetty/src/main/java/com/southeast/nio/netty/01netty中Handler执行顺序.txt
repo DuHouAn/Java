@@ -1,0 +1,19 @@
+Handler在netty中，无疑占据着非常重要的地位。
+Handler与Servlet中的filter很像，通过Handler可以完成
+通讯报文的解码编码、拦截指定的报文、同意日志错误进行处理、同意对请求进行计数、控制Handler的执行与否。
+
+Netty中的所有handler都实现自ChannelHandler接口。
+按照输出输出来分，分为ChannelInboundHandler、ChannelOutboundHandler两大类：
+ChannelInboundHandler对从客户端发往服务器的报文进行处理，一般用来执行解码、读取客户端数据、进行业务处理等；
+ChannelOutboundHandler对从服务器发往客户端的报文进行处理，一般用来进行编码、发送报文到客户端。
+Netty中，可以注册多个handler。
+ChannelInboundHandler按照注册的先后顺序执行；
+ChannelOutboundHandler按照注册的先后顺序逆序执行.
+见 Handler执行顺序图.png
+
+在使用Handler的过程中，需要注意：
+（1）ChannelInboundHandler之间的传递，通过调用 ctx.fireChannelRead(msg) 实现；
+    调用ctx.write(msg) 将传递到ChannelOutboundHandler。
+（2）ctx.write()方法执行后，需要调用flush()方法才能令它立即执行。
+（3）流水线pipeline中outhandler不能放在最后，否则不生效
+（4）Handler的消费处理放在最后一个处理。

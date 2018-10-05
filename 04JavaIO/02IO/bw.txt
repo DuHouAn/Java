@@ -1,0 +1,43 @@
+package com.southeast.memoryStream;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+/**
+ * �ڴ�����������ڴ�����ʱ�洢��Ϣ�ģ����������ݾʹ��ڴ�����ʧ��
+ * �ֽ����飺
+ * 		ByteArrayInputStream
+ * 		ByteArrayOutputStream
+ * �ַ����飺
+ * 		CharArrayReader
+ * 		CharArrayWriter
+ * �ַ�
+ * 		StringReader
+ * 		StringWriter
+ */
+public class ByteArrayStreamDemo {
+    public static void main(String[] args) throws IOException {
+        //д���
+        ByteArrayOutputStream bos=new ByteArrayOutputStream();
+        for(int i=0;i<10;i++){
+            bos.write(("hello"+i).getBytes());
+        }
+
+        byte[] bys=bos.toByteArray();
+        //�����
+        ByteArrayInputStream bis=new ByteArrayInputStream(bys);
+
+        int by=0;
+        while((by=bis.read())!=-1){
+            System.out.print((char)by);
+        }
+
+       // bos.close();
+       // bis.close();
+       /*
+        ͨ��鿴Դ������֪������ʲô��û�������Ը���Ҫclose()
+       public void close() throws IOException {
+        }*/
+    }
+}

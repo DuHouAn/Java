@@ -1,0 +1,27 @@
+1、TCP协议特点：
+（1）建立连接，形成传输数据的通道
+（2）在连接中进行大数据量传输
+（3）通过三次握手完成连接，是可靠协议
+（4）必须建立连接，效率会降低
+
+2、客户端发送数据
+TCP协议发送数据：
+    A:创建发送端的Socket对象    new Socket(ip,port)
+  		这一步如果成功，就说明连接已经建立成功了。
+    B:获取输出流，写数据
+        os=getOutputStream()
+        os.write
+    C:释放资源
+        close()
+
+3、服务端接收数据
+TCP协议接收数据：
+    A:创建接收端的Socket对象 ServerSocket(int port)
+         ServerSocket socket=new ServerSocket(8888);
+    B:监听客户端连接。返回一个对应的Socket对象
+        // public Socket accept()
+         Socket s=socket.accept();
+    C:获取输入流，读取数据显示在控制台
+        s.getInputStream()
+    D:释放资源
+        s.close();

@@ -1,0 +1,2 @@
+通过ServerScockeChannel和SocektChannel
+实现TCP协议下的数据传输
