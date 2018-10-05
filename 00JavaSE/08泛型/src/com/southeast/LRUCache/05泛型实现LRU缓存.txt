@@ -1,0 +1,27 @@
+1、LRU(Least Recently Used,最近最久未使用)
+LRU缓存思想：
+（1）固定缓存大小，需要给缓存分配一个固定的大小。
+（2）每次读取缓存都会改变缓存的使用时间，将缓存的存在时间重新刷新。
+（3）需要在缓存满了后，将最近最久未使用的缓存删除，再添加最新的缓存。
+
+实现思路：
+TODO：使用LinkedHashMap来实现LRU缓存。
+
+LinkedHashMap的一个构造函数：
+public LinkedHashMap(int initialCapacity,
+                     float loadFactor,
+                     boolean accessOrder) {
+    super(initialCapacity, loadFactor);
+    this.accessOrder = accessOrder;
+}
+传入的第三个参数
+accessOrder为true的时候，就按访问顺序对LinkedHashMap排序，
+accessOrder为false的时候,就按插入顺序（默认是按照顺序）。
+
+TODO：当把accessOrder设置为true后（按照访问顺序），就可以将最近访问的元素置于最前面。这样就可以满足上述的（2）。
+
+LinkedHashMap是为自动扩容的，当table数组中元素大于Capacity * loadFactor的时候，就会自动进行两倍扩容。
+但是为了使缓存大小固定，
+TODO：就需要在初始化的时候传入容量大小和负载因子。
+为了使得到达设置缓存大小不会进行自动扩容，需要将初始化的大小进行计算再传入，
+TODO：将初始化大小设置为(缓存大小 / loadFactor) + 1，这样就可以在元素数目达到缓存大小时，也不会进行扩容了。这样就解决了上述（1）。

@@ -1,0 +1,113 @@
+1、泛型的实现方式
+Java的泛型是一种违反型，编译为字节码时参数类型会在代码中被擦除，
+单独记录在Class文件的attributes域内，而在使用泛型处做类型检查与类型转换。
+
+TODO:假设参数类型的占位符为T，擦除规则（保留上界）如下：
+（1）<T>擦除后变为Object
+（2）<? extends A>擦除后变为A
+（3）<？ super A>擦除后变为Object
+
+2、类型擦除带来的问题：
+（1）<？ extends A>和<？ super A>的擦除
+因为保留上界，所以擦除后并没有破坏里氏替换原则。
+假设有类
+Super与Sub:
+    class Super{}
+    class Sub extends Super{}
+
+对于：
+    List<? extends Super> list = new ArrayList<Sub>();  //协变 <? extends Super>表示Super及其子类
+    List<? super Sub> list2 = new ArrayList<Super>();   //逆变 <? super Sub>表示Sub及其父类
+类型擦除后，就等价于
+    List<Super> list = new ArrayList<Sub>();
+    List<Object> list2 = new ArrayList<Super>();
+可以看出，参数类型的擦除并没有破坏里氏替换原则，这也是保留上界的原因。
+
+（2）对于<T>的擦除，根据T在类中出现位置的不同，分以下5种情况讨论：
+i.T是成员变量的类型
+ii.T是泛型变量（无论成员变量还是局部变量）的类型参数，常见如Class<T>，List<T>。
+iii.T是方法抛出的Exception（要求<T extends Exception>）
+iv.T是方法的返回值
+v.T是方法的参数
+
+情况i的擦除不会有任何影响，因为编译器会在泛型被调用的地方加上类型转换；
+
+情况ii的擦除也不会有问题，这个问题有点像“要实现不可变类，就要保证成员变量中引用指向的类型也是不可变的”，是个递归定义；
+
+情况iii:假设现在得到并可以抛出泛型T的实例，来看一下会出现什么情况。
+class Super<T extends SQLException>{
+    public void test() throws T{}    //别怀疑，这段代码是可以编译通过的......
+}
+
+class Sub extends Super<BatchUpdateException>{ //这里 T 就是BatchUpdateException
+    @Override
+    public void test() throws BatchUpdateException{}
+    //这里必须与参数类型保持一致，否则编译不通过。 T就是BatchUpdateException
+}
+Super的参数类型被擦除之后，变成了:
+class Super<SQLException>{
+    public void test() throws SQLException{}
+}
+与Sub类对比后，发现并没有违背Java中方法重写（Override）的规则。
+注意：
+Java中Override的规则有一个好记的口诀，叫“两同两小一大”（其实叫“两同两窄一宽”我觉得更好），说的是子类方法与父类方法的异同：
+- 子类方法的方法名&参数列表与父类方法的相同。
+- 子类方法的返回类型是父类方法返回类型的子类（协变返回类型，范围更窄）；
+- 子类方法抛出的异常少于父类方法抛出的异常（范围更窄）；
+- 子类方法的访问控制权限大于父类方法（访问范围更宽）。
+这个规则可以很方便的用里氏替换原则反推出来。显然这里类型擦除后并没有违反重写时对异常的规定。
+
+情况iv:将T作为返回类型时的被擦除，因为协变返回类型的存在，它同样不会有问题。
+class Super<T>{
+    T test(){}
+}
+
+class Sub extends Super<String>{
+    @Override
+    protected String test(){}  //protected拥有比package更高的访问权限，可以被同一包内的类访问
+}
+Super类型擦除后:
+class Super{
+    Object test(){}
+}
+TODO:这里 情况i->情况iv都没有问题
+
+情况v:T是方法的参数
+class Super<T>{
+    public void test(T arg){}
+}
+class Sub extends Super<String>{
+    @Override
+    public void test(String str){}
+}
+
+再来看Super的参数类型被擦除后：
+class Super{
+    public void test(Object org){}
+}
+class Sub extends Super{
+    //TODO：实际上会多一个桥方法(这个方法是由编译器自动生成的)
+    @Override
+    public void test(Object org){
+        test((String)org);
+    }
+
+    public void test(String str){} //TODO: Sub的test()和 Super的test()方法参数列表不同，在Sub中这两个函数重载，而不是重写。
+}
+
+3、协变返回类型的桥方法
+一个Class文件中出现了两个签名一样，只是返回值不一样的方法。
+如果是在Java源代码中出现这种情况，编译是不会通过的。Java源代码中之所以不允许这样做，是为了避免方法调用时产生歧义，比如：
+    public Object test(){ //error:调用时产生歧义
+        return "obj";
+    }
+    public String test(){ //error:调用时产生歧义
+        return "str";
+    }
+    public static void main(String[] args){
+        System.out.println(new Super().test());
+    }
+此时编译器是无法确定调用哪个test()的，所以干脆禁止出现这种情况。
+而在==运行期==，JVM有足够的方法去区分这种二义性
+（比如用ACC_BRIDGE或ACC_SYNTHETIC这两个flag），
+所以就可以允许这种情况存在了。

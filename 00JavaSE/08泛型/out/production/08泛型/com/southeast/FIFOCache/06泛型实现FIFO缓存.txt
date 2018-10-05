@@ -1,0 +1,12 @@
+1、FIFO设计思路
+FIFO就是先进先出，可以使用LinkedHashMap进行实现。
+
+LinkedHashMap的构造函数：
+public LinkedHashMap(int initialCapacity,
+                     float loadFactor,
+                     boolean accessOrder) {
+    super(initialCapacity, loadFactor);
+    this.accessOrder = accessOrder;
+}
+
+当第三个参数传入为false或者是默认的时候，就可以实现按插入顺序排序，就可以实现FIFO缓存了。
