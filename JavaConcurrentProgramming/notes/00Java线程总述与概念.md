@@ -18,7 +18,7 @@
 
 线程有**就绪**、**阻塞**和**运行**三种状态，线程状态切换如下图：
 
-<div align="center"> <img src="pics//thread/thread_1.png" width="600"/> </div>
+<div align="center"> <img src="pics//thread/thread_1.png"/> </div>
 
 也正因为多个线程会共享进程资源，所以当它们对同一个共享变量/对象进行操作的时候，线程的冲突和不一致性就产生了。
 
