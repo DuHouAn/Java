@@ -1,6 +1,5 @@
 package code_00_thread.threadUsing;
 
-import org.junit.Test;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;

@@ -1,4 +1,4 @@
-Java提供了两种锁机制来控制多个线程对共享资源的互斥访问，
+﻿Java提供了两种锁机制来控制多个线程对共享资源的互斥访问，
 第一个是JVM实现的synchronized,
 而另一个是JDK实现的ReentrantLock.
 
@@ -25,3 +25,9 @@ ReentrantLock 默认情况下也是非公平的，但是也可以是公平的。
 这是因为
 （1）synchronized 是 JVM 实现的一种锁机制，JVM 原生地支持它，而 ReentrantLock 不是所有的 JDK 版本都支持。
 （2）并且使用 synchronized 不用担心没有释放锁而导致死锁问题，因为 JVM 会确保锁的释放。
+
+
+<th class="center" width="10%">
+						<input type="hidden" id="zjbh${s.count}" name="zjbh${s.count}" value="${i.BH}" />
+						<input type="text" id="zjxm${s.count}" value="${i.ZCRY }" style="width: 70%" disabled="disabled">
+					</th>

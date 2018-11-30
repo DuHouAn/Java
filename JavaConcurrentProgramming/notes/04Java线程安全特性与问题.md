@@ -2,6 +2,12 @@
 *  [Java线程安全特性与问题](#Java线程安全特性与问题)
     * [线程安全特性](#线程安全特性)
     * [线程安全问题](#线程安全问题)
+    * [如何确保线程安全特性](#如何确保线程安全特性)
+        * [如何确保原子性](#如何确保原子性)
+            * [锁和同步](#锁和同步)
+            * [CAS](#CAS)
+        * [如何确保可见性](#如何确保可见性)
+        * [如何确保有序性](#如何确保有序性)
 <!-- GFM-TOC -->
 
 # Java线程安全特性与问题
@@ -350,3 +356,264 @@ FairLock新创建了一个QueueObject的实例，并对每个调用lock()的线�
 
 queueObject.doWait()在try – catch块中是怎样调用的。
 在InterruptedException抛出的情况下，线程得以离开lock()，并需让它从队列中移除。
+
+## 如何确保线程安全特性
+### 如何确保原子性
+#### 锁和同步
+常用的保证Java操作原子性的工具是**锁和同步方法（或者同步代码块）**。
+使用锁，可以保证同一时间只有一个线程能拿到锁，也就保证了同一时间只有一个线程能执行申请锁和释放锁之间的代码。
+```java
+public void testLock () {
+    lock.lock();
+    try{
+        int j = i;
+        i = j + 1;
+    } finally {
+        lock.unlock();
+    }
+}
+```
+与锁类似的是同步方法或者同步代码块。
+
+使用**非静态同步方法**时，锁住的是**当前实例**
+
+使用**静态同步方法**时，锁住的是**该类的Class对象**
+
+使用**静态代码块**时，锁住的是**synchronized关键字后面括号内的对象**
+```java
+public void testLock () {
+    synchronized (anyObject){
+        int j = i;
+        i = j + 1;
+    }
+}
+```
+无论使用锁还是synchronized，本质都是一样，
+通过**锁或同步来实现资源的排它性**，
+从而实际目标代码段同一时间只会被一个线程执行，进而保证了目标代码段的原子性。
+**这是一种以牺牲性能为代价的方法**。
+
+#### CAS
+基础类型变量自增（i++）是一种常被新手误以为是原子操作而实际不是的操作。
+
+Java中提供了对应的原子操作类来实现该操作，并保证原子性，其**本质是利用了CPU级别的CAS指令**。
+由于是CPU级别的指令，其开销比需要操作系统参与的锁的开销小。AtomicInteger使用方法如下：
+
+```java
+AtomicInteger atomicInteger = new AtomicInteger();
+for(int b = 0; b < numThreads; b++) {
+    new Thread(() -> {
+        for(int a = 0; a < iteration; a++) {
+            atomicInteger.incrementAndGet();
+        }
+    }).start();
+}
+```
+
+**CAS原理**：
+ 
+CAS(Compare And Swap)，即比较并交换。是解决多线程并行情况下使用锁造成性能损耗的一种机制。
+
+CAS操作包含三个操作数——内存位置（V）、预期原值（A）和新值(B)。 
+
+如果内存位置的值与预期原值相匹配，那么处理器会自动将该位置值更新为新值。 否则，处理器不做任何操作。 
+
+无论哪种情况，它都会在CAS指令之前返回该位置的值。
+ 
+CAS有效地说明了 我认为位置V应该包含值A；如果包含该值，则将B放到这个位置； 
+ 
+否则，不要更改该位置，只告诉我这个位置现在的值即可。
+
+
+**CAS的ABA问题**：
+
+在CAS算法中，需要取出内存中某时刻的数据（由用户完成），在下一时刻比较并替换（由CPU完成，该操作是原子的）。
+
+这个时间差中，会导致数据的变化。
+
+假设如下事件序列：
+
+1、线程 1 从内存位置V中取出A。
+
+2、线程 2 从位置V中取出A。
+
+3、线程 2 进行了一些操作，将B写入位置V。
+
+4、线程 2 将A再次写入位置V。
+
+5、线程 1 进行CAS操作，发现位置V中仍然是A，操作成功。
+
+尽管线程 1 的CAS操作成功，但不代表这个过程没有问题——对于线程 1 ，线程 2 的修改已经丢失。
+
+
+**使用AtomicStampedReference解决ABA问题**：
+
+AtomicStampedReference除了对象值，其内部还维护了一个“状态戳”。
+ 
+状态戳可类比为时间戳，是一个整数值，每一次修改对象值的同时，也要修改状态戳， 从而区分相同对象值的不同状态。 
+当AtomicStampedReference设置对象值时，对象值以及状态戳都必须满足期望值，写入才会成功。
+
+```java
+//比较设置 参数依次为：期望值 写入新值 期望时间戳 新时间戳
+public boolean compareAndSet(V expectedReference, V newReference, 
+    int expectedStamp, int newStamp)
+//获得当前对象引用
+public V getReference()
+//获得当前时间戳
+public int getStamp()
+//设置当前对象引用和时间戳
+public void set(V newReference, int newStamp)
+```
+
+### 如何确保可见性
+Java提供了volatile关键字来保证可见性。
+
+当使用volatile修饰某个变量时，它会**保证对该变量的修改会立即被更新到内存中，并且将其它线程缓存中对该变量的缓存设置成无效**，
+因此其它线程需要读取该值时必须从主内存中读取，从而得到最新的值。
+
+volatile适用场景：
+
+**volatile适用于不需要保证原子性，但却需要保证可见性的场景**。
+
+一种典型的使用场景是用它修饰用于停止线程的状态标记。
+```java
+boolean isRunning = false;
+public void start () {
+    new Thread( () -> {
+        while(isRunning) {
+            someOperation();
+        }
+    }).start();
+}
+public void stop () {
+    isRunning = false;
+}
+```
+在这种实现方式下，即使其它线程通过调用stop()方法将isRunning设置为false，循环也不一定会立即结束。
+可以通过volatile关键字，保证while循环及时得到isRunning最新的状态从而及时停止循环，结束线程。
+
+```java
+volatile boolean isRunning = false;
+public void start () {
+    new Thread( () -> {
+        while(isRunning) {
+            someOperation();
+        }
+    }).start();
+}
+public void stop () {
+    isRunning = false;
+}
+```
+
+### 如何确保有序性
+在 Java 内存模型中，允许编译器和处理器对指令进行重排序，
+重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。
+
+volatile 关键字通过**添加内存屏障**的方式来禁止指令重排，
+即重排序时不能把后面的指令放到内存屏障之前。
+
+也可以通过 synchronized 来保证有序性，它保证每个时刻只有一个线程执行同步代码，相当于是让线程顺序执行同步代码。
+
+#### 先行发生原则(Happens-Before原则)
+
+上面提到了可以用 volatile 和 synchronized 来保证有序性。除此之外，JVM 还规定了先行发生原则，让一个操作无需控制就能先于另一个操作完成。
+
+##### 1. 单一线程原则
+
+> Single Thread rule
+
+在一个线程内，在程序前面的操作先行发生于后面的操作。
+
+<div align="center"> <img src="pics//thread//threadSafe_3.png" width=""/> </div><br>
+
+##### 2. 管程锁定规则
+
+> Monitor Lock Rule
+
+一个 unlock 操作先行发生于后面对同一个锁的 lock 操作。
+
+<div align="center"> <img src="pics//thread//threadSafe_4.png" width=""/> </div><br>
+
+##### 3. volatile 变量规则
+
+> Volatile Variable Rule
+
+对一个 volatile 变量的写操作先行发生于后面对这个变量的读操作。
+
+<div align="center"> <img src="pics//thread//threadSafe_5.png" width=""/> </div><br>
+
+##### 4. 线程启动规则
+
+> Thread Start Rule
+
+Thread 对象的 start() 方法调用先行发生于此线程的每一个动作。
+
+<div align="center"> <img src="pics//thread//threadSafe_6.png" width=""/> </div><br>
+
+##### 5. 线程加入规则
+
+> Thread Join Rule
+
+Thread 对象的结束先行发生于 join() 方法返回。
+
+<div align="center"> <img src="pics//thread//threadSafe_7.png" width=""/> </div><br>
+
+##### 6. 线程中断规则
+
+> Thread Interruption Rule
+
+对线程 interrupt() 方法的调用先行发生于被中断线程的代码检测到中断事件的发生，
+
+可以通过 interrupted() 方法检测到是否有中断发生。
+
+##### 7. 对象终结规则
+
+> Finalizer Rule
+
+一个对象的初始化完成（构造函数执行结束）先行发生于它的 finalize() 方法的开始。
+
+##### 8. 传递性
+
+> Transitivity
+
+如果操作 A 先行发生于操作 B，操作 B 先行发生于操作 C，那么操作 A 先行发生于操作 C。
+
+## 关于线程安全的几个为什么
+1、平时项目中使用锁和synchronized比较多，而很少使用volatile，难道就没有保证可见性？
+
+锁和synchronized即可以保证原子性，也可以保证可见性。
+
+都是通过**保证同一时间只有一个线程执行目标代码段来实现的**。
+
+2、锁和synchronized为何能保证可见性？
+
+根据JDK 7的Java doc中对concurrent包的说明，
+一个线程的写结果保证对另外线程的读操作可见，
+只要**该写操作可以由happen-before原则推断出在读操作之前发生**。
+
+3、既然锁和synchronized即可保证原子性也可保证可见性，为何还需要volatile？
+
+synchronized和锁需要通过**操作系统**来仲裁谁获得锁，开销比较高，而volatile开销小很多。
+
+因此在**只需要保证可见性**的条件下，使用volatile的性能要比使用锁和synchronized高得多。
+
+4、既然锁和synchronized可以保证原子性，为什么还需要AtomicInteger这种的类来保证原子操作？
+
+锁和synchronized需要通过操作系统来仲裁谁获得锁，开销比较高，
+
+而**AtomicInteger是通过CPU级的CAS操作来保证原子性，开销比较小**。所以使用AtomicInteger的目的还是为了提高性能。
+
+5、还有没有别的办法保证线程安全？
+
+有。**尽可能避免引起非线程安全的条件——共享变量**。
+
+如果能从设计上避免共享变量的使用，即可避免非线程安全的发生，也就无须通过锁或者synchronized以及volatile解决原子性、可见性和顺序性的问题。
+
+6、synchronized即可修饰非静态方式，也可修饰静态方法，还可修饰代码块，有何区别？
+
+synchronized修饰非静态同步方法时，锁住的是**当前实例**
+
+synchronized修饰静态同步方法时，锁住的是**该类的Class对象**
+
+synchronized修饰静态代码块时，锁住的是**synchronized关键字后面括号内的对象**
