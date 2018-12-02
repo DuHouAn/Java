@@ -34,7 +34,7 @@
 ### 第二部分 内存模型
 
 | 章节 | 本章笔记 |
-| :---: | :---: | :---:|
+| :---: | :---: |
 | **第九章 内存模型之基础概述** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/07%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA.md) |
 | **第十章 内存模型之内部原理** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/08%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86.md) |
 | **第十一章 内存模型之重排序** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/09%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%87%8D%E6%8E%92%E5%BA%8F.md) |
