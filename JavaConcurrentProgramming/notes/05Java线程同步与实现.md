@@ -354,7 +354,7 @@ thread2执行到condition.await()时，当前线程进入阻塞状态，
 ## Java线程的状态转换中线程同步方法
 Java线程的状态转换图:
 
-<div align="center"> <img src="pics//thread/thread_7.png"/> </div>
+<div align="center"> <img src="pics//thread/thread_7.png" witdh="600"/> </div>
 
 红线框起来的部分可以认为已过时，不再使用。
 
@@ -529,7 +529,7 @@ public class ThreadLocalExample1 {
 }
 ```
 它所对应的底层结构图为：
-<div align="center"> <img src="pics//thread/thread_8.png"/> </div>
+<div align="center"> <img src="pics//thread/thread_8.png" width="600"/> </div>
 
 每个 Thread 都有一个 ThreadLocal.ThreadLocalMap 对象。
 
@@ -607,7 +607,7 @@ JUC并发包的作者（Doug Lea）期望它能够成为实现大部分同步需
 它是JUC并发包中的核心基础组件。 
 其底层的数据结构可以看做一个队列，如下图所示：
 
-<div align="center"><img src="pics//thread//thread_10.png"/></div>
+<div align="center"><img src="pics//thread//thread_10.png" width="600"/></div>
 
 Sync queue：双向链表，同步队列，head节点主要负责后面的调度。
 
@@ -630,7 +630,7 @@ Condition queue：单向链表，不是必须的的，也可以有多个。
 维护了一个计数器 cnt，每次调用 countDown() 方法会让计数器的值减 1，
 减到 0 的时候，那些因为调用 await() 方法而在等待的线程就会被唤醒。
 
-<div align="center"> <img src="pics//thread//CountdownLatch.png" width="600"/> </div>
+<div align="center"> <img src="pics//thread//CountdownLatch.png" width="300"/> </div>
 
 ```java
 public class CountdownLatchExample {
@@ -788,7 +788,7 @@ public CyclicBarrier(int parties) {
 }
 ```
 
-<div align="center"> <img src="pics//thread//CyclicBarrier.png" width="600"/> </div><br>
+<div align="center"> <img src="pics//thread//CyclicBarrier.png" width="300"/> </div><br>
 
 ```java
 public class CyclicBarrierExample {
@@ -865,7 +865,7 @@ after...8
 
 Semaphore 类似于操作系统中的信号量，可以控制对互斥资源的访问线程数。
 
-<div align="center"> <img src="pics//thread//Semaphore.png" width="600"/> </div>
+<div align="center"> <img src="pics//thread//Semaphore.png" width="300"/> </div>
 
 以下代码模拟了对某个服务的并发请求，每次只能有 3 个客户端同时访问，请求总数为 10。
 
