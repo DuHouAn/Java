@@ -1,8 +1,0 @@
-public void func() {
-    synchronized (SynchronizedExample.class) {
-        // ...
-    }
-}
-
-作用于整个类，也就是说两个线程调用
-==同一个类的不同对象上==的这种同步语句，也会进行同步。

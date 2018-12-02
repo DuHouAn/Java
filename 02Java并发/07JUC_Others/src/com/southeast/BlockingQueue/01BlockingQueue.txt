@@ -1,6 +1,0 @@
-java.util.concurrent.BlockingQueue接口有以下阻塞队列的实现：
-FIFO队列：LinkedBlockingQueue、ArrayBlockingQueue(固定长度)
-优先级队列：PriorityBlockingQueue
-提供了阻塞的take()和put()方法：
-如果队列为空，take()将阻塞，一直到队列中有内容；
-如果队列为满，put()将阻塞，一直到队列有空闲位置。

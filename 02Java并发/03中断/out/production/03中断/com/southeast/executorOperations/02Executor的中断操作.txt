@@ -1,3 +1,0 @@
-调用Executor的shutdown()方法会等待线程执行完毕之后再关闭，
-但是如果调用的shutdownNow()方法则相当于调用每个线程interrupt()方法。
-

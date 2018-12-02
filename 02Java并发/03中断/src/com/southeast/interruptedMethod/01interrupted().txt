@@ -1,7 +1,0 @@
-如果一个线程的run()方法执行一个无限循环，
-并且没有执行sleep()等会抛出InterruptedException的操作，
-那么调用线程的interrupt()方法就无法使用线程提前结束。
-
-但是调用interrupt()方法会设置线程的中断标记，此时调用interrupted()方法会返回true。
-因此可以在循环体中使用interruted()方法来判断线程是否处于中断状态，
-从而提前结束行程。

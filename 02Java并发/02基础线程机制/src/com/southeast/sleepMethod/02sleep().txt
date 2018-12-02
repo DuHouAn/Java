@@ -1,7 +1,0 @@
-Thread.sleep(millisec)
-会休眠当前正在执行的线程，millisec单位是毫秒。
-
-sleep()可能会抛出InterruptedException，因为
-===异常不能跨线程传播回main()中=====，
-因此必须在本地进行处理。
-线程中抛出的其他异常也同样需要在本地进行处理。
