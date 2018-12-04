@@ -19,6 +19,8 @@
 
 ## 模块二 Java虚拟机
 
+* [笔记](https://github.com/DuHouAn/Java/blob/master/JVM/Java%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
+
 ## 模块三 Java并发
 ### 第一部分 Java线程
 | 章节 | 本章笔记 | 本章相关代码 |
