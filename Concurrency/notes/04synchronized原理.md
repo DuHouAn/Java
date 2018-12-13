@@ -1,9 +1,9 @@
 <!-- GFM-TOC -->
 * [五、synchronized原理](#五synchronized原理)
     * [synchronized基本原理](#synchronized基本原理)
-        * [对象锁（monitor）机制](#1.对象锁（monitor）机制)
-        * [synchronized的happens-before关系](#2.synchronized的happens-before关系)
-        * [锁获取和锁释放的内存语义](#3.锁获取和锁释放的内存语义)
+        * [对象锁（monitor）机制](#对象锁（monitor）机制)
+        * [synchronized的happens-before关系](#synchronized的happens-before关系)
+        * [锁获取和锁释放的内存语义](#锁获取和锁释放的内存语义)
     * [synchronized优化](#synchronized优化)
         * [CAS操作](#CAS操作)
         * [轻量级锁](#轻量级锁)
@@ -19,7 +19,7 @@ java代码中使用synchronized可是使用在代码块和方法中，根据Sync
 这里的需要注意的是：**如果锁的是类对象的话，尽管new多个实例对象，但他们仍然是属于同一个类依然会被锁住，即线程之间保证同步关系**。
 
 ## synchronized基本原理
-### 1.对象锁（monitor）机制
+### 对象锁（monitor）机制
 先写一个简单的Demo:
 ```java
 public class SynchronizedDemo {
@@ -66,7 +66,7 @@ synchronized先天具有重入性。
 如果获取失败，该线程就进入同步状态，线程状态变为BLOCKED，
 当Object的监视器占有者释放后，在**同步队列**中得线程就会有机会重新获取该监视器。
 
-### 2.synchronized的happens-before关系
+### synchronized的happens-before关系
 Synchronized的happens-before规则，即监视器锁规则：
 
 对同一个监视器的解锁，happens-before于对该监视器的加锁。
@@ -101,7 +101,7 @@ happens-before关系如图所示：
 如果A happens-before B，则A的执行结果对B可见，并且A的执行顺序先于B。
 线程A先对共享变量A进行加一，由2 happens-before 5关系可知线程A的执行结果对线程B可见即线程B所读取到的a的值为1。
 
-### 3.锁获取和锁释放的内存语义
+### 锁获取和锁释放的内存语义
 基于java内存抽象模型的Synchronized的内存语义:
 
 <div align="center"> <img src="pics//04_04.png" width="600"/> </div><br>
