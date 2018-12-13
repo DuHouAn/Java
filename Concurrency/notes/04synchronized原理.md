@@ -87,7 +87,7 @@ public class MonitorDemo {
 ```
 happens-before关系如图所示：
 
-<div align="center"> <img src="pics//04_03.png" width="600"/> </div><br>
+<div align="center"> <img src="pics//04_03.png" width="400"/> </div><br>
 
 在图中每一个箭头连接的两个节点就代表之间的happens-before关系：
 
