@@ -111,7 +111,7 @@ happens-before关系如图所示：
 
 线程A加锁-->执行临界区代码-->释放锁相对应的内存语义
 
-<div align="center"> <img src="pics//04_05.png" width="600"/> </div><br>
+<div align="center"> <img src="pics//04_04.png" width="600"/> </div><br>
 
 线程B获取锁的时候同样会从主内存中获取共享变量a的值，这个时候就是最新的值1,
 然后将该值拷贝到线程B的工作内存中去，释放锁的时候同样会重写到主内存中。
