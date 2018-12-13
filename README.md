@@ -41,6 +41,9 @@
 | **第九章 内存模型之内部原理** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/08%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86.md) |
 | **第十章 内存模型之重排序** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/09%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%87%8D%E6%8E%92%E5%BA%8F.md) |
 
+- [参考资料-1](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%B9%B6%E5%8F%91.md)
+
+- [参考资料-2](https://github.com/CL0610/Java-concurrency)
 
 ## 模块三 Java容器
 
