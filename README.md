@@ -66,6 +66,7 @@
 #### 第八章 volatile原理
 - [volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md)
 
+#### 参考资料
 - [参考资料-1](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%B9%B6%E5%8F%91.md)
 
 - [参考资料-2](https://github.com/CL0610/Java-concurrency)
