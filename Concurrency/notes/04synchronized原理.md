@@ -5,7 +5,6 @@
         * [synchronized的happens-before关系](#synchronized的happens-before关系)
         * [锁获取和锁释放的内存语义](#锁获取和锁释放的内存语义)
     * [synchronized优化](#synchronized优化)
-        * [CAS操作](#CAS操作)
         * [轻量级锁](#轻量级锁)
         * [偏向锁](#偏向锁)
         * [各种锁的比较](#各种锁的比较)
