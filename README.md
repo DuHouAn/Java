@@ -42,14 +42,29 @@
 | **第十章 内存模型之重排序** | [笔记](https://github.com/DuHouAn/Java/blob/master/JavaConcurrentProgramming/notes/09%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%87%8D%E6%8E%92%E5%BA%8F.md) |
 
 ### Java并发笔记
-[#### 第一章 并发编程优缺点](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/00%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9.md)
-[#### 第二章 线程状态转换](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/01%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.md)
-[#### 第三章 使用线程](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/02%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B.md)
-[#### 第四章 基础线程机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/03%E5%9F%BA%E7%A1%80%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6.md)
-[#### 第五章 Java内存模型](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/04Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
-[#### 第六章 synchronized原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/05synchronized%E5%8E%9F%E7%90%86.md)
-[#### 第七章 final关键字](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/06final%E5%85%B3%E9%94%AE%E5%AD%97.md)
-[#### 第八章 volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md)
+#### 第一章 并发编程优缺点
+- [并发编程优缺点](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/00%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9.md)
+
+#### 第二章 线程状态转换
+- [线程状态转换](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/01%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.md)
+
+#### 第三章 使用线程
+- [使用线程](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/02%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B.md)
+
+#### 第四章 基础线程机制
+- [基础线程机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/03%E5%9F%BA%E7%A1%80%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6.md)
+
+#### 第五章 Java内存模型
+- [Java内存模型](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/04Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
+
+#### 第六章 synchronized原理
+- [synchronized原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/05synchronized%E5%8E%9F%E7%90%86.md)
+
+#### 第七章 final关键字
+- [final关键字](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/06final%E5%85%B3%E9%94%AE%E5%AD%97.md)
+
+#### 第八章 volatile原理
+- [volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md)
 
 - [参考资料-1](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%B9%B6%E5%8F%91.md)
 
