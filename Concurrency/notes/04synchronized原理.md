@@ -258,7 +258,7 @@ HotSpot的作者经过研究发现，大多数情况下，锁不仅不存在多�
 
 线程1展示了偏向锁获取的过程，线程2展示了偏向锁撤销的过程：
 
-<div align="center"> <img src="pics//04_09.png" width=""/> </div><br>
+<div align="center"> <img src="pics//04_09.png" width="600"/> </div><br>
 
 - (3)如何关闭偏向锁
 
@@ -290,7 +290,7 @@ HotSpot的作者经过研究发现，大多数情况下，锁不仅不存在多�
 
 下图是两个线程同时争夺锁，导致锁膨胀的流程图：
 
-<div align="center"> <img src="pics//04_10.png" width=""/> </div><br>
+<div align="center"> <img src="pics//04_10.png" width="600"/> </div><br>
 
 因为自旋会消耗CPU，为了避免无用的自旋（比如获得锁的线程被阻塞住了），
 一旦锁升级成重量级锁，就不会再恢复到轻量级锁状态。
