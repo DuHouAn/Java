@@ -133,11 +133,11 @@ public class VolatileExample {
 - 在每个volatile写操作的前面插入一个StoreStore屏障
 - 在每个volatile写操作的后面插入一个StoreLoad屏障
 
-<div align="center"> <img src="pics//05_05.png" width="400"/> </div><br>
+<div align="center"> <img src="pics//05_05.png" width="600"/> </div><br>
 
 - 在每个volatile读操作的后面插入一个LoadLoad屏障
 - 在每个volatile读操作的后面插入一个LoadStore屏障
 
-<div align="center"> <img src="pics//05_06.png" width="400"/> </div><br>
+<div align="center"> <img src="pics//05_06.png" width="600"/> </div><br>
 
 需要注意的是：volatile写是在前面和后面分别插入内存屏障，而volatile读操作是在后面插入两个内存屏障。
