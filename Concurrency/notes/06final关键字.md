@@ -8,8 +8,6 @@
         * [final修饰类](#final修饰类)
     * [final在多线程中的使用](#final在多线程中的使用)
         * [final域重排序规则](#final域重排序规则)
-            * [final域为基本类型](#final域为基本类型)
-            * [final域为引用类型](#final域为引用类型)
 <!-- GFM-TOC -->
 # 七、final关键字
 ## final的简介
