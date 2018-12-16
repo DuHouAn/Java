@@ -1,5 +1,5 @@
 <!-- GFM-TOC -->
-* [八、volatile原理](#八volatile原理)
+* [七、volatile原理](#七volatile原理)
    * [volatile简介](#volatile简介)
    * [volatile实现原理](#volatile实现原理)
    * [volatile的happens-before关系](#volatile的happens-before关系)
@@ -7,7 +7,7 @@
         * [volatile的内存语义实现](#volatile的内存语义实现)
 <!-- GFM-TOC -->
 
-# 八、volatile原理
+# 七、volatile原理
 ## volatile简介
 Java内存模型告诉我们，各个线程会将共享变量从主内存中拷贝到工作内存，然后执行引擎会基于工作内存中的数据进行操作处理。
 线程在工作内存进行操作后何时会写到主内存中？
