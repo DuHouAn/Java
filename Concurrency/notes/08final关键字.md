@@ -1,5 +1,5 @@
 <!-- GFM-TOC -->
-* [八、final关键字](#八final关键字)
+* [九、final关键字](#九final关键字)
     * [final的简介](#final的简介)
     * [final的具体使用场景](#final的具体使用场景)
         * [final修饰成员变量](#final修饰成员变量)
@@ -12,7 +12,7 @@
     * [对象溢出](#对象溢出)
     * [final的实现原理](#final的实现原理)
 <!-- GFM-TOC -->
-# 八、final关键字
+# 九、final关键字
 ## final的简介
 **final可以修饰变量，方法和类**，用于表示所修饰的内容一旦赋值之后就不会再被改变，比如String类就是一个final类型的类。
 
