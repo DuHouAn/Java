@@ -1,5 +1,5 @@
 <!-- GFM-TOC -->
-* [六、synchronized原理](#六synchronized原理)
+* [七、synchronized原理](#七synchronized原理)
     * [synchronized基本原理](#synchronized基本原理)
         * [对象锁（monitor）机制](#对象锁（monitor）机制)
         * [synchronized的happens-before关系](#synchronized的happens-before关系)
@@ -10,7 +10,7 @@
         * [各种锁的比较](#各种锁的比较)
 <!-- GFM-TOC -->
 
-# 六、synchronized原理
+# 七、synchronized原理
 java代码中使用synchronized可是使用在代码块和方法中，根据Synchronized用的位置可以有这些使用场景：
 
 <div align="center"> <img src="pics//04_00.png" width="600"/> </div><br>
