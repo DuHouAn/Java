@@ -1,5 +1,5 @@
 <!-- GFM-TOC -->
-* [十二、深入理解读写锁ReentrantReadWriteLock](#深入理解读写锁ReentrantReadWriteLock)
+* [十三、深入理解读写锁ReentrantReadWriteLock](#深入理解读写锁ReentrantReadWriteLock)
     * [读写锁简介](#读写锁简介)
     * [写锁详解](#写锁详解)
         * [写锁的获取](#写锁的获取)

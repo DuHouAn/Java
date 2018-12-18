@@ -1,5 +1,5 @@
 <!-- GFM-TOC -->
-* [十一、深入理解ReentrantLock](#深入理解ReentrantLock)
+* [十二、深入理解ReentrantLock](#深入理解ReentrantLock)
     * [ReentrantLock简介](#ReentrantLock简介)
     * [重入性的实现原理](#重入性的实现原理)
     * [公平锁与非公平锁](#公平锁与非公平锁)
