@@ -1,3 +1,4 @@
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -5,6 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockDemo {
     private static ReentrantLock lock = new ReentrantLock();
+
+    private Condition condition=lock.newCondition();
 
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {

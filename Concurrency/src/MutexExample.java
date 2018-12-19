@@ -1,6 +1,7 @@
 /**
  * Created by 18351 on 2018/12/17.
  */
+
 public class MutexExample {
     private static Mutex mutex = new Mutex();
 
