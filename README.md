@@ -3,14 +3,19 @@
 
 ## :computer: 模块一 Java基础
 
-- [Java基础](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/Java%20%E5%9F%BA%E7%A1%80.md)
-
-- [Java基础相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics)
-
 | 章节 |  内容 | 代码 |
 | :--: | :--: | :--: |
-| 第一节 数据类型 | [第一节 数据类型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/00%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md) | [代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_00_dataType) |
-| 第二节 String | [第二节 String](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/01String.md)| [代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_01_string) |
+| 第一节 数据类型 | [第一节 数据类型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/00%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md) | [第一节相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_00_dataType) |
+| 第二节 String | [第二节 String](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/01String.md)| [第二节相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_01_string) |
+| 第三节 运算 | [第三节 运算](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/02%E8%BF%90%E7%AE%97.md) | [第三节相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_02_calculation) |
+| 第四节 Object通用方法 | [第四节 Object通用方法](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/03Object%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95.md) | [第四节相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_03_Object) |
+| 第五节 关键字 | 第五节 关键字 | 第五节相关代码 | 
+| 第六节 反射 |  第六节 反射 |  第六节相关代码 |
+| 第七节 异常 | 第七节 异常 | 第七节相关代码 |
+| 第八节 泛型 | 第八节 泛型 | 第八节相关代码 |
+| 第九节 注解 | 第九节 注解 | 第九节相关代码 |
+| 第十节 其他 | 第十节 其他 | 第十节相关代码 |
+
 
 ## :art: 模块二  Java虚拟机
 
@@ -62,4 +67,4 @@
 
 ## :envelope: 模块四 Java容器
 
-## :iphone: 模块五  JavaIO
+## :couple: 模块五  JavaIO
