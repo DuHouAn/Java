@@ -32,6 +32,7 @@
 
 * [第七章 虚拟机字节码执行引擎](https://github.com/DuHouAn/Java/blob/master/JVM/06%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E.md)
 
+## :coffee: Java
 ## 模块三 Java并发
 ### 第一部分 Java线程
 | 章节 | 本章笔记 | 本章相关代码 |
@@ -72,7 +73,22 @@
 - [第八章 volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md)
 
 - [第九章 final关键字](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/08final%E5%85%B3%E9%94%AE%E5%AD%97.md)
+
 ### 第四部分 Lock体系
+- [第十章 Lock解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/09Lock%E8%A7%A3%E6%9E%90.md)
+
+- [第十一章 深入理解AQS](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/10%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3AQS.md)
+
+- [第十二章 深入理解ReentrantLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/11%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ReentrantLock.md)
+
+- [第十三章 深入理解读写锁ReentrantReadWriteLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md)
+
+- [第十四章 Condition的await和signal等待通知机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md)
+
+- [第十五章 互斥同步和线程之间的协作](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md)
+
+- [第十六章 LockSupport解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/15LockSupport%E8%A7%A3%E6%9E%90.md)
+
 ### 第五部分 并发容器
 ### 第六部分 线程池（Executor体系）
 ### 第七部分 原子操作类
