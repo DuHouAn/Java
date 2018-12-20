@@ -7,6 +7,10 @@
 
 - [Java基础相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics)
 
+| 章节 |  内容 | 代码 |
+| :--: | :--: | :--: |
+| 第一节 数据类型 | [第一节 数据类型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/00%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md) | [代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_00_dataType) |
+| 第二节 String | [第二节 String](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/01String.md)| [代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_01_string) |
 
 ## :art: 模块二  Java虚拟机
 
@@ -56,6 +60,6 @@
 
 - [参考资料-2](https://github.com/CL0610/Java-concurrency)
 
-## :envelope: 模块三 Java容器
+## :envelope: 模块四 Java容器
 
-## :couple: 模块四  JavaIO
+## :iphone: 模块五  JavaIO
