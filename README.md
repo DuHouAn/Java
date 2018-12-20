@@ -32,8 +32,7 @@
 
 * [第七章 虚拟机字节码执行引擎](https://github.com/DuHouAn/Java/blob/master/JVM/06%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E.md)
 
-## :coffee: Java
-## 模块三 Java并发
+## :coffee: 模块三 Java并发
 ### 第一部分 Java线程
 | 章节 | 本章笔记 | 本章相关代码 |
 | :---: | :---: | :---:|
