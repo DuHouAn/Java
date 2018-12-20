@@ -1,23 +1,14 @@
 # Java
 本仓库是对Java的一些基础知识进行收集、整理。一共分为5个模块。
 
-## 模块一 JavaSE
-| 章节 | 本章笔记 | 本章相关代码 |
-| :---: | :---: | :---:|
-| **第一章 数据类型** | | |
-| **第二章 String** | | |
-| **第三章 运算** | | |
-| **第四章 继承** | | |
-| **第五章 Object通用方法** | | |
-| **第六章 关键字** | | |
-| **第七章 反射** | | |
-| **第八章 异常** | | |
-| **第九章 泛型** | | |
-| **第十章 注解** | | |
-| **第十一章 Java特性** | | |
+## 模块一 :computer: Java基础
+
+- [Java基础](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/Java%20%E5%9F%BA%E7%A1%80.md)
+
+- [Java基础相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics)
 
 
-## 模块二 Java虚拟机
+## 模块二 :art: Java虚拟机
 * [第一章 运行时数据区域](https://github.com/DuHouAn/Java/blob/master/JVM/00%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md)
 
 * [第二章 垃圾收集](https://github.com/DuHouAn/Java/blob/master/JVM/01%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86.md)
@@ -99,6 +90,6 @@
 
 - [参考资料-2](https://github.com/CL0610/Java-concurrency)
 
-## 模块三 Java容器
+## 模块三 :envelope: Java容器
 
-## 模块四 JavaIO
+## 模块四 :iphone: JavaIO
