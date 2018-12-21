@@ -1,5 +1,5 @@
 # Java
-本仓库是对Java的一些基础知识进行收集、整理。一共分为5个模块。
+本仓库是对Java的一些基础知识进行收集、整理。一共分为7个模块。
 
 ## :computer: 模块一 Java基础
 
@@ -58,7 +58,7 @@
 | **第八章 并发工具** |  |
 | **第九章 并发实践** |  |
 
-## :envelope: 模块四 Java容器
+## :hammer: 模块四 Java容器
 
 | 章节 |  内容 | 代码 |
 | :--: | :--: | :--: |
@@ -66,7 +66,7 @@
 | 第二节 容器的设计模式 | [第二节 容器的设计模式](https://github.com/DuHouAn/Java/blob/master/JavaContainer/notes/01%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md)  | [无] |
 | 第三节 容器源码解析 | [第三节 容器源码解析](https://github.com/DuHouAn/Java/blob/master/JavaContainer/notes/02%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md) | [无] |
 
-## :couple: 模块五  JavaIO
+## :bulb: 模块五  JavaIO
 
 | 章节 |  内容 | 代码 |
 | :--: | :--: | :--: |
@@ -77,3 +77,22 @@
 | 第五节 对象操作 | [第五节 对象操作](https://github.com/DuHouAn/Java/blob/master/JavaIO/notes/03%E5%AD%97%E7%AC%A6%E6%93%8D%E4%BD%9C.md) | 第五节 对象操作 |
 | 第六节 网络操作 | [第六节 网络操作](https://github.com/DuHouAn/Java/blob/master/JavaIO/notes/05%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C.md) | 第六节 网络操作 |
 | 第七节 NIO | [第七节 NIO](https://github.com/DuHouAn/Java/blob/master/JavaIO/notes/06NIO.md) | 第七节 NIO |
+
+## :memo: 模块六 面向对象
+
+| 章节 |  内容 | 代码 |
+| :--: | :--: | :--: |
+| **第一章 设计模式** | | |
+| 第一节 设计模式概述 |  [第一节 设计模式概述](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/00%E6%A6%82%E8%BF%B0.md) | [无] |
+| 第二节 创建型设计模式 | [第二节 创建型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/01%E5%88%9B%E5%BB%BA%E5%9E%8B.md) | 第二节 创建型设计模式 |
+| 第三节 行为型设计模式 | [第三节 行为型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/02%E8%A1%8C%E4%B8%BA%E5%9E%8B.md) | 第三节 行为型设计模式 |
+| 第四节 结构型设计模式 | [第四节 结构型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) | 第四节 结构型设计模式 |
+| **第二章 面向对象思想** |  |  |
+| 第五节 面向对象三大特性 | [第五节 面向对象三大特性](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/04%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7.md) | 第五节 面向对象三大特性 | 
+| 第六节 关系类图 | [第六节 关系类图](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/05%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE.md) | 第六节 关系类图 |
+| 第七节 面向对象设计原则 | [第七节 面向对象设计原则](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/06%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md) | 第七节 面向对象设计原则 |
+
+## :iphone: 模块七 Spring框架
+
+| 章节 |  内容 | 代码 |
+| :--: | :--: | :--: |
