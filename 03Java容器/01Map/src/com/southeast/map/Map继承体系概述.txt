@@ -1,8 +1,0 @@
-HashMap:基于哈希实现。
-HashTable:和HashMap类似，但他是线程安全的，
-          这意味着同一时刻多个线程可以同时写入HashTable并且不会导致数据不一致。
-          它是遗留类，不应该去使用它。
-          现在可以使用ConcurrentHashMap来支持线程安全，并且ConcurrentHashMap的效率会更高，
-          因为ConcurrentHashMap引入了分段锁。
-LinkedHashMap:使用链表来维护元素的顺序，顺序为插入顺序（默认）或者最近最少使用（LRU）顺序。
-TreeMap:基于红黑树实现。

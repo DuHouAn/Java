@@ -1,3 +1,0 @@
-1、存储结构
-WeakHashMap的Entry继承自WeakRefercence,
-2、ConcurrentCache
