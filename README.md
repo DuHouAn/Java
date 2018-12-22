@@ -53,6 +53,7 @@
 | 第十五节 互斥同步和线程之间的协作 | [第十五节 互斥同步和线程之间的协作](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md) |
 | 第十六节 LockSupport解析 | [第十六节 LockSupport解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/15LockSupport%E8%A7%A3%E6%9E%90.md) |
 | **第五章 并发容器** |  |
+| 第十七节 并发容器 | [ 第十七节 并发容器](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/16%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md) |
 | **第六章 线程池（Executor体系）** |  |
 | **第七章 原子操作类** |  |
 | **第八章 并发工具** |  |
