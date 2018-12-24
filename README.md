@@ -55,6 +55,7 @@
 | **第五章 并发容器** |  |
 | 第十七节 并发容器 | [ 第十七节 并发容器](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/16%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md) |
 | **第六章 线程池（Executor体系）** |  |
+| 第十八节 线程池 | [第十八节 线程池](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/17%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) |
 | **第七章 原子操作类** |  |
 | **第八章 并发工具** |  |
 | **第九章 并发实践** |  |
