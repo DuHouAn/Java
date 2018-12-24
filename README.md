@@ -12,7 +12,7 @@
 | 第五节 关键字 | [第五节 关键字](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/04%E5%85%B3%E9%94%AE%E5%AD%97.md) | [第五节 关键字相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_04_keyWords) | 
 | 第六节 反射 |  [第六节 反射](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/05%E5%8F%8D%E5%B0%84.md) |  [第六节 反射相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_05_reflection) |
 | 第七节 异常 | [第七节 异常](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/06%E5%BC%82%E5%B8%B8.md) |  [第七节 异常相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_06_exception) |
-| 第八节 泛型 | [第八节 泛型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/07%E6%B3%9B%E5%9E%8B.md) | 第八节 泛型相关代码 |
+| 第八节 泛型 | [第八节 泛型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/07%E6%B3%9B%E5%9E%8B.md) | [第八节 泛型相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_07_generic) |
 | 第九节 注解 | [第九节 注解](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/08%E6%B3%A8%E8%A7%A3.md) | 第九节 注解相关代码 |
 | 第十节 其他 | [第十节 其他](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/09%E5%85%B6%E4%BB%96.md) | 第十节 其他相关代码 |
 
