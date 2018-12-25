@@ -13,8 +13,9 @@
 | 第六节 反射 |  [第六节 反射](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/05%E5%8F%8D%E5%B0%84.md) |  [第六节 反射相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_05_reflection) |
 | 第七节 异常 | [第七节 异常](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/06%E5%BC%82%E5%B8%B8.md) |  [第七节 异常相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_06_exception) |
 | 第八节 泛型 | [第八节 泛型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/07%E6%B3%9B%E5%9E%8B.md) | [第八节 泛型相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_07_generic) |
-| 第九节 注解 | [第九节 注解](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/08%E6%B3%A8%E8%A7%A3.md) | 第九节 注解相关代码 |
-| 第十节 其他 | [第十节 其他](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/09%E5%85%B6%E4%BB%96.md) | 第十节 其他相关代码 |
+| 第九节 注解 | [第九节 注解](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/08%E6%B3%A8%E8%A7%A3.md) | [第九节 注解相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_08_annotation) |
+| 第十节 Java中常见对象 | [第十节 Java中常见对象](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/09Java%E5%B8%B8%E8%A7%81%E5%AF%B9%E8%B1%A1.md) | [第十节 Java中常见对象相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_09_usefulObjects) | 
+| 第十一节 其他 | [第十一节 其他](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/09%E5%85%B6%E4%BB%96.md) | [无] |
 
 ## :art: 模块二  Java虚拟机
 
