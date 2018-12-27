@@ -41,25 +41,33 @@
 | **第二章 并发理论** |  |
 | 第五节 Java内存模型 | [第五节 Java内存模型](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/04Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md) | 
 | 第六节 锁优化 | [第六节 锁优化](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/05%E9%94%81%E4%BC%98%E5%8C%96.md) | 
+| 第七节 乐观锁与悲观锁 | [第七节 乐观锁与悲观锁](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/06%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.md)| 
 | **第三章 并发关键字** |  |
-| 第七节 synchronized原理 | [第七节 synchronized原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/06synchronized%E5%8E%9F%E7%90%86.md) | 
-| 第八节 volatile原理 | [第八节 volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md) | 
-| 第九节 final关键字 | [第九节 final关键字](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/08final%E5%85%B3%E9%94%AE%E5%AD%97.md) |
+| 第八节 synchronized原理 | [第八节 synchronized原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/06synchronized%E5%8E%9F%E7%90%86.md) | 
+| 第九节 volatile原理 | [第九节 volatile原理](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/07volatile%E5%8E%9F%E7%90%86.md) | 
+| 第十节 final关键字 | [第十节 final关键字](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/08final%E5%85%B3%E9%94%AE%E5%AD%97.md) |
 | **第四章 Lock体系** |  |
-| 第十节 Lock解析 | [第十节 Lock解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/09Lock%E8%A7%A3%E6%9E%90.md)| 
-| 第十一节 深入理解AQS | [第十一节 深入理解AQS](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/10%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3AQS.md) | 
-| 第十二节 深入理解ReentrantLock | [第十二节 深入理解ReentrantLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/11%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ReentrantLock.md) |
-| 第十三节 深入理解读写锁 | [第十三节 深入理解读写锁](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md) |
-| 第十四节 Condition的等待通知机制 | [第十四节 Condition的等待通知机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md) |
-| 第十五节 互斥同步和线程之间的协作 | [第十五节 互斥同步和线程之间的协作](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md) |
-| 第十六节 LockSupport解析 | [第十六节 LockSupport解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/15LockSupport%E8%A7%A3%E6%9E%90.md) |
+| 第十一节 Lock解析 | [第十一节 Lock解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/09Lock%E8%A7%A3%E6%9E%90.md)| 
+| 第十二节 深入理解AQS | [第十二节 深入理解AQS](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/10%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3AQS.md) | 
+| 第十三节 深入理解ReentrantLock | [第十三节 深入理解ReentrantLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/11%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ReentrantLock.md) |
+| 第十四节 深入理解读写锁 | [第十四节 深入理解读写锁](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md) |
+| 第十五节 Condition的等待通知机制 | [第十五节 Condition的等待通知机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md) |
+| 第十六节 互斥同步和线程之间的协作 | [第十六节 互斥同步和线程之间的协作](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md) |
+| 第十七节 LockSupport解析 | [第十六节 LockSupport解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/15LockSupport%E8%A7%A3%E6%9E%90.md) |
 | **第五章 并发容器** |  |
-| 第十七节 并发容器 | [ 第十七节 并发容器](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/16%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md) |
+| 第十八节 并发容器 | [ 第十八节 并发容器](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/16%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md) |
 | **第六章 线程池（Executor体系）** |  |
-| 第十八节 线程池 | [第十八节 线程池](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/17%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) |
+| 第十九节 线程池 | [第十九节 线程池](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/17%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) |
 | **第七章 原子操作类** |  |
+| 第二十节 原子操作类 | [第二十节 原子操作类](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/19%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E7%B1%BB.md) |
 | **第八章 并发工具** |  |
+| 第二十一节 JUC_AQS | [第二十一节 JUC_AQS](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/20JUC_AQS.md) |
+| 第二十二节 JUC_其他组件 | [第二十二节 JUC_其他组件](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/21JUC_%E5%85%B6%E4%BB%96%E7%BB%84%E4%BB%B6.md) |
 | **第九章 并发实践** |  |
+| 第二十三节 线程不安全示例 | [第二十三节 线程不安全示例](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/22%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%A4%BA%E4%BE%8B.md)  |
+| 第二十四节 线程安全 | [第二十四节 线程安全](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/23%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8.md) |
+| 第二十五节 生产者和消费者 | [第二十五节 生产者和消费者](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/24%E7%94%9F%E4%BA%A7%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85.md) |
+| 第二十六节 多线程良好开发实践 | [第二十六节 多线程良好开发实践](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/25%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%89%AF%E5%A5%BD%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5.md) |
 
 ## :hammer: 模块四 Java容器
 
