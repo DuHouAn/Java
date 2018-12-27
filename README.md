@@ -49,8 +49,8 @@
 | 第十节 Lock解析 | [第十节 Lock解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/09Lock%E8%A7%A3%E6%9E%90.md)| 
 | 第十一节 深入理解AQS | [第十一节 深入理解AQS](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/10%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3AQS.md) | 
 | 第十二节 深入理解ReentrantLock | [第十二节 深入理解ReentrantLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/11%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ReentrantLock.md) |
-| 第十三节 深入理解读写锁ReentrantReadWriteLock | [第十三节 深入理解读写锁ReentrantReadWriteLock](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md) |
-| 第十四节 Condition的await和signal等待通知机制 | [第十四节 Condition的await和signal等待通知机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md) |
+| 第十三节 深入理解读写锁 | [第十三节 深入理解读写锁](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md) |
+| 第十四节 Condition的等待通知机制 | [第十四节 Condition的等待通知机制](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md) |
 | 第十五节 互斥同步和线程之间的协作 | [第十五节 互斥同步和线程之间的协作](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md) |
 | 第十六节 LockSupport解析 | [第十六节 LockSupport解析](https://github.com/DuHouAn/Java/blob/master/Concurrency/notes/15LockSupport%E8%A7%A3%E6%9E%90.md) |
 | **第五章 并发容器** |  |
