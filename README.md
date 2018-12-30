@@ -31,7 +31,7 @@
 | 第十节 Java中常见对象 | [第十节 Java中常见对象](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/09Java%E5%B8%B8%E8%A7%81%E5%AF%B9%E8%B1%A1.md) | [第十节 Java中常见对象相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_09_usefulObjects) | 
 | 第十一节 其他 | [第十一节 其他](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/10%E5%85%B6%E4%BB%96.md) | [无] |
 
-## :art: 模块二  Java虚拟机
+## :art: 模块二 Java虚拟机
 
 | 章节 |  内容 |
 | :--:| :--: |
