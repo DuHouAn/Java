@@ -106,6 +106,7 @@
 | 第二节 创建型设计模式 | [第二节 创建型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/01%E5%88%9B%E5%BB%BA%E5%9E%8B.md) | [第二节 创建型设计模式相关代码](https://github.com/DuHouAn/Java/tree/master/Object_Oriented/src/code_00_creation) |
 | 第三节 行为型设计模式 | [第三节 行为型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/02%E8%A1%8C%E4%B8%BA%E5%9E%8B.md) | [第三节 行为型设计模式相关代码](https://github.com/DuHouAn/Java/tree/master/Object_Oriented/src/code_01_activity) |
 | 第四节 结构型设计模式 | [第四节 结构型设计模式](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) | [第四节 结构型设计模式相关代码](https://github.com/DuHouAn/Java/tree/master/Object_Oriented/src/code_02_strcuture) |
+| 参考资料 | [参考资料](https://www.jianshu.com/nb/4583287) | [无] |
 | **第二章 面向对象思想** |  |  |
 | 第五节 面向对象三大特性 | [第五节 面向对象三大特性](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/04%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7.md) | 第五节 面向对象三大特性 | 
 | 第六节 关系类图 | [第六节 关系类图](https://github.com/DuHouAn/Java/blob/master/Object_Oriented/notes/05%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE.md) | 第六节 关系类图 |
