@@ -829,7 +829,7 @@ protected void finalize()
 //当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。用于垃圾回收，但是什么时候回收不确定。
 ```
 
-- [Object的使用 代码示例]()
+- [Object的使用 代码示例](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_03_Object)
 
 ## Scanner
 Scanner:用于接收键盘录入数据。
