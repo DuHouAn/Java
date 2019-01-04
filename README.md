@@ -22,7 +22,7 @@
 | 章节 |  内容 | 代码 |
 | :--:| :--: | :--: |
 | 第一章 运行时数据区域 | [第一章 运行时数据区域](https://github.com/DuHouAn/Java/blob/master/JVM/notes/00%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md) | [第一章 运行时数据区域相关代码](https://github.com/DuHouAn/Java/tree/master/JVM/src/code_00) |
-| 第二章 垃圾收集 | [第二章 垃圾收集](https://github.com/DuHouAn/Java/blob/master/JVM/notes/01%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86.md) | 第二章 垃圾收集相关代码 |
+| 第二章 垃圾收集 | [第二章 垃圾收集](https://github.com/DuHouAn/Java/blob/master/JVM/notes/01%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86.md) | [无] |
 | 第三章 内存分配与回收策略 | [第三章 内存分配与回收策略](https://github.com/DuHouAn/Java/blob/master/JVM/notes/02%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5.md) |  第三章 内存分配与回收策略相关代码 |
 | 第四章 Java类文件结构 | [第四章 Java类文件结构](https://github.com/DuHouAn/Java/blob/master/JVM/notes/03Java%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.md) | [第四章 Java类文件结构相关代码 |
 | 第五章 类加载机制 | [第五章 类加载机制](https://github.com/DuHouAn/Java/blob/master/JVM/notes/04%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md) | 第五章 类加载机制相关代码 |
