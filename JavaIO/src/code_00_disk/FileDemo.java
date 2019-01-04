@@ -1,9 +1,9 @@
-package code_00_file;
+package code_00_disk;
 
 import java.io.File;
 
 /**
- *     * File:文件和目录(文件夹)路径名的抽象表示形式
+ * File:文件和目录(文件夹)路径名的抽象表示形式
  * 构造方法：
  * 		File(String pathname)：根据一个路径得到File对象
  * 		File(String parent, String child):根据一个目录和一个子文件/目录得到File对象
