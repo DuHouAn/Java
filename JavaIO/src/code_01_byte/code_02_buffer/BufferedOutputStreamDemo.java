@@ -1,4 +1,4 @@
-package code_01_iostream.code_02_buffer;
+package code_01_byte.code_02_buffer;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;

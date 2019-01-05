@@ -1,4 +1,4 @@
-package code_01_iostream;
+package code_01_byte;
 
 import java.io.*;
 

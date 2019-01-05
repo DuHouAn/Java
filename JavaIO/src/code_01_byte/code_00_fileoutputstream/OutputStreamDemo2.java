@@ -1,4 +1,4 @@
-package code_01_iostream.code_00_fileoutputstream;
+package code_01_byte.code_00_fileoutputstream;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
