@@ -1,0 +1,73 @@
+/*这是自定义样式的css文件*/
+
+body {
+	margin-top: 20px;
+	margin: 0 auto;
+	width: 100%;
+}
+.carousel-inner .item img {
+	width: 100%;
+	height: 300px;
+}
+
+.clear{
+	clear:both;
+}
+
+.top{
+	width:1210px;
+	margin:20px auto;
+	overflow:hidden;
+}
+
+.top div{
+	
+}
+
+.search{
+	background-color: #FCFDEF;
+	padding:10px 200px 10px 0px;
+}
+
+.content{
+	width:1210px;
+	margin:0 auto;
+}
+
+.news{
+	border:1px solid #E7E7E7;
+	height:auto;
+	height:300px;
+}
+
+.mynav{
+	width:1210px;
+	margin:0 auto;
+}
+
+.myrow .col-md-10 div{
+	border-bottom:1px solid #E7E7E7;
+	border-left:1px solid #E7E7E7;
+	padding:0px;
+}
+
+.row p{margin:0;}
+
+.myrow .yes-right-border{
+	border-right:1px solid #E7E7E7;
+}
+.myrow .no-left-border{
+	border-left:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
