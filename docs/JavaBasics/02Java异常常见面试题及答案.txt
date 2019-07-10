@@ -1,0 +1,96 @@
+6.被检查的异常和不受检查的异常有什么区别？
+答：
+A.被检查的异常应该用try-catch块代码处理，
+或者在main方法中用throws关键字让JRE了解程序可能抛出哪些异常。
+不受检查的异常在程序中不要求被处理或用throws语句告知。
+B.  Exception是所有被检查异常的基类，
+    RuntimeException是所有不受检查异常的基类。
+C．被检查的异常适用于那些不是因程序引起的错误情况( 提示:不受检查异常为编译器不要求强制处理的异常，检查异常则是编译器要求必须处置的异常。)
+比如：读取文件时文件不存在引发的FileNotFoundException。
+然而，不被检查的异常通常都是由于糟糕的编程引起的，比如：在对象引用时没有确保对象非空而引起的NullPointerException。
+
+7．在Java中throw与throws关键字之间的区别？
+答： 见 com.southeast.catchException.tryCatch.Code_08_Exception
+    throws:
+        (1)用在方法后面，使用的是异常类名
+        (2)可以跟多个类名，用 ，分隔
+        (3)表示抛出异常，由方法调用者来处理
+        (4)throes表示异常的一种可能性，并不一定会发生异常
+    throw:
+        (1)用在方法体内，跟的是异常对象
+        (2)只能抛出一个异常
+        (3)表示抛出异常，有方法体内的语句处理
+        (4)throw则是抛出了异常，执行throw则一定抛出了某种异常
+
+8.在Java中怎么写自定义的异常？
+答：我们能继承Exception类或其任何子类来实现自己的自定义异常类。
+这自定义异常类可以有自己变量和方法来传递错误代码或其它异常相关信息来处理异常。
+
+下面是一个简单的自定义异常示例：
+import java.io.IOException;
+
+public class MyException extends IOException { //继承自IOException
+
+    private static final long serialVersionUID = 4664456874499611218L;
+
+    private String errorCode="Unknown_Exception";
+
+    public MyException(String message, String errorCode){
+        super(message);
+        this.errorCode=errorCode;
+    }
+
+    public String getErrorCode(){
+        return this.errorCode;
+    }
+}
+
+9.在Java中什么是内存不足错误？
+答：在Java中，OutOfMemoryError是 java.lang.VirtualMachineError的一个子类，当堆内存耗尽时会被JVM抛出。
+我们能通过设置Java选项来提供更大的内存供应用使用来达到修复的目的。
+
+$>java MyProgram -Xms1024m -Xmx1024m -XX:PermSize=64M -XX:MaxPermSize=256m
+-Xms是设置初始值
+-Xmx是设置最大值
+
+10.引发Exception in thread main的各种不同情形？
+答：通常的一些主线程异常情形主要有以下几种：
+    Exception in thread main java.lang.UnsupportedClassVersionError:
+        当编译和运行Java类的JDK版本不同的时出现这种异常。
+    Exception in thread main java.lang.NoClassDefFoundError:
+        这种异常出现的原因有两种：第一种是提供类全名时附带有.class；第二种是指定类未找到。
+    Exception in thread main java.lang.NoSuchMethodError: main:
+        当试图运行一个没main方法的类时会出现这种异常。
+    无论何时main方法任何异常，它打印异常到控制台。其第一部分是陈述main方法抛出的异常，第二部分打印异常类名，后接异常类信息。
+
+11．Java中final,finally,finalize的区别？
+答：
+    final：最终的意思，可以修饰类，修饰成员变量，修饰成员方法
+          修饰类：类不能被继承
+          修饰变量：变量是常量
+         修饰方法：方法不能被重写（Override）
+    finally:是异常处理的关键字，用于释放资源。
+         一般来说，代码必须执行（特殊情况：在执行到finally JVM就退出了）
+    finalize:是Object的一个方法，用于垃圾回收。
+
+12.在main方法抛出异常时发生了什么？
+答：当main方法抛出异常时，Java运行时间终止并在控制台打印异常信息和栈轨迹。
+
+13.catch子句能为空吗？
+答：可以有空的catch子句，但那是最糟糕的编程，因为那样的话，异常即使被捕获，我们也得不到任何的有用信息，
+对于调试来说会是个噩梦，因此，编程时永远不要有空的catch子句。
+Catch子句中至少要包含一个日志语句输出到控制台或保存到日志文件中。
+
+14.提供一些Java异常处理的最佳实践。
+
+答：有关Java异常处理的相关最佳实践如下：
+使用具体的异常方便调试
+TODO：程序中尽早抛出异常
+捕获异常后先让调用者处理异常
+TODO：使用Java 7 ARM功能确保资源关闭或者用finally子句正确地关闭它们
+为了调试需要总是记录异常信息
+用多个catch子句实现更完全的关闭
+你自己的应用API中用自定义的异常来抛出单种类型异常
+遵循命名规定，以异常结束
+在Javadoc中用@throws来标注方法抛出的异常
+TODO：处理异常是有花销的，因此只有在必要时才抛出。否则，你会扑空或毫无收获。
