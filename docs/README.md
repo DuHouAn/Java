@@ -3,6 +3,9 @@
 
 ## 💻 模块一 Java基础
 
+- [第一节 数据类型](JavaBasics/notes/00数据类型.md)
+- 
+
 | 章节 |  内容 | 代码 |
 | :--: | :--: | :--: |
 | 第一节 数据类型 | [第一节 数据类型](https://github.com/DuHouAn/Java/blob/master/JavaBasics/notes/00%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md) | [第一节 数据类型相关代码](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_00_dataType) |
