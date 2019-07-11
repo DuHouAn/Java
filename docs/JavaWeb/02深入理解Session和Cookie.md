@@ -1,11 +1,3 @@
-<!-- GFM-TOC -->
-* [二、深入理解Session和Cookie](#深入理解Session和Cookie)
-    * [Cookie](#Cookie)
-    * [Session](#Session)
-    * [实现会话跟踪的技术](#实现会话跟踪的技术) 
-    * [Cookie和Session的的区别](#Cookie和Session的的区别)
-<!-- GFM-TOC -->
-
 ## Cookie
 ### Cookie简介
 Cookie意为“甜饼”，是由W3C组织提出，最早由Netscape社区发展的一种机制。
@@ -48,7 +40,7 @@ Web应用程序是使用HTTP协议传输数据的。HTTP协议是无状态的协
 举个例子，用户A购买了一件商品放入购物车内，
 当再次购买商品时服务器已经无法判断该购买行为是属于用户A的会话还是用户B的会话了。
 要跟踪该会话，必须引入一种机制。
-    
+​    
 Cookie就是这样的一种机制。它可以弥补HTTP协议无状态的不足。
 在Session出现之前，基本上所有的网站都**采用Cookie来跟踪会话**。
 
@@ -75,7 +67,7 @@ Cookie就是这样的一种机制。它可以弥补HTTP协议无状态的不足�
 - 3. **客户端发送一个http请求到服务器端，其中包含Cookie头部**
 - 4. **服务器端发送一个http响应到客户端**
 
-<div align="center"><img src="pics\\02_1.png" width="400"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/01_2.png" width="400"/></div>
 
 在客户端的第二次请求中包含Cookie头部，提供给了服务器端可以用来唯一标识客户端身份的信息。
 这时，服务器端也就可以判断客户端是否启用了cookie。
@@ -524,32 +516,6 @@ public class ClearCartServlet extends HttpServlet {
 ```
 
 - [Coookie和Session案例的完整代码](https://github.com/DuHouAn/Java/tree/master/JavaWeb/Category)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## 实现会话跟踪的技术
 - 1. **Cookie**

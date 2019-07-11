@@ -1,10 +1,3 @@
-<!-- GFM-TOC -->
-* [二、JSP解析](#JSP解析)
-   * [JSP概述](#JSP概述) 
-   * [JSP工作原理](#JSP工作原理)
-   * [JSP九大内置对象、七大动作、三大指令](#JSP九大内置对象-七大动作-三大指令)
-<!-- GFM-TOC -->
-
 # JSP解析
 ## JSP概述
 
@@ -49,7 +42,7 @@ JSP会在客户端第一次请求JSP文件时被编译为HttpJspPage类（实现
 ## JSP九大内置对象、七大动作、三大指令
 ### 九大内置对象
 
-<div align="center"><img src="pics\\01_1.png" width="600"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/01_1.png" width="600"/></div>
 
 
 1. out 输出流对象
@@ -79,7 +72,7 @@ JSP中通过config获取这些参数。
 **每个JSP文件中共有一个config对象**。
 
 5. session 会话对象
- 
+
 隐藏对象session是javax.servlet.http.HttpSession类的实例。
 
 session与cookie是记录客户访问信息的两种机制:
@@ -133,7 +126,7 @@ pageContext对象代表**当前JSP页面编译后的内容**。
 | jsp:include | 在页面被请求的时候引入一个文件 |
 | jsp:useBean | 寻找或者实例化一个 JavaBean |
 | jsp:setProperty | 设置 JavaBean 的属性 |
-| jsp:getProperty | 输出某个 JavaBean 的属性 | 
+| jsp:getProperty | 输出某个 JavaBean 的属性 |
 | jsp:forward | 把请求转到一个新的页面 |
 | jsp:plugin | 根据浏览器类型为 Java 插件生成 OBJECT 或 EMBED 标记 |
 
