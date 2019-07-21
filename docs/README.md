@@ -26,41 +26,16 @@
 
 ## ☕️ 模块三 Java并发
 
-- **第一章 基础知识**
-  * [第一节 并发编程优缺点](Concurrency/00%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9.md) 
-  * [第二节 线程状态转换](Concurrency/01%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.md) 
-  * [第三节 使用线程](Concurrency/02%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B.md) 
-  * [第四节 基础线程机制](Concurrency/03%E5%9F%BA%E7%A1%80%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6.md) 
-- **第二章 并发理论**    
-  * [第五节 Java 内存模型](Concurrency/04Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)   
-  * [第六节 锁优化](Concurrency/05%E9%94%81%E4%BC%98%E5%8C%96.md) 
-  * [第七节 乐观锁与悲观锁](Concurrency/06%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.md) 
-- **第三章 并发关键字**
-  * [第八节 synchronized 原理](Concurrency/06synchronized%E5%8E%9F%E7%90%86.md)
-  * [第九节 volatile 原理](Concurrency/07volatile%E5%8E%9F%E7%90%86.md) 
-  * [第十节 final 关键字](Concurrency/08final%E5%85%B3%E9%94%AE%E5%AD%97.md)  
-- **第四章 Lock 体系**
-  * [第十一节 Lock 解析](Concurrency/09Lock%E8%A7%A3%E6%9E%90.md)  
-  * [第十二节 深入理解 AQS](Concurrency/10%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3AQS.md)  
-  * [第十三节 深入理解 ReentrantLock](Concurrency/11%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ReentrantLock.md) 
-  * [第十四节 深入理解读写锁](Concurrency/12%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%BB%E5%86%99%E9%94%81ReentrantReadWriteLock.md) 
-  * [第十五节 Condition 的等待通知机制](Concurrency/13Condition%E7%9A%84await%E5%92%8Csignal%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6.md) 
-  * [第十六节 互斥同步和线程之间的协作](Concurrency/14%E4%BA%92%E6%96%A5%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C..md) 
-  * [第十七节 LockSupport 解析](Concurrency/15LockSupport%E8%A7%A3%E6%9E%90.md) 
-- **第五章 并发容器**   
-  * [ 第十八节 并发容器](Concurrency/16%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md) 
-- **第六章 线程池（Executor 体系）**    
-  * [第十九节 线程池](Concurrency/17%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) 
-- **第七章 原子操作类**
-  * [第二十节 原子操作类](Concurrency/19%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E7%B1%BB.md)  
-- **第八章 并发工具**   
-  *  [第二十一节 JUC_AQS](Concurrency/20JUC_AQS.md) 
-  * [第二十二节 JUC_其他组件](Concurrency/21JUC_%E5%85%B6%E4%BB%96%E7%BB%84%E4%BB%B6.md)  
-- **第九章 并发实践**   
-  * [第二十三节 线程不安全示例](Concurrency/22%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%A4%BA%E4%BE%8B.md) 
-  *  [第二十四节 线程安全](Concurrency/23%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8.md)
-  * [第二十五节 生产者和消费者](Concurrency/24%E7%94%9F%E4%BA%A7%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85.md) 
-  * [第二十六节 多线程良好开发实践](Concurrency/25%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%89%AF%E5%A5%BD%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5.md)
+- [第一节 基础知识](Java_Concurrency/1_基础知识.md)
+- [第二节 并发理论](Java_Concurrency/2_并发理论.md)
+- [第三节 并发关键字](Java_Concurrency/3_并发关键字.md)
+
+- [第四节 Lock 体系](Java_Concurrency/4_Lock 体系.md)
+- [第五节 原子操作类](Java_Concurrency/5_原子操作类.md)
+- [第六节 并发容器](Java_Concurrency/6_并发容器.md)
+- [第七节 并发工具](Java_Concurrency/7_并发工具.md)
+- [第八节 线程池](Java_Concurrency/8_线程池.md)
+- [第九节 并发实践](Java_Concurrency/9_并发实践.md)
 
 ## 🔨 模块四 Java容器
 
@@ -86,27 +61,30 @@
 
 ## 👫 模块七 面向对象
 
-- **第一章 设计模式**
-  * [第一节 设计模式概述](OO/00%E6%A6%82%E8%BF%B0.md) 
-  * [第二节 创建型设计模式](OO/01%E5%88%9B%E5%BB%BA%E5%9E%8B.md)
-  * [第三节 行为型设计模式相关代码](OO/src/code_01_activity)
-  * [第四节 结构型设计模式](OO/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) 
-- **第二章 面向对象思想**
-  *  [第五节 面向对象三大特性](OO/04%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7.md)  
-  *  [第六节 关系类图](OO/05%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE.md) 
-  * [第七节 面向对象设计原则](OO/06%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
+### I、设计模式
+
+- [第一节 设计模式概述](OO/00%E6%A6%82%E8%BF%B0.md) 
+- [第二节 创建型设计模式](OO/01%E5%88%9B%E5%BB%BA%E5%9E%8B.md)
+- [第三节 行为型设计模式相关代码](OO/src/code_01_activity)
+- [第四节 结构型设计模式](OO/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) 
+
+### II、面向对象思想
+
+- [第五节 面向对象三大特性](OO/04%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7.md)  
+- [第六节 关系类图](OO/05%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE.md) 
+- [第七节 面向对象设计原则](OO/06%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
 
 ## ☕️ 模块八 LeetCode 题解
 
 - [第一节 数组问题](LeetCode/1_数组问题.md)
 - [第二节 查找表相关问题](LeetCode/2_查找表相关问题.md)
 - [第三节 链表问题](LeetCode/3_链表问题.md)
-- 第四节 栈和队列
+- [第四节 栈和队列](LeetCode/4_栈和队列.md)
 - [第五节 二叉树](LeetCode/5_二叉树.md)
-- 第六节 回溯法
+- [第六节 回溯法](LeetCode/6_回溯法.md)
 - [第七节 动态规划](LeetCode/7_动态规划.md)
-- 第八节 字符串
-- 第九节 数学问题
-- 第十节 数据结构设计
-- 第十一节 数据结构
-- 第十二节 常见算法思想
+- [第八节 字符串](LeetCode/8_字符串.md)
+- [第九节 数学问题](LeetCode/9_数学问题.md)
+- [第十节 数据结构设计](LeetCode/10_数据结构设计.md)
+- [第十一节 数据结构](LeetCode/11_数据结构.md)
+- [第十二节 常见算法思想](LeetCode/12_算法思想.md)
