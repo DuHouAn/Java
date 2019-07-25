@@ -19,9 +19,9 @@
 - [第一节 运行时数据区域](JVM/1_JVM.md) 
 - [第二节 HotSpot 虚拟机对象](JVM/2_JVM.md) 
 - [第三节 String 类和常量池](JVM/3_JVM.md) 
-- [第四节 垃圾收集](JVM/4_JVM.md) 
-- [第五节 内存分配与回收策略](JVM/5_JVM.md) 
-- [第六节 Java类文件结构](JVM/6_JVM.md) 
+- [第四节 8 种基本类型的包装类和常量池](JVM/4_JVM.md)
+- [第五节 垃圾收集](JVM/5_JVM.md) 
+- [第六节 内存分配与回收策略](JVM/6_JVM.md) 
 - [第七节 类加载机制](JVM/7_JVM.md) 
 
 ## ☕️ 模块三 Java 并发
