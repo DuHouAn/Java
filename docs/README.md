@@ -112,6 +112,7 @@
 - [第十三节 排序](AimForOffer/13_排序.md)
 - [第十四节 堆](AimForOffer/14_堆.md)
 - [第十五节 哈希](AimForOffer/15_哈希.md)
+- [第十六节 补充](AimForOffer/16_补充.md)
 
 ## 💻 LeetCode 题解**
 
