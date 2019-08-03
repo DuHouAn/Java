@@ -108,7 +108,7 @@
 - [第九节 回溯](AimForOffer/9_回溯.md)
 - [第十节 深度优先](AimForOffer/10_深度优先.md)
 - [第十一节 贪心](AimForOffer/11_贪心.md)
-- [第十二节 位运算](AimForOffer/12_位运算.md)
+- [第十二节 数学运算](AimForOffer/12_数学运算.md)
 - [第十三节 排序](AimForOffer/13_排序.md)
 - [第十四节 堆](AimForOffer/14_堆.md)
 - [第十五节 哈希](AimForOffer/15_哈希.md)
