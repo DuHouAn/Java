@@ -1,4 +1,4 @@
-本项目对应 WebSite（效果更佳）: https://duhouan.github.io/Java/#/
+本项目对应 WebSite: https://duhouan.github.io/Java/#/
 
 # 📖 目录
 
