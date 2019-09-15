@@ -34,7 +34,7 @@
 - [第十节 Java中常见对象](JavaBasics/09Java%E5%B8%B8%E8%A7%81%E5%AF%B9%E8%B1%A1.md)  
 - [第十一节 其他](JavaBasics/10%E5%85%B6%E4%BB%96.md) 
 
-## 💾 Java 容器*
+## 💾 Java 容器
 
 - [第一节 Java容器概览](JavaContainer/00Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%A7%88.md)
 - [第二节 容器的设计模式](JavaContainer/01%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md)
@@ -42,7 +42,7 @@
 - [第三节 容器源码解析-Map](JavaContainer/03容器源码分析%20-%20Map.md)
 - [第三节 容器源码解析-并发容器](JavaContainer/04容器源码分析%20-%20并发容器.md)
 
-## 🙊 Java 虚拟机**
+## 🙊 Java 虚拟机
 
 - [第一节 运行时数据区域](JVM/1_JVM.md) 
 - [第二节 HotSpot 虚拟机对象](JVM/2_JVM.md) 
@@ -52,7 +52,7 @@
 - [第六节 内存分配与回收策略](JVM/6_JVM.md) 
 - [第七节 类加载机制](JVM/7_JVM.md) 
 
-## 🔨  Java 并发**
+## 🔨  Java 并发
 
 - [第一节 基础知识](Java_Concurrency/1_基础知识.md)
 - [第二节 并发理论](Java_Concurrency/2_并发理论.md)
@@ -86,8 +86,7 @@
 
 - [第一节 设计模式概述](OO/00%E6%A6%82%E8%BF%B0.md) 
 - [第二节 创建型设计模式](OO/01%E5%88%9B%E5%BB%BA%E5%9E%8B.md)
-- [第三节 行为型设计模式相关代码](OO/src/code_01_activity)
-- [第四节 结构型设计模式](OO/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) 
+- [第三节 结构型设计模式](OO/03%E7%BB%93%E6%9E%84%E5%9E%8B.md) 
 
 ### II、面向对象思想
 
@@ -95,7 +94,7 @@
 - [第六节 关系类图](OO/05%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE.md) 
 - [第七节 面向对象设计原则](OO/06%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
 
-## 🎨 剑指 Offer 题解**
+## 🎨 剑指 Offer 题解
 
 - [第一节 数组](AimForOffer/1_数组.md)
 - [第二节 字符串](AimForOffer/2_字符串.md)
@@ -114,22 +113,12 @@
 - [第十五节 哈希](AimForOffer/15_哈希.md)
 - [第十六节 其他](AimForOffer/16_其他.md)
 
-## 💻 LeetCode 题解**
+## 💻 Redis 实战
 
-- [第一节 数组问题](LeetCode/1_数组问题.md)
-- [第二节 查找表相关问题](LeetCode/2_查找表相关问题.md)
-- [第三节 链表问题](LeetCode/3_链表问题.md)
-- [第四节 栈和队列](LeetCode/4_栈和队列.md)
-- [第五节 二叉树](LeetCode/5_二叉树.md)
-- [第六节 回溯法](LeetCode/6_回溯法.md)
-- [第七节 动态规划](LeetCode/7_动态规划.md)
-- [第八节 字符串](LeetCode/8_字符串.md)
-- [第九节 数学问题](LeetCode/9_数学问题.md)
-- [第十节 数据结构设计](LeetCode/10_数据结构设计.md)
-- [第十一节 数据结构](LeetCode/11_数据结构.md)
-- [第十二节 常见算法思想](LeetCode/12_算法思想.md)
 
-## 🔧 关注的小专栏*
+
+## 🔧 关注的小专栏
 
 - [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
 - [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
+
