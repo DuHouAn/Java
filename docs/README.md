@@ -1,6 +1,6 @@
 # ✏️  计算机基础
 
-## 1. 数据结构
+## 1. 数据结构和算法
 
 ## 2. 计算机网络
 
@@ -119,13 +119,32 @@
 
 ## 2. LeetCode 题解
 
+- [第一节 数组问题](LeetCode/1_数组问题.md)
+- [第二节 查找表相关问题](LeetCode/2_查找表相关问题.md)
+- [第三节 链表问题](LeetCode/3_链表问题.md)
+- [第四节 栈和队列](LeetCode/4_栈和队列.md)
+- [第五节 二叉树](LeetCode/5_二叉树.md)
+- [第六节 回溯法](LeetCode/6_回溯法.md)
+- [第七节 动态规划](LeetCode/7_动态规划.md)
+- [第八节 字符串](LeetCode/8_字符串.md)
+- [第九节 数学问题](LeetCode/9_数学问题.md)
+- [第十节 数据结构设计](LeetCode/10_数据结构设计.md)
+- [第十一节 数据结构](LeetCode/11_数据结构.md)
+- [第十二节 常见算法思想](LeetCode/12_算法思想.md)
+
 # 💾 数据库
 
-## 1. MySQL
+## 1. DataBase
 
-## 2. Redis
 
-# 🔨 常用框架
+
+## 2. MySQL
+
+
+
+## 3. Redis
+
+# 🎨  常用框架
 
 ## 1. SpringMVC
 
@@ -133,8 +152,23 @@
 
 ## 3. MyBatis
 
-# 🔧 关注的小专栏
+# 🔨 消息队列
+
+## 1. Kafka
+
+## 2. RabbitMQ
+
+# 📖 网站架构
+
+# 💻 工具
+
+## 1. Git
+
+## 2. Nginx
+
+## 3. Docker
+
+# 🔧 进阶指南
 
 - [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
 - [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
-
