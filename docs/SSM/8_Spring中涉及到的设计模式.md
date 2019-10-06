@@ -2,7 +2,7 @@
 
 ## 工厂模式
 
-- [工厂模式]()
+- [工厂模式](OO/2_创建型.md#2-简单工厂simple-factory)
 
 BeanFactory 用来创建各种不同的 Bean。
 
