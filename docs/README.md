@@ -43,7 +43,8 @@
 - [第八节 泛型](JavaBasics/07%E6%B3%9B%E5%9E%8B.md) 
 - [第九节 注解](JavaBasics/08%E6%B3%A8%E8%A7%A3.md)  
 - [第十节 Java中常见对象](JavaBasics/09Java%E5%B8%B8%E8%A7%81%E5%AF%B9%E8%B1%A1.md)  
-- [第十一节 其他](JavaBasics/10%E5%85%B6%E4%BB%96.md) 
+- [第十一节 抽象类和接口](JavaBasics/10抽象类和接口.md)
+- [第十二节 其他](JavaBasics/11其他.md) 
 
 ## 2. Java 容器
 
