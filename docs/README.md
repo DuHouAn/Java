@@ -1,6 +1,6 @@
 # ✏️  计算机基础
 
-## 1. 数据结构和算法
+## *1. 数据结构和算法
 
 - [第一节 绪论](DataStructure/1_绪论.md)
 - [第二节 线性表](DataStructure/2_线性表.md)
@@ -28,6 +28,14 @@
 - [第四节 内存管理](OS/4_内存管理.md)
 - [第五节 设备管理](OS/4_设备管理.md)
 - [第六节 链接](OS/6_链接.md)
+
+## *4. Linux
+
+- [第一节 Linux概论](Linux/1_Linux概论.md)
+- [第二节 Linux文件系统](Linux/2_Linux文件系统.md)
+- [第三节 进程管理](Linux/3_进程管理.md)
+- [第四节 Linux常用命令](Linux/4_Linux常用命令.md)
+- [第五节 Linux常用软件安装](Linux/5_Linux常用软件安装.md)
 
 # ☕️ Java
 
@@ -85,6 +93,7 @@
 - [第五节 对象操作](JavaIO/04%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C.md)  
 - [第六节 网络操作](JavaIO/05%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C.md)  
 - [第七节 NIO](JavaIO/06NIO.md)
+- [第八节 JavaIO方式](JavaIO/07JavaIO方式.md)
 
 # 👫 面向对象
 
@@ -103,26 +112,31 @@
 
 # 📝 编程题
 
-## 1. 剑指 Offer 题解
+## *1. 剑指 Offer 题解
 
-- [第一节 数组](AimForOffer/1_数组.md)
-- [第二节 字符串](AimForOffer/2_字符串.md)
-- [第三节 查找](AimForOffer/3_查找.md)
-- [第四节 链表](AimForOffer/4_链表.md)
-- [第五节 树](AimForOffer/5_树.md)
-- [第六节 栈](AimForOffer/6_栈.md)
-- [第七节 队列](AimForOffer/7_队列.md)
-- [第八节 动态规划](AimForOffer/8_动态规划.md)
-- [第九节 回溯](AimForOffer/9_回溯.md)
-- [第十节 深度优先](AimForOffer/10_深度优先.md)
-- [第十一节 贪心](AimForOffer/11_贪心.md)
-- [第十二节 数学运算](AimForOffer/12_数学运算.md)
-- [第十三节 排序](AimForOffer/13_排序.md)
-- [第十四节 堆](AimForOffer/14_堆.md)
-- [第十五节 哈希](AimForOffer/15_哈希.md)
-- [第十六节 其他](AimForOffer/16_其他.md)
+> **数据结构相关**
 
-## 2. LeetCode 题解
+- [第一节 数组和矩阵](AimForOffer/数据结构相关/1_数组和矩阵.md)
+- [第二节 字符串](AimForOffer/数据结构相关/2_字符串.md)
+- [第三节 链表](AimForOffer/数据结构相关/3_链表.md)
+- [第四节 树](AimForOffer/数据结构相关/4_树.md)
+- [第五节 栈](AimForOffer/数据结构相关/5_栈.md)
+- [第六节 队列](AimForOffer/数据结构相关/6_队列.md)
+- [第七节 堆](AimForOffer/数据结构相关/7_堆.md)
+- [第八节 哈希.](AimForOffer/数据结构相关/8_哈希.md)
+
+> **算法相关**
+
+- [第一节 查找](AimForOffer/算法思想相关/1_查找.md)
+- [第二节 排序](AimForOffer/算法思想相关/2_排序.md)
+- [第三节 动态规划](AimForOffer/算法思想相关/3_动态规划.md)
+- [第四节 回溯](AimForOffer/算法思想相关/4_回溯.md)
+- [第五节 深度优先](AimForOffer/算法思想相关/5_深度优先.md)
+- [第六节 贪心](AimForOffer/算法思想相关/6_贪心.md)
+- [第七节 数学运算](AimForOffer/算法思想相关/7_数学运算.md)
+- [第八节 其他](AimForOffer/算法思想相关/8_其他.md)
+
+## *2. LeetCode 题解
 
 - [第一节 数组问题](LeetCode/1_数组问题.md)
 - [第二节 查找表相关问题](LeetCode/2_查找表相关问题.md)
@@ -156,7 +170,7 @@
 - [第五节 MySQL优化](MySQL/5_MySQL优化.md)
 - [第六节 补充知识](MySQL/6_补充知识.md)
 
-## 3. Redis
+## *3. Redis
 
 
 
@@ -178,19 +192,23 @@
 
 ## 1. Kafka
 
-## 2. RabbitMQ
+- [第一节 消息队列](Kafka/1_消息队列.md)
+- [第二节 Kafka的架构](Kafka/2_Kafka的架构.md)
+- [第三节 Kafka的高可用原理](Kafka/3_Kafka的高可用原理.md)
+- [第四节 Kafka中一些常见问题](Kafka/4_Kafka中一些常见问题.md)
+- [第五节 Kafka特点](Kafka/5_Kafka特点.md)
+
+## *2. RabbitMQ
 
 # 📖 网站架构
 
-# 💻 工具
+# *💻 工具
 
-## 1. Linux
+## 1. Git
 
-## 2. Git
+## 2. Nginx
 
-## 3. Nginx
-
-## 4. Docker
+## 3. Docker
 
 # 🔧 进阶指南
 
