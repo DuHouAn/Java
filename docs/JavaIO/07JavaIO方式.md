@@ -9,6 +9,10 @@
 
 Java IO 的方式通常分为阻塞的 BIO（Blocking IO）、同步非阻塞的 NIO（New IO） 和异步非阻塞的 AIO（Asynchronous IO）。
 
+JDK1.4 之前只支持 BIO，JDK1.4 以后开始支持 NIO，JDK1.7 开始支持 AIO。
+
+
+
 ### 1. BIO
 
 BIO 是同步阻塞的。服务器的模式为**一个连接一个线程**。

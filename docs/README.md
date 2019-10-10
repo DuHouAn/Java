@@ -29,13 +29,13 @@
 - [第五节 设备管理](OS/4_设备管理.md)
 - [第六节 链接](OS/6_链接.md)
 
-## *4. Linux
+## 4. Linux
 
 - [第一节 Linux概论](Linux/1_Linux概论.md)
 - [第二节 Linux文件系统](Linux/2_Linux文件系统.md)
-- [第三节 进程管理](Linux/3_进程管理.md)
-- [第四节 Linux常用命令](Linux/4_Linux常用命令.md)
-- [第五节 Linux常用软件安装](Linux/5_Linux常用软件安装.md)
+- [第三节 Linux常用命令](Linux/3_Linux常用命令.md)
+- [第四节 Liunx进程管理](Linux/4_Liunx进程管理.md)
+- [第五节 Linux压缩与打包](Linux/5_Linux压缩与打包.md)
 
 # ☕️ Java
 
