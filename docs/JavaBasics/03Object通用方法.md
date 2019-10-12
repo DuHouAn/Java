@@ -27,7 +27,7 @@ public final void wait(long timeout, int nanos) throws InterruptedException
 public final void wait() throws InterruptedException
 ```
 
-## equals()
+## *equals()
 
 **1. 等价关系** 
 
@@ -117,7 +117,7 @@ public class EqualExample {
 }
 ```
 
-## hashCode()
+## *hashCode()
 
 hashCode() 返回散列值，而 equals() 是用来判断两个对象是否等价。
 **等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价**。

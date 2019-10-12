@@ -1,4 +1,4 @@
-<img width="200px" src="https://gitee.com/duhouan/ImagePro/raw/master/logo.png" background-color="transparent">
+<img width="250px" src="https://gitee.com/duhouan/ImagePro/raw/master/logo.png">
 
 # Java
 
