@@ -1,15 +1,16 @@
 # ✏️  计算机基础
 
-## *1. 数据结构和算法
+## 1. 数据结构和算法
 
-- [第一节 绪论](DataStructure/1_绪论.md)
-- [第二节 线性表](DataStructure/2_线性表.md)
+- [第一节 数组](DataStructure/1_数组.md)
+- [第二节 链表](DataStructure/2_链表.md)
 - [第三节 栈和队列](DataStructure/3_栈和队列.md)
 - [第四节 串](DataStructure/4_串.md)
 - [第五节 树和二叉树](DataStructure/5_树和二叉树.md)
 - [第六节 图](DataStructure/6_图.md)
-- [第七节 查找](DataStructure/7_查找.md)
-- [第八节 排序](DataStructure/8_排序.md)
+- [第七节 哈希](DataStructure/7_哈希.md)
+- [第八节 查找](DataStructure/8_查找.md)
+- [第九节 排序](DataStructure/9_排序.md)
 
 ## 2. 计算机网络
 
