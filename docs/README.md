@@ -1,18 +1,6 @@
 # ✏️  计算机基础
 
-## 1. 数据结构和算法
-
-- [第一节 数组](DataStructure/1_数组.md)
-- [第二节 链表](DataStructure/2_链表.md)
-- [第三节 栈和队列](DataStructure/3_栈和队列.md)
-- [第四节 串](DataStructure/4_串.md)
-- [第五节 树和二叉树](DataStructure/5_树和二叉树.md)
-- [第六节 图](DataStructure/6_图.md)
-- [第七节 哈希](DataStructure/7_哈希.md)
-- [第八节 查找](DataStructure/8_查找.md)
-- [第九节 排序](DataStructure/9_排序.md)
-
-## 2. 计算机网络
+## 1. 计算机网络
 
 - [第一节 概述](Net/1_概述.md)
 - [第二节 物理层](Net/2_物理层.md)
@@ -21,7 +9,7 @@
 - [第五节 运输层](Net/5_运输层.md)
 - [第六节 应用层](Net/6_应用层.md)
 
-## 3. 操作系统
+## 2. 操作系统
 
 - [第一节 操作系统概述](OS/1_操作系统概述.md)
 - [第二节 进程管理](OS/2_进程管理.md)
@@ -30,7 +18,7 @@
 - [第五节 设备管理](OS/4_设备管理.md)
 - [第六节 链接](OS/6_链接.md)
 
-## 4. HTTP
+## 3. HTTP
 
 - [第一节 HTTP概述](HTTP/1_HTTP概述.md)
 - [第二节 HTTP状态码](HTTP/2_HTTP状态码.md)
@@ -38,7 +26,7 @@
 - [第四节 HTTPs](HTTP/4_HTTPs.md)
 - [第五节 get和post比较](HTTP/5_get和post比较.md)
 
-## 5. Linux
+## 4. Linux
 
 - [第一节 Linux概论](Linux/1_Linux概论.md)
 - [第二节 Linux文件系统](Linux/2_Linux文件系统.md)
@@ -121,7 +109,7 @@
 
 # 📝 编程题
 
-## *1. 剑指 Offer 编程题
+## 1. 剑指 Offer 编程题
 
 > **数据结构相关**
 
@@ -145,20 +133,31 @@
 - [第七节 数学运算](AimForOffer/算法思想相关/7_数学运算.md)
 - [第八节 其他](AimForOffer/算法思想相关/8_其他.md)
 
-## *2. LeetCode 编程题
+## 2. LeetCode 编程题
 
-- [第一节 数组问题](LeetCode/1_数组问题.md)
-- [第二节 查找表相关问题](LeetCode/2_查找表相关问题.md)
-- [第三节 链表问题](LeetCode/3_链表问题.md)
-- [第四节 栈和队列](LeetCode/4_栈和队列.md)
-- [第五节 二叉树](LeetCode/5_二叉树.md)
-- [第六节 回溯法](LeetCode/6_回溯法.md)
-- [第七节 动态规划](LeetCode/7_动态规划.md)
-- [第八节 字符串](LeetCode/8_字符串.md)
-- [第九节 数学问题](LeetCode/9_数学问题.md)
-- [第十节 数据结构设计](LeetCode/10_数据结构设计.md)
-- [第十一节 数据结构](LeetCode/11_数据结构.md)
-- [第十二节 常见算法思想](LeetCode/12_算法思想.md)
+> **数据结构相关**
+
+- [第一节 数组问题](LeetCode/数据结构相关/1_数组问题.md)
+- [第二节 链表问题](LeetCode/数据结构相关/2_链表问题.md)
+- [第三节 栈和队列](LeetCode/数据结构相关/3_栈和队列.md)
+- [第四节 二叉树](LeetCode/数据结构相关/4_二叉树.md)
+- [第五节 字符串](LeetCode/数据结构相关/5_字符串.md)
+- [第六节 哈希](LeetCode/数据结构相关/6_哈希.md)
+- [第七节 图](LeetCode/数据结构相关/7_图.md)
+- [第八节 数据结构设计](LeetCode/数据结构相关/8_数据结构设计.md)
+
+> **算法思想相关**
+
+- [第一节 排序](LeetCode/算法思想相关/1_排序.md)
+- [第二节 分治思想](LeetCode/算法思想相关/2_分治思想.md)
+- [第三节 贪心思想](LeetCode/算法思想相关/3_贪心思想.md)
+- [第四节 LRU](LeetCode/算法思想相关/4_LRU.md)
+- [第五节 DFS](LeetCode/算法思想相关/5_DFS.md)
+- [第六节 回溯法](LeetCode/算法思想相关/6_回溯法.md)
+- [第七节 动态规划](LeetCode/算法思想相关/7_动态规划.md)
+- [第八节 数学问题](LeetCode/算法思想相关/8_数学问题.md)
+
+
 
 # 💾 数据库
 
