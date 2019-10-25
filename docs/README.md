@@ -18,7 +18,24 @@
 - [第五节 设备管理](OS/4_设备管理.md)
 - [第六节 链接](OS/6_链接.md)
 
-## 3. HTTP
+## 3. 数据结构和算法
+
+- [第一节 概述](data_structure/1_概述.md)
+- [第二节 线性表](data_structure/2_线性表.md)
+- [第三节 栈和队列](data_structure/3_栈和队列.md)
+- [第四节 树](data_structure/4_树.md)
+- [第五节 图](data_structure/5_图.md)
+- [第六节 集合和映射](data_structure/6_集合和映射.md)
+- [第七节 并查集](data_structure/7_并查集.md)
+- [第八节 优先队列和堆](data_structure/8_优先队列和堆.md)
+- [第九节 哈希表](data_structure/9_哈希表.md)
+- [第十节 排序](data_structure/10_排序.md)
+- [第十一节 线段树](data_structure/11_线段树.md)
+- [第十二节 Trie树](data_structure/12_Trie树.md)
+- [第十三节 AVL](data_structure/13_AVL.md)
+- [第十四节 红黑树](data_structure/14_红黑树.md)
+
+## 4. HTTP
 
 - [第一节 HTTP概述](HTTP/1_HTTP概述.md)
 - [第二节 HTTP状态码](HTTP/2_HTTP状态码.md)
@@ -26,7 +43,7 @@
 - [第四节 HTTPs](HTTP/4_HTTPs.md)
 - [第五节 get和post比较](HTTP/5_get和post比较.md)
 
-## 4. Linux
+## 5. Linux
 
 - [第一节 Linux概论](Linux/1_Linux概论.md)
 - [第二节 Linux文件系统](Linux/2_Linux文件系统.md)
@@ -189,7 +206,7 @@
 - [第七节 降低内存占用](Redis/7_降低内存占用.md)
 - [第八节 简单点赞系统](Redis/8_简单点赞系统)
 
-## *4. 海量数据处理
+## 4. 海量数据处理
 
 - [第一节 概述](MassDataProcessing/1_概述.md)
 - [第二节 哈希分治](MassDataProcessing/2_哈希分治.md)
