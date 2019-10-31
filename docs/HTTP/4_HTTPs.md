@@ -1,4 +1,4 @@
-# HTTPs
+# HTTPS
 
 HTTP 有以下安全性问题：
 
@@ -6,9 +6,9 @@ HTTP 有以下安全性问题：
 - 不验证通信方的身份，通信方的身份有可能遭遇伪装；
 - 无法证明报文的完整性，报文有可能遭篡改。
 
-HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPs 使用了隧道进行通信。
+HTTPS 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPS 使用了隧道进行通信。
 
-通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
+通过使用 SSL，HTTPS 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/ssl-offloading.jpg" width="700"/> </div><br>
 
@@ -40,7 +40,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/How-HTTPS-Works.png" width="600"/> </div><br>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/How-HTTPS-Works.png" width="400"/> </div><br>
 
 ## 认证
 
@@ -66,18 +66,18 @@ HTTPs 的报文摘要功能之所以安全，是因为它结合了加密和认�
 
 
 
-## HTTP 与 HTTPs 的区别
+## HTTP 与 HTTPS 的区别
 
-- HTTPs 需要向 CA 申请证书，需要支持证书授权的费用；
+- HTTPS 需要向 CA 申请证书，需要支持证书授权的费用；
 
   HTTP 不需要收费
 
-- HTTPs 是密文传输的，存在加密、加密过程，速度会更慢；
+- HTTPS 是密文传输的，存在加密、加密过程，速度会更慢；
 
   HTTP 是密文传输
 
-- HTTPs 默认使用 443 端口；
+- HTTPS 默认使用 443 端口；
 
   HTTP 默认使用 80 端口
 
-- HTTPs 先与 SSL 通信，再由 SSL 与 TCP 通信，在 HTTP 基础上增加了加密、认证、完整性保护的功能，比 HTTP 更安全。
+- HTTPS 先与 SSL 通信，再由 SSL 与 TCP 通信，在 HTTP 基础上增加了加密、认证、完整性保护的功能，比 HTTP 更安全。
