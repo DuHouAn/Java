@@ -1,4 +1,4 @@
-# 十、Java常见对象
+# Java常见对象
 
 ## Arrays
 Arrays:针对数组进行操作的工具类。

@@ -1,8 +1,8 @@
-## 运行时数据区域
+# 运行时数据区域
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/5778d113-8e13-4c53-b5bf-801e58080b97.png" width="400px"> </div>
 
-### 程序计数器（Program Counter Register）
+## 程序计数器（Program Counter Register）
 
 - 当前线程所执行的字节码行号指示器（逻辑）
 - 通过改变计数器的值来选取下一条需要执行的字节码指令
@@ -10,7 +10,7 @@
 - 对 Java 方法计数，如果是 Native 方法则计数器值为 Undefined
 - 只是计数，不会发生内存泄漏
 
-### Java 虚拟机栈
+## Java 虚拟机栈
 
 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，就对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。
 
@@ -57,7 +57,7 @@ javap -verbose JVMTest
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_2.png" > </div>
 
-### 本地方法栈
+## 本地方法栈
 
 本地方法栈与 Java 虚拟机栈类似，它们之间的区别只不过是本地方法栈为本地方法服务。
 
@@ -65,7 +65,7 @@ javap -verbose JVMTest
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/66a6899d-c6b0-4a47-8569-9d08f0baf86c.png" width="300px"> </div>
 
-### 堆
+## 堆
 
 所有对象都在这里分配内存，是垃圾收集的主要区域（"GC 堆"）。
 
@@ -132,7 +132,7 @@ java -Xms1M -Xmx2M HackTheJava
 
 
 
-### 方法区
+## 方法区
 
 用于存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。
 
@@ -156,7 +156,7 @@ HotSpot 虚拟机把它当成永久代来进行垃圾回收。但很难确定永
 
 3、永久代会为 GC 带来不必要的复杂性
 
-### 运行时常量池
+## 运行时常量池
 
 运行时常量池是方法区的一部分。
 
@@ -164,11 +164,11 @@ Class 文件中的常量池（编译器生成的字面量和符号引用）会�
 
 除了在编译期生成的常量，还允许动态生成，例如 String 类的 intern()。
 
-### 直接内存
+直接内存
 
 在 JDK 1.4 中新引入了 NIO 类，它可以使用 Native 函数库直接分配堆外内存，然后通过 Java 堆里的 DirectByteBuffer 对象作为这块内存的引用进行操作。这样能在一些场景中显著提高性能，因为避免了在堆内存和堆外内存来回拷贝数据。
 
-### JVM常见参数
+## JVM常见参数
 
 | 参数 | 含义                                                         |
 | ---- | ------------------------------------------------------------ |

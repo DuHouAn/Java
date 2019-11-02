@@ -1,8 +1,8 @@
-## 七、类加载机制
+# 类加载机制
 
 类是在运行期间第一次使用时动态加载的，而不是一次性加载所有类。因为如果一次性加载，那么会占用很多的内存。
 
-### 类的生命周期
+## 类的生命周期
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/335fe19c-4a76-45ab-9320-88c90d6a0d7e.png" width="600px"> </div>
 
@@ -16,11 +16,11 @@
 - 使用（Using）
 - 卸载（Unloading）
 
-### 类加载过程
+## 类加载过程
 
 包含了加载、验证、准备、解析和初始化这 5 个阶段。
 
-#### 1. 加载
+### 1. 加载
 
 加载是类加载的一个阶段，注意不要混淆。
 
@@ -37,11 +37,11 @@
 - 运行时计算生成，例如动态代理技术，在 java.lang.reflect.Proxy 使用 ProxyGenerator.generateProxyClass 的代理类的二进制字节流。
 - 由其他文件生成，例如由 JSP 文件生成对应的 Class 类。
 
-#### 2. 验证
+### 2. 验证
 
 确保 Class 文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。
 
-#### 3. 准备
+### 3. 准备
 
 类变量是被 static 修饰的变量，准备阶段为类变量分配内存并设置初始值，使用的是方法区的内存。
 
@@ -59,7 +59,7 @@ public static int value = 123;
 public static final int value = 123;
 ```
 
-#### 4. 解析
+### 4. 解析
 
 将常量池的符号引用替换为直接引用的过程。
 
@@ -67,7 +67,7 @@ public static final int value = 123;
 
 <div data="补充为什么可以支持动态绑定 --> <--"></div>
 
-#### 5. 初始化
+### 5. 初始化
 
 <div data="modify -->"></div>
 
@@ -113,9 +113,9 @@ public static void main(String[] args) {
 - loadClass：得到的是第一个阶段加载的class对象，并没有初始化，例如Spring中Bean的实例的懒加载就是通过这种方式实现的。
 - forName ：得到的是第五阶段初始化的class对象，例如JDBC中的数据连接。
 
-### 类初始化时机
+## 类初始化时机
 
-#### 1. 主动引用
+### 1. 主动引用
 
 虚拟机规范中并没有强制约束何时进行加载，但是规范严格规定了有且只有下列五种情况必须对类进行初始化（加载、验证、准备都会随之发生）：
 
@@ -125,7 +125,7 @@ public static void main(String[] args) {
 - 当虚拟机启动时，用户需要指定一个要执行的主类（包含 main() 方法的那个类），虚拟机会先初始化这个主类；
 - 当使用 JDK 1.7 的动态语言支持时，如果一个 java.lang.invoke.MethodHandle 实例最后的解析结果为 REF_getStatic, REF_putStatic, REF_invokeStatic 的方法句柄，并且这个方法句柄所对应的类没有进行过初始化，则需要先触发其初始化；
 
-#### 2. 被动引用
+### 2. 被动引用
 
 以上 5 种场景中的行为称为对一个类进行主动引用。除此之外，所有引用类的方式都不会触发初始化，称为被动引用。被动引用的常见例子包括：
 
@@ -147,13 +147,13 @@ SuperClass[] sca = new SuperClass[10];
 System.out.println(ConstClass.HELLOWORLD);
 ```
 
-### 类与类加载器
+## 类与类加载器
 
 两个类相等，需要类本身相等，并且使用同一个类加载器进行加载。这是因为每一个类加载器都拥有一个独立的类名称空间。
 
 这里的相等，包括类的 Class 对象的 equals() 方法、isAssignableFrom() 方法、isInstance() 方法的返回结果为 true，也包括使用 instanceof 关键字做对象所属关系判定结果为 true。
 
-### 类加载器分类
+## 类加载器分类
 
 从 Java 虚拟机的角度来讲，只存在以下两种不同的类加载器：
 
@@ -168,7 +168,7 @@ System.out.println(ConstClass.HELLOWORLD);
 
 <div data="modify <--"></div>
 
-### 双亲委派模型
+## 双亲委派模型
 
 应用程序是由三种类加载器互相配合从而实现类加载，除此之外还可以加入自己定义的类加载器。
 
@@ -176,11 +176,11 @@ System.out.println(ConstClass.HELLOWORLD);
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/0dd2d40a-5b2b-4d45-b176-e75a4cd4bdbf.png" width="500px"> </div>
 
-#### 1. 工作过程
+### 1. 工作过程
 
 一个类加载器首先将类加载请求转发到父类加载器，只有当父类加载器无法完成时才尝试自己加载。
 
-#### 2. 好处
+### 2. 好处
 
 使得 Java 类随着它的类加载器一起具有一种带有优先级的层次关系，从而使得基础类得到统一。
 
@@ -188,7 +188,7 @@ System.out.println(ConstClass.HELLOWORLD);
 
 例如 java.lang.Object 存放在 rt.jar 中，如果编写另外一个 java.lang.Object 并放到 ClassPath 中，程序可以编译通过。由于双亲委派模型的存在，所以在 rt.jar 中的 Object 比在 ClassPath 中的 Object 优先级更高，这是因为 rt.jar 中的 Object 使用的是启动类加载器，而 ClassPath 中的 Object 使用的是应用程序类加载器。rt.jar 中的 Object 优先级更高，那么程序中所有的 Object 都是这个 Object。
 
-#### 3. 实现
+### 3. 实现
 
 以下是抽象类 java.lang.ClassLoader 的代码片段，其中的 loadClass() 方法运行过程如下：先检查类是否已经加载过，如果没有则让父类加载器去加载。当父类加载器加载失败时抛出 ClassNotFoundException，此时尝试自己去加载。
 
@@ -236,7 +236,7 @@ public abstract class ClassLoader {
 }
 ```
 
-### 自定义类加载器实现
+## 自定义类加载器实现
 
 以下代码中的 FileSystemClassLoader 是自定义类加载器，继承自 java.lang.ClassLoader，用于加载文件系统上的类。它首先根据类的全名在文件系统上查找类的字节代码文件（.class 文件），然后读取该文件内容，最后通过 defineClass() 方法来把这些字节代码转换成 java.lang.Class 类的实例。
 

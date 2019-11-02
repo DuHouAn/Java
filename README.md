@@ -263,7 +263,13 @@
 - [第十一节 DoS攻击](docs/Safety/11_DoS攻击.md)
 - [第十二节 重放攻击](docs/Safety/12_重放攻击.md)
 
-## *3. 分布式
+## 3. 分布式
+
+- [第一节 分布式系统设计理念](docs/distribution/1_分布式系统设计理念.md)
+- [第二节 CAP理论](docs/distribution/2_CAP理论.md)
+- [第三节 BASE理论](docs/distribution/3_BASE理论.md)
+- [第四节 分布式锁](docs/distribution/4_分布式锁.md)
+- [第五节 分布式事务](docs/distribution/5_分布式事务.md)
 
 ## *4. 微服务
 

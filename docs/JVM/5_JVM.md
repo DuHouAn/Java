@@ -1,12 +1,12 @@
-## 垃圾收集
+# 垃圾收集
 
 [垃圾回收的脑图](http://naotu.baidu.com/file/1eb8ce88025d3d160c2efbf03c7b62b5?token=64d1a334774221b1)
 
 垃圾收集主要是针对堆和方法区进行。程序计数器、虚拟机栈和本地方法栈这三个区域属于线程私有的，只存在于线程的生命周期内，线程结束之后就会消失，因此不需要对这三个区域进行垃圾回收。
 
-### 判断一个对象是否可被回收
+## 判断一个对象是否可被回收
 
-#### 1. 引用计数算法
+### 1. 引用计数算法
 
 为对象添加一个引用计数器，当对象增加一个引用时计数器加 1，引用失效时计数器减 1。引用计数为 0 的对象可被回收。
 
@@ -34,7 +34,7 @@ public class Test {
 - 优点：执行效率高，程序执行受影响较小。
 - 缺点：无法检测出循环引用的情况，引起内存泄漏。
 
-#### 2. 可达性分析算法
+### 2. 可达性分析算法
 
 通过判断对象的引用链是否可达来决定对象是否可以被回收。
 
@@ -50,7 +50,7 @@ Java 虚拟机使用该算法来判断对象是否可被回收，GC Roots 一般
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/83d909d2-3858-4fe1-8ff4-16471db0b180.png" width="350px"> </div>
 
-#### 3. 方法区的回收
+### 3. 方法区的回收
 
 因为方法区主要存放永久代对象，而永久代对象的回收率比新生代低很多，所以在方法区上进行回收性价比不高。
 
@@ -64,7 +64,7 @@ Java 虚拟机使用该算法来判断对象是否可被回收，GC Roots 一般
 - 加载该类的 ClassLoader 已经被回收。
 - 该类对应的 Class 对象没有在任何地方被引用，也就无法在任何地方通过反射访问该类方法。
 
-#### 4. finalize()
+### 4. finalize()
 
 类似 C++ 的析构函数，用于关闭外部资源。但是 try-finally 等方式可以做得更好，并且该方法运行代价很高，不确定性大，无法保证各个对象的调用顺序，因此最好不要使用。
 
@@ -77,13 +77,13 @@ Java 虚拟机使用该算法来判断对象是否可被回收，GC Roots 一般
 - 由于线程的优先级比较低，执行过程随时可能会被终止；
 - 给予对象最后一次重生的机会
 
-### 引用类型
+## 引用类型
 
 无论是通过引用计数算法判断对象的引用数量，还是通过可达性分析算法判断对象是否可达，判定对象是否可被回收都与引用有关。
 
 Java 提供了四种强度不同的引用类型。
 
-#### 1. 强引用
+### 1. 强引用
 
 被强引用关联的对象不会被回收。
 
@@ -95,7 +95,7 @@ Object obj = new Object();
 
 抛出OOM Error终止程序也不会回收具有强引用的对象，只有通过将对象设置为null来弱化引用，才能使其被回收。
 
-#### 2. 软引用
+### 2. 软引用
 
 表示对象处在**有用但非必须**的状态。
 
@@ -109,7 +109,7 @@ SoftReference<Object> sf = new SoftReference<Object>(obj);
 obj = null;  // 使对象只被软引用关联
 ```
 
-#### 3. 弱引用
+### 3. 弱引用
 
 表示非必须的对象，比软引用更弱一些。适用于偶尔被使用且不影响垃圾收集的对象。
 
@@ -123,7 +123,7 @@ WeakReference<Object> wf = new WeakReference<Object>(obj);
 obj = null;
 ```
 
-#### 4. 虚引用
+### 4. 虚引用
 
 又称为幽灵引用或者幻影引用，一个对象是否有虚引用的存在，不会对其生存时间造成影响，也无法通过虚引用得到一个对象。
 
@@ -149,9 +149,9 @@ obj = null;
 
 > 引用队列（ReferenceQueue）：当GC（垃圾回收线程）准备回收一个对象时，如果发现它还仅有软引用(或弱引用，或虚引用)指向它，就会在回收该对象之前，把这个软引用（或弱引用，或虚引用）加入到与之关联的引用队列（ReferenceQueue）中。**如果一个软引用（或弱引用，或虚引用）对象本身在引用队列中，就说明该引用对象所指向的对象被回收了**。无实际的存储结构，存储逻辑依赖于内部节点之间的关系来表达。
 
-### 垃圾收集算法
+## 垃圾收集算法
 
-#### 1. 标记 - 清除
+### 1. 标记 - 清除
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/005b481b-502b-4e3f-985d-d043c2b330aa.png" width="400px"> </div>
 
@@ -166,7 +166,7 @@ obj = null;
 - 标记和清除过程效率都不高；
 - 会产生大量不连续的内存碎片，导致无法给大对象分配内存。
 
-#### 2. 标记 - 整理
+### 2. 标记 - 整理
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/ccd773a5-ad38-4022-895c-7ac318f31437.png" width="400px"> </div>
 
@@ -180,7 +180,7 @@ obj = null;
 
 - 需要移动大量对象，处理效率比较低。
 
-#### 3. 复制
+### 3. 复制
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/b2b77b9e-958c-4016-8ae5-9c6edd83871e.png" width="400px"> </div>
 
@@ -192,7 +192,7 @@ obj = null;
 
 HotSpot 虚拟机的 Eden 和 Survivor 大小比例默认为 8:1，保证了内存的利用率达到 90%。如果每次回收有多于 10% 的对象存活，那么一块 Survivor 就不够用了，此时需要依赖于老年代进行空间分配担保，也就是借用老年代的空间存储放不下的对象。
 
-#### 4. 分代收集
+### 4. 分代收集
 
 Stop-the-World
 
@@ -212,7 +212,7 @@ Safepoint
 - 新生代使用：复制算法
 - 老年代使用：标记 - 清除 或者 标记 - 整理 算法
 
-### 垃圾收集器
+## 垃圾收集器
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/c625baa0-dde6-449e-93df-c3a67f2f430f.jpg" width=""/> </div>
 
@@ -221,7 +221,7 @@ Safepoint
 - 单线程与多线程：单线程指的是垃圾收集器只使用一个线程，而多线程使用多个线程；
 - 串行与并行：串行指的是垃圾收集器与用户程序交替执行，这意味着在执行垃圾收集的时候需要停顿用户程序；并行指的是垃圾收集器和用户程序同时执行。除了 CMS 和 G1 之外，其它垃圾收集器都是以串行的方式执行。
 
-#### 1. Serial 收集器（-XX:+UseSerialGC）
+### 1. Serial 收集器（-XX:+UseSerialGC）
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/22fda4ae-4dd5-489d-ab10-9ebfdad22ae0.jpg" width=""/> </div>
 
@@ -233,7 +233,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 它是 Client 场景下的默认新生代收集器，因为在该场景下内存一般来说不会很大。它收集一两百兆垃圾的停顿时间可以控制在一百多毫秒以内，只要不是太频繁，这点停顿时间是可以接受的。
 
-#### 2. ParNew 收集器（-XX:+UseParNewGC）
+### 2. ParNew 收集器（-XX:+UseParNewGC）
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/81538cd5-1bcf-4e31-86e5-e198df1e013b.jpg" width=""/> </div>
 
@@ -241,7 +241,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 它是 Server 场景下默认的新生代收集器，除了性能原因外，主要是因为除了 Serial 收集器，只有它能与 CMS 收集器配合使用。
 
-#### 3. Parallel Scavenge 收集器（-XX:+UseParallelGC）
+### 3. Parallel Scavenge 收集器（-XX:+UseParallelGC）
 
 与 ParNew 一样是多线程收集器。
 
@@ -253,7 +253,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 可以通过一个开关参数打开 GC 自适应的调节策略（GC Ergonomics），就不需要手工指定新生代的大小（-Xmn）、Eden 和 Survivor 区的比例、晋升老年代对象年龄等细节参数了。虚拟机会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量。
 
-#### 4. Serial Old 收集器（-XX:+UseSerialOldGC）
+### 4. Serial Old 收集器（-XX:+UseSerialOldGC）
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/08f32fd3-f736-4a67-81ca-295b2a7972f2.jpg" width=""/> </div>
 
@@ -262,7 +262,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 - 在 JDK 1.5 以及之前版本（Parallel Old 诞生以前）中与 Parallel Scavenge 收集器搭配使用。
 - 作为 CMS 收集器的后备预案，在并发收集发生 Concurrent Mode Failure 时使用。
 
-#### 5. Parallel Old 收集器（-XX:+UseParallelOldGC）
+### 5. Parallel Old 收集器（-XX:+UseParallelOldGC）
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/278fe431-af88-4a95-a895-9c3b80117de3.jpg" width=""/> </div>
 
@@ -270,7 +270,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 **在注重吞吐量以及 CPU 资源敏感的场合**，都可以优先考虑 Parallel Scavenge 加 Parallel Old 收集器。
 
-#### 6. CMS 收集器（-XX:+UseConcMarkSweepGC）
+### 6. CMS 收集器（-XX:+UseConcMarkSweepGC）
 
 <div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/62e77997-6957-4b68-8d12-bfd609bb2c68.jpg" width=""/> </div>
 
@@ -293,7 +293,7 @@ CMS（Concurrent Mark Sweep），Mark Sweep 指的是标记 - 清除算法。
 - 无法处理浮动垃圾，可能出现 Concurrent Mode Failure。浮动垃圾是指并发清除阶段由于用户线程继续运行而产生的垃圾，这部分垃圾只能到下一次 GC 时才能进行回收。由于浮动垃圾的存在，因此需要预留出一部分内存，意味着 CMS 收集不能像其它收集器那样等待老年代快满的时候再回收。如果预留的内存不够存放浮动垃圾，就会出现 Concurrent Mode Failure，这时虚拟机将临时启用 Serial Old 来替代 CMS。
 - 标记 - 清除算法导致的空间碎片，往往出现老年代空间剩余，但无法找到足够大连续空间来分配当前对象，不得不提前触发一次 Full GC。
 
-#### 7. G1 收集器（-XX:+UseG1GC）
+### 7. G1 收集器（-XX:+UseG1GC）
 
 G1（Garbage-First），它是一款面向服务端应用的垃圾收集器，在多 CPU 和大内存的场景下有很好的性能。HotSpot 开发团队赋予它的使命是未来可以替换掉 CMS 收集器。
 
@@ -327,9 +327,9 @@ G1 把堆划分成多个大小相等的独立区域（Region），新生代和�
 
 
 
-### 降低停顿时间
+## 降低停顿时间
 
-#### 1. 使用 CMS 收集器
+### 1. 使用 CMS 收集器
 
 CMS 收集器进行垃圾回收，有 4 个步骤：
 
@@ -340,7 +340,7 @@ CMS 收集器进行垃圾回收，有 4 个步骤：
 
 其中初始标记和重新标记需要 "stop the world"，但耗时时间最长的并发标记、并发清除过程中，GC 线程都可与用户线程一起工作。整体上说，CMS 和用户线程是并行的。
 
-#### 2. 增量算法
+### 2. 增量算法
 
 基本思路：若一次性将所有垃圾进行处理，会造成系统长时间的停顿，则就让 GC 线程与用户线程交替执行。每次 GC 线程只收集一小块区域的内存空间，接着切换到用户线程，重复几次，直至 GC 完成。
 

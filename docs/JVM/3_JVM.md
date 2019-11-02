@@ -1,6 +1,6 @@
-## 三、String 类和常量池
+# String 类和常量池
 
-### 1、String 对象的两种创建方式
+## 1、String 对象的两种创建方式
 
 ```java
 String str1 = "abcd";
@@ -19,7 +19,7 @@ System.out.println(str1==str2); //false
 
 str1 指向常量池中的 “abcd”，而 str2 指向堆中的字符串对象。
 
-### 2、intern() 方法
+## 2、intern() 方法
 
 intern() 方法设计的初衷，就是重用 String 对象，以节省内存消耗。
 
@@ -83,7 +83,7 @@ true
 
 `String s4 = "11"`， 这一行代码会直接去常量池中创建，但是发现已经有这个对象了，此时 s4 就是指向 s3 引用对象的一个引用。因此 `s3 == s4 `返回了true。
 
-### 3、字符串拼接
+## 3、字符串拼接
 
 ```java
 String str1 = "str";

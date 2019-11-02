@@ -1,4 +1,4 @@
-# 四、Object 通用方法
+# Object 通用方法
 
 Object 类中的方法一览：
 
