@@ -4,7 +4,7 @@
 
 ## Collection
 
-<div align="center"> <img src="../_pics/java-notes/java//VP6n3i8W48Ptde8NQ9_0eSR5eOD6uqx.png"/> </div>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java//VP6n3i8W48Ptde8NQ9_0eSR5eOD6uqx.png"/> </div>
 
 ### 1. Set
 
@@ -33,7 +33,7 @@
 
 ## Map
 
-<div align="center"> <img src="../_pics/java-notes/java/SoWkIImgAStDuUBAp2j9BKfBJ4vLy4q.png"/> </div>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/SoWkIImgAStDuUBAp2j9BKfBJ4vLy4q.png"/> </div>
 
 - TreeMap：基于红黑树实现。
 

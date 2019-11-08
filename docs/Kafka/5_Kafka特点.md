@@ -61,13 +61,13 @@ Kafka 消息存储时依赖于**文件系统**。为了利用数据的**局部�
 
 普通的数据拷贝：
 
-<div align="center"><img src="../_pics/kafka/k_9.png" width="450px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_9.png" width="450px"/></div>
 
 零拷贝主要的任务是避免 CPU 做大量的数据拷贝任务，减少不必要的拷贝。
 
 **内存映射文件（Memory Mapped Files，mmap）**在 64 位操作系统中一般可以表示 20G 的数据文件，它的工作原理是直接利用操作系统的页缓存来实现文件到物理内存的直接映射。
 
-<div align="center"><img src="../_pics/kafka/k_10.png" width="450px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_10.png" width="450px"/></div>
 
 使用 mmap 替代 read 很明显减少了 1 次拷贝，当拷贝数据量很大时，无疑提升了效率。
 

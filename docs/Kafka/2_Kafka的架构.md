@@ -30,7 +30,7 @@ Kafka 根据主题（Topic）对消息进行归类，**发布到 Kafka 集群的
 
 消息发送时都被发送到一个 Topic，其本质就是一个目录，而 Topic 由是由一些 Partition Logs（分区日志）组成,其组织结构如下：
 
-<div align="center"><img src="../_pics/kafka/k_4.png"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_4.png"/></div>
 
 **每个 Partition 中的消息都是有序的**，生产的消息被不断追加到 Partition Log 上，其中的每一个消息都被赋予了一个唯一的 offset 值，Kafka 通过 **offset 保证消息在分区内的顺序**，offset 的顺序性不跨分区，即 Kafka 只保证在同一个分区内的消息是有序的；同一 Topic 的多个分区内的消息，Kafka 并不保证其顺序性。
 
@@ -62,7 +62,7 @@ Kafka 中每个 Partition 可以有多个副本（Replication），每个副本�
 
 一般情况下，同一分区的多个副本会被分配到不同的 Broker上。当 Leader 所在的 Broker 宕机之后，可以重新选举新的 Leader，继续对外提供服务。
 
-<div align="center"><img src="../_pics/kafka/k_1.png"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_1.png"/></div>
 
 
 
@@ -104,7 +104,7 @@ Kafka 提供了两套 Consumer Api，分为 Simple Api 和 High-Level Api。
 
   High-Level API 还支持以组的形式消费 Topic，如果 Consumers 有同一个组名，那么 Kafka 就相当于一个队列消息服务，而各个 Consumer 均衡地消费相应 Partition 中的数据。若 Consumers 有不同的组名，那么此时 Kafka 就相当于一个广播服务，会把 Topic 中的所有消息广播到每个 Consumer。
 
-  <div align="center"><img src="../_pics/kafka/k_5.png"/></div>
+  <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_5.png"/></div>
 
 
 
@@ -116,7 +116,7 @@ Kafka 提供了两套 Consumer Api，分为 Simple Api 和 High-Level Api。
 
 Producer、Consumer 和 Consumer Group 之间的关系：
 
-<div align="center"><img src="../_pics/kafka/k_8.png"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_8.png"/></div>
 
 
 
@@ -138,7 +138,7 @@ Producer、Consumer 和 Consumer Group 之间的关系：
 
 
 
-<div align="center"><img src="../_pics/kafka/k_6.png" width="700px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_6.png" width="700px"/></div>
 
 
 
@@ -152,7 +152,7 @@ Producer 使用 Push 模式将消息发布到 Broker 上，Consumer 使用 Pull 
 
 ### Kafka 数据流
 
-<div align="center"><img src="../_pics/kafka/k_3.png"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_3.png"/></div>
 
 Producers 往 Brokers 中指定的 Topic Push 消息，Consumers 从 Brokers 里面 Pull 指定 Topic 的消息，然后进行业务处理。 
 

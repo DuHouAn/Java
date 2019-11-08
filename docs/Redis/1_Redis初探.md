@@ -40,7 +40,7 @@ STRING（字符串）、LIST（列表）、HASH（散列）、SET（集合）和
 
 字符串示例，键为 hello，值为 world：
 
-<div align="center"><img src="../_pics/redis/redis_1.png" width="350px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/redis_1.png" width="350px"/></div>
 
 - 字符串命令：
 
@@ -79,7 +79,7 @@ STRING（字符串）、LIST（列表）、HASH（散列）、SET（集合）和
 
 list-key 是一个包含 3 个元素的列表键，列表中的元素是可以重复的：
 
-<div align="center"><img src="../_pics/redis/redis_2.png" width="350px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/redis_2.png" width="350px"/></div>
 
 - 列表命令：
 
@@ -125,7 +125,7 @@ list-key 是一个包含 3 个元素的列表键，列表中的元素是可以�
 
 hash-key 是一个包含两个键值对的散列键：
 
-<div align="center"><img src="../_pics/redis/redis_4.png" width="350px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/redis_4.png" width="350px"/></div>
 
 - 散列命令：
 
@@ -169,7 +169,7 @@ hash-key 是一个包含两个键值对的散列键：
 
 set-key 是一个包含 3 个元素的集合键：
 
-<div align="center"><img src="../_pics/redis/redis_3.png" width="350px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/redis_3.png" width="350px"/></div>
 
 
 
@@ -222,7 +222,7 @@ set-key 是一个包含 3 个元素的集合键：
 
 zset-key 是已一个包含 2 个元素的有序集合键：
 
-<div align="center"><img src="../_pics/redis/redis_5.png" width="350px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/redis_5.png" width="350px"/></div>
 
 - 有序集合命令：
 

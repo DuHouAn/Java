@@ -14,7 +14,7 @@
 
 Linux 文件系统的结构层次鲜明，就像一棵倒立的树，最顶层是其根目录
 
-<div align="center"><img src="../_pics/java-notes/os/linux_1.png" width="600px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/os/linux_1.png" width="600px"/></div>
 
 目录说明：
 

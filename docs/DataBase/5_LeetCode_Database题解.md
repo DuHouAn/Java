@@ -422,15 +422,15 @@ ON p.PersonId=a.PersonId;
 
   * 内连接：返回两张表的交集部分。
 
-  <div align="center"><img src="../_pics/java-notes/database/leetcode_1.png"/></div>
+  <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/database/leetcode_1.png"/></div>
 
   * 左连接：
 
-  <div align="center"><img src="../_pics/java-notes/database/leetcode_2.png"/></div>
+  <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/database/leetcode_2.png"/></div>
 
   * 右连接：
 
-  <div align="center"><img src="../_pics/java-notes/database/leetcode_3.png"/></div>
+  <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/database/leetcode_3.png"/></div>
 
 # *8、超过经理收入的员工(181)
 

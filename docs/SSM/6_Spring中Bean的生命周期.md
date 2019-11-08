@@ -2,7 +2,7 @@
 
 ## Bean 的创建过程
 
-<div align="center"><img src="../_pics/java-notes/spring/spring_1.png" width="200px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/spring_1.png" width="200px"/></div>
 
 
 
@@ -15,7 +15,7 @@
 
 ## 详细过程
 
-<div align="center"><img src="../_pics/java-notes/spring/spring_2.png" width="600px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/spring_2.png" width="600px"/></div>
 
 
 
