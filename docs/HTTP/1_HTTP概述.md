@@ -30,17 +30,17 @@ URI 包含 URL 和 URN，目前 WEB 只有 URL 比较流行，所以见到的基
 - URL（Uniform Resource Locator，统一资源定位符）
 - URN（Uniform Resource Name，统一资源名称）
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/urlnuri.jpg" width="600"/> </div><br>
+<div align="center"> <img src="../_pics/java-notes/network/urlnuri.jpg" width="600"/> </div><br>
 
 ## 请求和响应报文
 
 ### 1. 请求报文
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/HTTP_RequestMessageExample.png" width=""/> </div>
+<div align="center"> <img src="../_pics/java-notes/network/HTTP_RequestMessageExample.png" width=""/> </div>
 
 ### 2. 响应报文
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/network/HTTP_ResponseMessageExample.png" width=""/> </div>
+<div align="center"> <img src="../_pics/java-notes/network/HTTP_ResponseMessageExample.png" width=""/> </div>
 
 ### 3. 请求响应步骤
 

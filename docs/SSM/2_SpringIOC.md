@@ -32,25 +32,25 @@ IOC，即控制反转（Iversion of Control）是一种**设计思想**。
 
 可这样表示：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_1.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_1.png" width="700px"/></div>
 
 相应的代码如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_2.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_2.png" width="700px"/></div>
 
 size 是固定值，可以进行相应的改进：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_3.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_3.png" width="700px"/></div>
 
 > 使用 DI 方式进行改进：
 
 先设计行李箱的大概样子，再根据行李箱的样子设计箱体，根据箱体去设计底盘，然后去设计轮子。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_4.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_4.png" width="700px"/></div>
 
 改进后相应的代码如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_5.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_5.png" width="700px"/></div>
 
 不难理解，依赖注入就是**将底层类作为参数传递给上层类，实现上层对下层的控制**。
 
@@ -67,7 +67,7 @@ DI 的 4 中方式：
 
 依赖倒置原则、IoC、DI 和 IoC 容器的关系：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_7.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_7.png" width="700px"/></div>
 
 使用 IoC 容器的好处：
 
@@ -80,7 +80,7 @@ DI 的 4 中方式：
 
 ### IoC 容器的初始化过程
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/01_1.png" width="700px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/01_1.png" width="700px"/></div>
 
 - Resource 定位（即 BeanDefinition 的资源定位，Resource 为各种形式的 BeanDefinition 的使用都提供了统一的接口）
 - BeanDefinition 的载入
@@ -88,7 +88,7 @@ DI 的 4 中方式：
 
 ## IoC 加载过程
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_11.png" width="600px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/ioc_11.png" width="600px"/></div>
 
 IoC 容器其实就是一个大工厂，它用来管理我们所有的对象以及依赖关系：
 

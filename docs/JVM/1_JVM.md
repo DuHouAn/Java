@@ -1,6 +1,6 @@
 # 运行时数据区域
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/5778d113-8e13-4c53-b5bf-801e58080b97.png" width="400px"> </div>
+<div align="center"> <img src="../_pics/JVM/5778d113-8e13-4c53-b5bf-801e58080b97.png" width="400px"> </div>
 
 ## 程序计数器（Program Counter Register）
 
@@ -14,7 +14,7 @@
 
 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，就对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/8442519f-0b4d-48f4-8229-56f984363c69.png" width="400px"> </div>
+<div align="center"> <img src="../_pics/JVM/8442519f-0b4d-48f4-8229-56f984363c69.png" width="400px"> </div>
 
 可以通过 -Xss 这个虚拟机参数来指定每个线程的 Java 虚拟机栈内存大小：
 
@@ -46,7 +46,7 @@ public class JVMTest {
 javap -verbose JVMTest
 ```
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_1.png" width="400px"> </div>
+<div align="center"> <img src="../_pics/JVM/j_1.png" width="400px"> </div>
 
 解读上述指令：
 
@@ -55,7 +55,7 @@ javap -verbose JVMTest
 
 执行 add(1,2)，说明局部变量表和操作数栈的关系：
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_2.png" > </div>
+<div align="center"> <img src="../_pics/JVM/j_2.png" > </div>
 
 ## 本地方法栈
 
@@ -63,7 +63,7 @@ javap -verbose JVMTest
 
 本地方法一般是用其它语言（C、C++ 或汇编语言等）编写的，并且被编译为基于本机硬件和操作系统的程序，对待这些方法需要特别处理。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/66a6899d-c6b0-4a47-8569-9d08f0baf86c.png" width="300px"> </div>
+<div align="center"> <img src="../_pics/JVM/66a6899d-c6b0-4a47-8569-9d08f0baf86c.png" width="300px"> </div>
 
 ## 堆
 
@@ -96,7 +96,7 @@ java -Xms1M -Xmx2M HackTheJava
 
 引用对象、数组时，栈里定义变量保存堆中目标的首地址。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_3.png" > </div>
+<div align="center"> <img src="../_pics/JVM/j_3.png" > </div>
 
 > **问题二：栈和堆的区别**
 

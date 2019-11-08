@@ -4,7 +4,7 @@
 
 对象的创建步骤：
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_4.jpg" > </div>
+<div align="center"> <img src="../_pics/JVM/j_4.jpg" > </div>
 
 1. **类加载检查**
 
@@ -56,7 +56,7 @@
 
 在 Hotspot 虚拟机中，对象在内存中的布局可以分为 3 块区域：对象头、实例数据、对齐填充。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_5.png" > </div>
+<div align="center"> <img src="../_pics/JVM/j_5.png" > </div>
 
 
 
@@ -88,13 +88,13 @@ Hotspot虚拟机的对象头包括两部分信息：
 
 如果使用[句柄](https://zh.wikipedia.org/wiki/%E5%8F%A5%E6%9F%84)的话，那么 **Java 堆**中将会划分出一块内存来作为句柄池，reference 中存储的就是**对象的句柄地址**，而句柄中包含了对象实例数据与类型数据各自的具体地址信息 。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_6.png" > </div>
+<div align="center"> <img src="../_pics/JVM/j_6.png" > </div>
 
 - **直接指针**
 
 如果使用直接指针访问，那么 Java 堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，而 reference 中存储的直接就是**对象的地址**。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_7.png" > </div>
+<div align="center"> <img src="../_pics/JVM/j_7.png" > </div>
 
 这两种对象访问方式各有优势:
 

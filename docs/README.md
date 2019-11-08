@@ -267,12 +267,14 @@
 - [第三节 BASE理论](distribution/3_BASE理论.md)
 - [第四节 分布式锁](distribution/4_分布式锁.md)
 - [第五节 分布式事务](distribution/5_分布式事务.md)
+- [第六节 分布式缓存的一致性哈希算法](distribution/6_分布式缓存的一致性哈希算法.md)
 
 ## *4. 微服务
 
 ## 5. 网站架构
 
 - [网站架构](web_architecture/网站架构.md)
+- [设计秒杀系统](web_architecture/2_设计秒杀系统.md)
 
 # 💻 工具
 
@@ -280,7 +282,7 @@
 
 - [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 
-- [廖雪峰 git 教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+- [git - 图解](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
 ## *2. Nginx
 
@@ -298,3 +300,5 @@
 
 - [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
 - [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
+
+- [编码规范指南](https://github.com/alibaba/p3c)

@@ -19,7 +19,7 @@ Condition condition = lock.newCondition();
 
   await 和 signal / signalAll 方法就像一个开关控制着线程 A（等待方）和线程 B（通知方）。
 
-  ![img](https://gitee.com/duhouan/ImagePro/raw/master/pics/blog/aqs_10.png)
+  ![img](../_pics/pics/blog/aqs_10.png)
 
   线程 awaitThread 先通过 lock.lock() 方法获取锁成功后调用了 condition.await 方法进入**等待队列**， 
 

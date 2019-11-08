@@ -12,7 +12,7 @@
 
   主要负责数据的存储和读取，采用可以替换的插件式架构，支持 InnoDB、MyISAM、Memory 等多个存储引擎，其中 InnoDB 引擎有自有的日志模块 redolog 模块。**现在最常用的存储引擎是 InnoDB，它从 MySQL 5.5.5 版本开始就被当做默认存储引擎了**。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/database/MySQL_7.png" width="500px"/></div>
+<div align="center"><img src="../_pics/java-notes/database/MySQL_7.png" width="500px"/></div>
 
 
 

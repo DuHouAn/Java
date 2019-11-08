@@ -97,7 +97,7 @@ System.out.println(str3 == str5);//true
 System.out.println(str4 == str5);//false
 ```
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_8.jpg" width="400px"> </div>
+<div align="center"> <img src="../_pics/JVM/j_8.jpg" width="400px"> </div>
 
 注意：尽量避免多个字符串拼接，因为这样会重新创建对象。 如果需要改变字符串的话，可以使用 **StringBuilder** 或者 **StringBuffer**。
 

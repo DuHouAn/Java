@@ -42,7 +42,7 @@ JSP会在客户端第一次请求JSP文件时被编译为HttpJspPage类（实现
 ## JSP九大内置对象、七大动作、三大指令
 ### 九大内置对象
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/01_1.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/java/01_1.png" width="600"/></div>
 
 
 1. out 输出流对象

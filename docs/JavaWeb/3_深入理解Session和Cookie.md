@@ -67,7 +67,7 @@ Cookie就是这样的一种机制。它可以弥补HTTP协议无状态的不足�
 - 3. **客户端发送一个http请求到服务器端，其中包含Cookie头部**
 - 4. **服务器端发送一个http响应到客户端**
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/01_2.png" width="400"/></div>
+<div align="center"><img src="../_pics/java-notes/java/01_2.png" width="400"/></div>
 
 在客户端的第二次请求中包含Cookie头部，提供给了服务器端可以用来唯一标识客户端身份的信息。
 这时，服务器端也就可以判断客户端是否启用了cookie。

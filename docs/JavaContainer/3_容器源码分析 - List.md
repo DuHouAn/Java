@@ -246,7 +246,7 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" width="500"/> </div><br>
+<div align="center"> <img src="../_pics/java-notes/java/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" width="500"/> </div><br>
 
 ### 2. 添加元素
 - 将元素添加到链表尾部

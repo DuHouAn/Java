@@ -32,7 +32,7 @@ SpringMVC 框架是以请求为驱动，围绕 Servlet 设计，将请求发给�
 
 原理图如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/springmvc_1.png" width="750px"/></div>
+<div align="center"><img src="../_pics/java-notes/spring/springmvc_1.png" width="750px"/></div>
 
 
 

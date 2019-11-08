@@ -27,7 +27,7 @@ public final class String
 如果一个 String 对象已经被创建过了，那么就会从 String Pool 中取得引用。
 只有 String 是不可变的，才可能使用 String Pool。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg" width=""/> </div>
+<div align="center"> <img src="../_pics/java-notes/java/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg" width=""/> </div>
 
 **3. 安全性** 
 

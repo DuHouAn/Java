@@ -1,16 +1,6 @@
-<!-- GFM-TOC -->
-* [AVL树](#AVL树)
-   * [平衡二叉树](#平衡二叉树)
-   * [计算节点的高度和平衡因子](#计算节点的高度和平衡因子)
-   * [检查二分搜索树和平衡树](#检查二分搜索树和平衡树)
-   * [AVL树的左旋转和右旋转](#AVL树的左旋转和右旋转)
-   * [LR和RL](#LR和RL)
-   * [删除元素](#删除元素)
-   * [基于AVL树的集合和映射](#基于AVL树的集合和映射)
-<!-- GFM-TOC -->
 # AVL树
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_1.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_1.png" width="600"/></div>
 
 ## 平衡二叉树
 
@@ -18,15 +8,15 @@
 
 下图就是一棵平衡二叉树：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_2.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_2.png" width="600"/></div>
 
 - 标注节点的高度：(叶子节点的高度为1)
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_3.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_3.png" width="600"/></div>
 
 - 计算平衡因子:(这里是根据左子树高度减去右子树高度进行计算)：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_4.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_4.png" width="600"/></div>
 
 ## 计算节点的高度和平衡因子
 ```java
@@ -140,21 +130,21 @@ private boolean isBalancedTree(Node node){
 ## AVL树的左旋转和右旋转
 - AVL树的右旋转：插入的元素在不平衡的节点的左侧的左侧
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_5.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_5.png" width="600"/></div>
 
 - 右旋转针对的情况：以x、z为根节点的子树是平衡的BST树,添加一个元素以y为根节点的子树就不是平衡二叉树了
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_6.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_6.png" width="600"/></div>
 
 - 右旋转操作I:**x.right=y**
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_7.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_7.png" width="600"/></div>
 
 - 右旋转操作II:**y.left=T3**
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_8.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_8.png" width="600"/></div>
 
 - 右旋转之后，就是平衡的BST：假设z节点的高度是(h+1),可以验证以x为根节点的BST树是平衡树
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_9.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_9.png" width="600"/></div>
 
 - 代码实现：
 ```java
@@ -269,18 +259,18 @@ private Node add(Node node,K key,V value){
 
 ## LR和RL
 - LR
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_10.png" width="400"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_10.png" width="400"/></div>
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_11.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_11.png" width="600"/></div>
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_12.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_12.png" width="600"/></div>
 
 - RL
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_13.png" width="400"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_13.png" width="400"/></div>
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_14.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_14.png" width="600"/></div>
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_15.png" width="600"/></div>
+<div align="center"><img src="../_pics/java-notes/dataStructure/avl//avl_15.png" width="600"/></div>
 
 ```java
 //计算平衡因子

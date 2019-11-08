@@ -123,7 +123,7 @@ AOF 持久化存在的问题：
 
 BGREWRITEAOF 原理：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/redis/r_4.png" width="600px"/></div>
+<div align="center"><img src="../_pics/redis/r_4.png" width="600px"/></div>
 
 Redis 维护 AOF 重写缓冲区和 AOF 缓冲区。子进程创建新的 AOF 文件期间，记录服务器执行的所有写命令会同时写入 2 个缓冲区中，使得新旧两个 AOF 文件中所保存的数据状态一致。
 
