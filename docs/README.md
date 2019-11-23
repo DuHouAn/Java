@@ -237,7 +237,6 @@
 - [第四节 RabbitMQ高级特性](RabbitMQ/4_RabbitMQ高级特性.md)
 - [第五节 RabbitMQ整合SpringAMQP](RabbitMQ/5_RabbitMQ整合SpringAMQP.md)
 - [第六节 RabbitMQ整合SpringBoot](RabbitMQ/6_RabbitMQ整合SpringBoot.md)
-
 - [RabbitMQ 官网](https://www.rabbitmq.com/)
 
 # 📖 系统设计

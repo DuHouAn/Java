@@ -1,5 +1,3 @@
-本项目对应 WebSite: https://duhouan.github.io/Java/#/
-
 # ✏️  计算机基础
 
 ## 1. 计算机网络
@@ -39,11 +37,11 @@
 
 ## 4. HTTP
 
-- [第一节 HTTP概述](docs/HTTP/1_HTTP概述.md)
-- [第二节 HTTP状态码](docs/HTTP/2_HTTP状态码.md)
-- [第三节 具体应用](docs/HTTP/3_具体应用.md)
-- [第四节 HTTPS](docs/HTTP/4_HTTPS.md)
-- [第五节 get和post比较](docs/HTTP/5_get和post比较.md)
+- [第一节 HTTP概述](http/1_HTTP概述.md)
+- [第二节 HTTP状态码](http/2_HTTP状态码.md)
+- [第三节 具体应用](http/3_具体应用.md)
+- [第四节 HTTPS](http/4_HTTPS.md)
+- [第五节 get和post比较](http/5_get和post比较.md)
 
 ## 5. Linux
 
@@ -77,7 +75,6 @@
 - [第三节 容器源码分析 - List](docs/JavaContainer/3_容器源码分析%20-%20List.md)
 - [第四节 容器源码分析 - Map](docs/JavaContainer/4_容器源码分析%20-%20Map.md)
 - [第五节 容器源码分析 - 并发容器](docs/JavaContainer/5_容器源码分析%20-%20并发容器.md)
-
 
 ## 3. Java 虚拟机
 
@@ -222,7 +219,7 @@
 - [第六节 数据库](docs/MassDataProcessing/6_数据库.md)
 - [第七节 倒排索引](docs/MassDataProcessing/7_倒排索引.md)
 
-# 🔨 消息队列
+# 🔨 消息中间件
 
 ## 1. Kafka
 
@@ -232,7 +229,15 @@
 - [第四节 Kafka中一些常见问题](docs/Kafka/4_Kafka中一些常见问题.md)
 - [第五节 Kafka特点](docs/Kafka/5_Kafka特点.md)
 
-## *2. RabbitMQ
+## 2. RabbitMQ
+
+- [第一节 主流消息中间件](docs/RabbitMQ/1_主流消息中间件.md)
+- [第二节 RabbitMQ概述](docs/RabbitMQ/2_RabbitMQ概述.md)
+- [第三节 RabbitMQ入门](docs/RabbitMQ/3_RabbitMQ入门.md)
+- [第四节 RabbitMQ高级特性](docs/RabbitMQ/4_RabbitMQ高级特性.md)
+- [第五节 RabbitMQ整合SpringAMQP](docs/RabbitMQ/5_RabbitMQ整合SpringAMQP.md)
+- [第六节 RabbitMQ整合SpringBoot](docs/RabbitMQ/6_RabbitMQ整合SpringBoot.md)
+- [RabbitMQ 官网](https://www.rabbitmq.com/)
 
 # 📖 系统设计
 
@@ -270,30 +275,36 @@
 - [第三节 BASE理论](docs/distribution/3_BASE理论.md)
 - [第四节 分布式锁](docs/distribution/4_分布式锁.md)
 - [第五节 分布式事务](docs/distribution/5_分布式事务.md)
+- [第六节 分布式缓存的一致性哈希算法](docs/distribution/6_分布式缓存的一致性哈希算法.md)
 
 ## *4. 微服务
 
 ## 5. 网站架构
 
-- [网站架构](docs/web_architecture/网站架构.md)
+- [网站架构](docs/web_architecture/1_网站架构.md)
+- [设计秒杀系统](docs/web_architecture/2_设计秒杀系统.md)
 
-# *💻 工具
+# 💻 工具
 
 ## 1. Git
 
-## 2. Nginx
+- [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+- [git - 图解](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
-## 3. Docker
+## 2. Maven
 
-# *🙊 大数据
+- [Maven](docs/Maven/1_Maven.md)
+- [Maven 下载](http://maven.apache.org/download.cgi)
+- [Maven 官网](https://maven.apache.org/)
 
-## 1. MapReduce
+## *2. Nginx
 
-## 2. Spark
+## *3. Docker
 
 
 
 # 🔧 进阶指南
 
-- [后端面试进阶指南](docs/https://xiaozhuanlan.com/CyC2018)
-- [Java 面试进阶指南](docs/https://xiaozhuanlan.com/javainterview)
+- [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
+- [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
+- [编码规范指南](https://github.com/alibaba/p3c)
