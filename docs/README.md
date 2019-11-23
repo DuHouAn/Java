@@ -219,7 +219,7 @@
 - [第六节 数据库](MassDataProcessing/6_数据库.md)
 - [第七节 倒排索引](MassDataProcessing/7_倒排索引.md)
 
-# 🔨 消息队列
+# 🔨 消息中间件
 
 ## 1. Kafka
 
@@ -229,7 +229,16 @@
 - [第四节 Kafka中一些常见问题](Kafka/4_Kafka中一些常见问题.md)
 - [第五节 Kafka特点](Kafka/5_Kafka特点.md)
 
-## *2. RabbitMQ
+## 2. RabbitMQ
+
+- [第一节 主流消息中间件](RabbitMQ/1_主流消息中间件.md)
+- [第二节 RabbitMQ概述](RabbitMQ/2_RabbitMQ概述.md)
+- [第三节 RabbitMQ入门](RabbitMQ/3_RabbitMQ入门.md)
+- [第四节 RabbitMQ高级特性](RabbitMQ/4_RabbitMQ高级特性.md)
+- [第五节 RabbitMQ整合SpringAMQP](RabbitMQ/5_RabbitMQ整合SpringAMQP.md)
+- [第六节 RabbitMQ整合SpringBoot](RabbitMQ/6_RabbitMQ整合SpringBoot.md)
+
+- [RabbitMQ 官网](https://www.rabbitmq.com/)
 
 # 📖 系统设计
 
@@ -281,18 +290,17 @@
 ## 1. Git
 
 - [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-
 - [git - 图解](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+
+## 2. Maven
+
+- [Maven](Maven/1_Maven.md)
+- [Maven 下载](http://maven.apache.org/download.cgi)
+- [Maven 官网](https://maven.apache.org/)
 
 ## *2. Nginx
 
 ## *3. Docker
-
-# *🙊 大数据
-
-## 1. MapReduce
-
-## 2. Spark
 
 
 
@@ -300,5 +308,4 @@
 
 - [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
 - [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
-
 - [编码规范指南](https://github.com/alibaba/p3c)

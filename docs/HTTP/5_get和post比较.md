@@ -1,4 +1,4 @@
-#九、GET 和 POST 比较
+# GET 和 POST 比较
 
 ## Http报文层面：
 
