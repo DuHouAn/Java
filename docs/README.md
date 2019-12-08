@@ -308,3 +308,10 @@
 - [后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
 - [Java 面试进阶指南](https://xiaozhuanlan.com/javainterview)
 - [编码规范指南](https://github.com/alibaba/p3c)
+
+# 🙊 参考资料
+
+- [参考仓库](reference/参考仓库.md)
+- [参考书籍](reference/参考书籍.md)
+- [慕课网](reference/慕课网.md)
+

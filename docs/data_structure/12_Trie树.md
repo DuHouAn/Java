@@ -1,12 +1,3 @@
-<!-- GFM-TOC -->
-* [Trie](#Trie)
-    * [什么是Trie](#什么是Trie)
-    * [Trie基础](#Trie基础)
-    * [Trie字典树查询](#Trie字典树查询)
-    * [Trie字典树前缀查询](#Trie字典树前缀查询)
-    * [Trie字典树和简单的模式匹配](#Trie字典树和简单的模式匹配)
-    * [Trie字典树和字符串映射](#Trie字典树和字符串映射)
-<!-- GFM-TOC -->
 # Trie
 ## 什么是Trie
 - Trie字典树/前缀树的直观感受

@@ -1,13 +1,3 @@
-<!-- GFM-TOC -->
-* [AVL树](#AVL树)
-   * [平衡二叉树](#平衡二叉树)
-   * [计算节点的高度和平衡因子](#计算节点的高度和平衡因子)
-   * [检查二分搜索树和平衡树](#检查二分搜索树和平衡树)
-   * [AVL树的左旋转和右旋转](#AVL树的左旋转和右旋转)
-   * [LR和RL](#LR和RL)
-   * [删除元素](#删除元素)
-   * [基于AVL树的集合和映射](#基于AVL树的集合和映射)
-<!-- GFM-TOC -->
 # AVL树
 
 <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/dataStructure/avl//avl_1.png" width="600"/></div>
