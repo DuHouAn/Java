@@ -22,6 +22,7 @@
 	<a href="https://duhouan.github.io/Java/#/./README?id=%f0%9f%93%96-%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1"><img src="https://img.shields.io/badge/website-系统设计-lightgrey.svg" alt="系统设计"/></a>
     <a href="https://duhouan.github.io/Java/#/?id=%f0%9f%92%bb-%e5%b7%a5%e5%85%b7"><img src="https://img.shields.io/badge/tools-工具-blueviolet.svg" alt="工具"/></a>
 	<a href="https://duhouan.github.io/Java/#/?id=%f0%9f%94%a7-%e8%bf%9b%e9%98%b6%e6%8c%87%e5%8d%97"><img src="https://img.shields.io/badge/advance-进阶指南-9cf.svg" alt="进阶指南"/></a>
+	<a href="https://duhouan.github.io/Java/#/?id=%f0%9f%99%8a-%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99"><img src="https://img.shields.io/badge/reference-参考资料-1ce.svg" alt="参考资料"/></a>
 </p>
 
 
