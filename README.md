@@ -1,3 +1,5 @@
+Update readme in English 
+
 项目对应 WebSIte：https://duhouan.github.io/Java/#/
 
 # ✏️  计算机基础
