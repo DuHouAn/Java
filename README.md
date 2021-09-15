@@ -1,14 +1,8 @@
-项目对应 WebSIte：https://duhouan.github.io/Java/#/
+本仓库是对 Java 的一些基础知识、数据库知识、以及框架知识进行收集、整理（持续更新中）。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/logo.png" width="250px"/></div>
-
-
-
-# Java
-
-[![watch](https://badgen.net/github/watchers/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java) [![stars](https://badgen.net/github/stars/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java) [![forks](https://badgen.net/github/forks/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java)
-
-- 本仓库是对 Java 的一些基础知识、数据库知识、以及框架知识进行收集、整理（持续更新中）。
+<p align="center">
+	<a href="https://duhouan.github.io/Java/#/">开始阅读</a>
+</p>
 
 <p align="center">
     <a href="https://duhouan.github.io/Java/#/?id=%e2%98%95%ef%b8%8f-java"><img src="https://img.shields.io/badge/java-Java-green.svg" alt="Java"/></a>
@@ -22,12 +16,6 @@
 	<a href="https://duhouan.github.io/Java/#/?id=%f0%9f%92%aa-%e5%b7%a5%e5%85%b7"><img src="https://img.shields.io/badge/tool-工具-blueviolet.svg" alt="工具"/></a>
 	<a href="https://duhouan.github.io/Java/#/?id=%f0%9f%93%9a-%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99"><img src="https://img.shields.io/badge/reference-参考资料-1ce.svg" alt="参考资料"/></a>
 </p>
-
-<p align="center">
-	<a href="https://duhouan.github.io/Java/#/">开始阅读</a>
-</p>
-
-[开始阅读](./README.md)
 
 # ✏️  计算机基础
 
