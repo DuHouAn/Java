@@ -3,7 +3,7 @@
 
 |                            ☕️ Java                            | 👫 面向对象 | 📝 编程题 | 💾 数据库 | ☎️ 常用框架 | 📖 系统设计 | 💪 工具 | 📚 参考资料 |
 | :----------------------------------------------------------: | :--------: | :------: | :------: | :--------: | :--------: | :----: | :--------: |
-| <p><a href="https://duhouan.github.io/Java/#/?id=%e2%98%95%ef%b8%8f-java"><img src="https://img.shields.io/badge/java-Java-green.svg" alt="Java"/></a></p> |            |          |          |            |            |        |            |
+| <a href="https://duhouan.github.io/Java/#/?id=%e2%98%95%ef%b8%8f-java"><img src="https://img.shields.io/badge/java-Java-green.svg" alt="Java"/></a> |            |          |          |            |            |        |            |
 
 
 
