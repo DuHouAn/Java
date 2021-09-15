@@ -23,6 +23,10 @@
 	<a href="https://duhouan.github.io/Java/#/?id=%f0%9f%93%9a-%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99"><img src="https://img.shields.io/badge/reference-参考资料-1ce.svg" alt="参考资料"/></a>
 </p>
 
+<p align="center">
+	<a href="https://duhouan.github.io/Java/#/">开始阅读</a>
+</p>
+
 [开始阅读](./README.md)
 
 # ✏️  计算机基础
