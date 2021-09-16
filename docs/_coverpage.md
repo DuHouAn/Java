@@ -4,7 +4,11 @@
 
 # Java
 
-[![watch](https://badgen.net/github/watchers/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java) [![stars](https://badgen.net/github/stars/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java) [![forks](https://badgen.net/github/forks/DuHouAn/Java?icon=github&color=4ab8a1)](https://github.com/DuHouAn/Java)
+<div align="center">
+<a href="https://github.com/DuHouAn/Java"><img src="https://badgen.net/github/watchers/DuHouAn/Java?icon=github&color=4ab8a1"/></a>
+<a href="https://github.com/DuHouAn/Java"><img src="https://badgen.net/github/stars/DuHouAn/Java?icon=github&color=4ab8a1"/></a>
+<a href="https://github.com/DuHouAn/Java"><img src="https://badgen.net/github/forks/DuHouAn/Java?icon=github&color=4ab8a1"/></a>
+</div><br/>
 
 - 本仓库是对 Java 的一些基础知识、数据库知识、以及框架知识进行收集、整理（持续更新中）。
 
