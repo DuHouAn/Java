@@ -1,6 +1,6 @@
 # 容器源码分析 - Map
 
-如果没有特别说明，以下源码分析基于 JDK 1.8。
+以下源码分析基于 JDK 1.8。
 
 ## HashMap
 
@@ -18,7 +18,7 @@ Entry 存储着键值对。它包含了四个字段，从 next 字段我们可�
 即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用**拉链法**来解决冲突，
 同一个链表中存放哈希值相同的 Entry。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" width="600"/> </div><br>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" width="650"/> </div><br>
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -98,7 +98,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" width="600"/> </div><br>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" width="650"/> </div><br>
 
 ### 3. put 操作
 

@@ -1,6 +1,6 @@
 # 容器源码分析 - List
 
-如果没有特别说明，以下源码分析基于 JDK 1.8。
+以下源码分析基于 JDK 1.8。
 
 ## ArrayList
 
@@ -176,7 +176,7 @@ private void readObject(java.io.ObjectInputStream s)
 }
 ```
 
-### 6.System.arraycopy()和Arrays.copyOf()方法
+### 6. System.arraycopy()和Arrays.copyOf()方法
 Arrays.copyOf() 的源代码内部调用了 System.arraycopy() 方法。
 
 - System.arraycopy() 方法需要目标数组，将原数组拷贝到目标数组里，而且可以选择**拷贝的起点和长度以及放入新数组中的位置**；
@@ -225,6 +225,8 @@ List<String> synList = Collections.synchronizedList(list);
 List<String> list = new CopyOnWriteArrayList<>();
 ```
 
+
+
 ## LinkedList
 
 ### 1. 概览
@@ -246,10 +248,11 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" width="500"/> </div><br>
+<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/java/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" width="600"/> </div>
 
 ### 2. 添加元素
-- 将元素添加到链表尾部
+将元素添加到链表尾部：
+
 ```java
 public boolean add(E e) {
     linkLast(e);//这里就只调用了这一个方法
@@ -274,7 +277,8 @@ void linkLast(E e) {
 }
 ```
 
-- 将元素添加到链表头部
+将元素添加到链表头部：
+
 ```java
 public void addFirst(E e) {
     linkFirst(e);
