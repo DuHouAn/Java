@@ -3,22 +3,18 @@
 ## Java 基础
 
 - [数据类型](JavaBasics/1_数据类型.md)
-- [String](JavaBasics/2_String.md)
-- [运算](JavaBasics/3_运算.md)
-- [Object通用方法](JavaBasics/4_Object通用方法.md)
-- [关键字](JavaBasics/5_关键字.md)
-- [反射](JavaBasics/6_反射.md)
+- [常见运算](JavaBasics/3_运算.md)
+- [final 和 static 关键字](JavaBasics/5_关键字.md)
+- [Java 常见类](JavaBasics/10_Java常见对象.md)
 - [异常](JavaBasics/7_异常.md)
+- [反射](JavaBasics/6_反射.md)
 - [泛型](JavaBasics/8_泛型.md)
 - [注解](JavaBasics/9_注解.md)
-- [Java常见对象](JavaBasics/10_Java常见对象.md)
-- [抽象类和接口](JavaBasics/11_抽象类和接口.md)
 - [正则表达式](JavaBasics/正则表达式.md)
-- [其他](JavaBasics/12_其他.md)
 
 ## Java 容器
 
-- [J容器概览](JavaContainer/1_容器概览.md)
+- [容器概览](JavaContainer/1_容器概览.md)
 - [容器中的设计模式](JavaContainer/2_容器中的设计模式.md)
 - [容器源码分析 - List](JavaContainer/3_容器源码分析%20-%20List.md)
 - [容器源码分析 - Map](JavaContainer/4_容器源码分析%20-%20Map.md)

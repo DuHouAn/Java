@@ -1,9 +1,388 @@
-# Java常见对象
+# Java 常见类
+
+## Object 
+
+Object类是类层次结构的根类。每个类都使用 Object 作为超类。每个类都直接或者间接的继承自Object类。
+
+Object 中常用方法有：
+
+```java
+public int hashCode() //返回该对象的哈希码值。
+// 注意：哈希值是根据哈希算法计算出来的一个值，这个值和地址值有关，但是不是实际地址值。
+
+public final Class getClass() //返回此 Object 的运行时类
+
+public String toString() //返回该对象的字符串表示。
+
+protected Object clone() //创建并返回此对象的一个副本。可重写该方法
+
+protected void finalize() 
+// 当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。用于垃圾回收，但是什么时候回收不确定。
+```
+
+### equals() 方法
+
+**1. 等价关系** 
+
+Ⅰ 自反性
+
+```java
+x.equals(x); // true
+```
+
+Ⅱ 对称性
+
+```java
+x.equals(y) == y.equals(x); // true
+```
+
+Ⅲ 传递性
+
+```java
+if (x.equals(y) && y.equals(z))
+    x.equals(z); // true;
+```
+
+Ⅳ 一致性
+
+多次调用 equals() 方法结果不变
+
+```java
+x.equals(y) == x.equals(y); // true
+```
+
+Ⅴ 与 null 的比较
+
+对任何**不是 null 的对象** x 调用 x.equals(null) 结果都为 false
+
+```java
+x.equals(null); // false;
+```
+
+**2. 等价与相等** 
+
+- 对于基本类型，== 判断两个值是否相等，基本类型没有 equals() 方法。
+- 对于引用类型，== 判断两个变量是否引用同一个对象，而 equals() 判断引用的对象是否等价。
+
+```java
+Integer x = new Integer(1);
+Integer y = new Integer(1);
+System.out.println(x.equals(y)); // true
+System.out.println(x == y);      // false
+```
+
+**3. 实现** 
+
+- 检查是否为同一个对象的引用，如果是直接返回 true；
+- 检查是否是同一个类型，如果不是，直接返回 false；
+- 将 Object 对象进行转型；
+- 判断每个关键域是否相等。
+
+```java
+public class EqualExample {
+
+    private int x;
+    private int y;
+    private int z;
+
+    public EqualExample(int x, int y, int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;  //检查是否为同一个对象的引用，如果是直接返回 true；
+        if (o == null || getClass() != o.getClass()){
+            //检查是否是同一个类型，如果不是，直接返回 false
+            return false;
+        }
+
+        // 将 Object 对象进行转型
+        EqualExample that = (EqualExample) o;
+
+        // 判断每个关键域是否相等。
+        if (x != that.x) return false;
+        if (y != that.y) return false;
+        return z == that.z;
+    }
+}
+```
+
+### hashCode() 方法
+
+hashCode() 返回散列值，而 equals() 是用来判断两个对象是否等价。
+**等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价**。
+
+**在覆盖 equals() 方法时应当总是覆盖 hashCode() 方法，保证等价的两个对象散列值也相等**。
+
+下面的代码中，新建了两个等价的对象，并将它们添加到 HashSet 中。
+我们希望将这两个对象当成一样的，只在集合中添加一个对象，但是因为 EqualExample 没有实现 hasCode() 方法，
+因此这两个对象的散列值是不同的，最终导致集合添加了两个等价的对象。
+
+```java
+EqualExample e1 = new EqualExample(1, 1, 1);
+EqualExample e2 = new EqualExample(1, 1, 1);
+System.out.println(e1.equals(e2)); // true
+HashSet<EqualExample> set = new HashSet<>();
+set.add(e1);
+set.add(e2);
+System.out.println(set.size());   // 2
+```
+
+理想的散列函数应当具有均匀性，即不相等的对象应当均匀分布到所有可能的散列值上。
+这就要求了散列函数要把**所有域的值都考虑进来**。
+可以将每个域都当成 R 进制的某一位，然后组成一个 R 进制的整数。
+R 一般取 31，因为它是一个奇素数，如果是偶数的话，当出现乘法溢出，信息就会丢失，因为与 2 相乘相当于向左移一位。
+
+一个数与 31 相乘可以转换成移位和减法：`31*x == (x<<5)-x`，编译器会自动进行这个优化。
+
+```java
+@Override
+public int hashCode() {
+    int result = 17;
+    result = 31 * result + x;
+    result = 31 * result + y;
+    result = 31 * result + z;
+    return result;
+}
+```
+
+> 了解：IDEA中 Alt+Insert 快捷键就可以快速生成 hashCode() 和 equals() 方法。
+
+### toString() 方法
+
+默认返回 ToStringExample@4554617c 这种形式，其中 @ 后面的数值为散列码的无符号十六进制表示。
+
+```java
+public class ToStringExample {
+
+    private int number;
+
+    public ToStringExample(int number) {
+        this.number = number;
+    }
+}
+```
+
+```java
+ToStringExample example = new ToStringExample(123);
+System.out.println(example.toString());
+```
+
+```html
+ToStringExample@4554617c
+```
+
+### clone() 方法
+
+**1. Cloneable** 
+
+clone() 是 Object 的 **protected 方法**，它不是 public，一个类不显式去重写 clone()，其它类就不能直接去调用该类实例的 clone() 方法。
+
+```java
+public class CloneExample {
+    private int a;
+    private int b;
+}
+```
+
+```java
+CloneExample e1 = new CloneExample();
+// CloneExample e2 = e1.clone(); 
+// 'clone()' has protected access in 'java.lang.Object'
+```
+
+重写 clone() 得到以下实现：
+
+```java
+public class CloneExample {
+    private int a;
+    private int b;
+
+    // CloneExample 默认继承 Object
+    @Override
+    public CloneExample clone() throws CloneNotSupportedException {
+        return (CloneExample)super.clone();
+    }
+}
+```
+
+```java
+CloneExample e1 = new CloneExample();
+try {
+    CloneExample e2 = e1.clone();
+} catch (CloneNotSupportedException e) {
+    e.printStackTrace();
+}
+```
+
+```html
+java.lang.CloneNotSupportedException: CloneExample
+```
+
+以上抛出了 CloneNotSupportedException，这是因为 CloneExample 没有实现 Cloneable 接口。
+
+应该注意的是，**clone() 方法并不是 Cloneable 接口的方法，而是 Object 的一个 protected 方法**。
+
+**Cloneable 接口只是规定，如果一个类没有实现 Cloneable 接口又调用了 clone() 方法，就会抛出 CloneNotSupportedException**。
+
+```java
+public class CloneExample implements Cloneable {
+    private int a;
+    private int b;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+```
+
+**2. 浅拷贝** 
+
+拷贝对象和原始对象的引用类型引用同一个对象。
+
+```java
+public class ShallowCloneExample implements Cloneable {
+
+    private int[] arr;
+
+    public ShallowCloneExample() {
+        arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+    }
+
+    public void set(int index, int value) {
+        arr[index] = value;
+    }
+
+    public int get(int index) {
+        return arr[index];
+    }
+
+    @Override
+    protected ShallowCloneExample clone() throws CloneNotSupportedException {
+        return (ShallowCloneExample) super.clone();
+    }
+}
+```
+
+```java
+// 拷贝对象和原始对象的引用类型引用同一个对象。
+ShallowCloneExample e1 = new ShallowCloneExample();
+ShallowCloneExample e2 = null;
+try {
+    e2 = e1.clone();
+} catch (CloneNotSupportedException e) {
+    e.printStackTrace();
+}
+e1.set(2, 222);
+System.out.println(e1.get(2)); // 222
+System.out.println(e2.get(2)); // 222
+```
+
+**3. 深拷贝** 
+
+拷贝对象和原始对象的引用类型引用不同对象。
+
+```java
+public class DeepCloneExample implements Cloneable {
+
+    private int[] arr;
+
+    public DeepCloneExample() {
+        arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+    }
+
+    public void set(int index, int value) {
+        arr[index] = value;
+    }
+
+    public int get(int index) {
+        return arr[index];
+    }
+
+    @Override
+    protected DeepCloneExample clone() throws CloneNotSupportedException {
+        DeepCloneExample result = (DeepCloneExample) super.clone();
+        // 创建新对象
+        result.arr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result.arr[i] = arr[i];
+        }
+        return result;
+    }
+}
+```
+
+```java
+DeepCloneExample e1 = new DeepCloneExample();
+DeepCloneExample e2 = null;
+try {
+    e2 = e1.clone();
+} catch (CloneNotSupportedException e) {
+    e.printStackTrace();
+}
+e1.set(2, 222);
+System.out.println(e1.get(2)); // 222
+System.out.println(e2.get(2)); // 2
+```
+
+**4. clone() 的替代方案** 
+
+使用 clone() 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。
+Effective Java 书上讲到，最好不要去使用 clone()，可以使用**拷贝构造函数或者拷贝工厂来拷贝一个对象**。
+
+```java
+public class CloneConstructorExample {
+
+    private int[] arr;
+
+    public CloneConstructorExample() { //构造函数
+        arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+    }
+
+    public CloneConstructorExample(CloneConstructorExample original) { // 拷贝构造函数
+        arr = new int[original.arr.length];
+        for (int i = 0; i < original.arr.length; i++) {
+            arr[i] = original.arr[i];
+        }
+    }
+
+    public void set(int index, int value) {
+        arr[index] = value;
+    }
+
+    public int get(int index) {
+        return arr[index];
+    }
+}
+```
+
+```java
+CloneConstructorExample e1 = new CloneConstructorExample();
+CloneConstructorExample e2 = new CloneConstructorExample(e1);
+e1.set(2, 222);
+System.out.println(e1.get(2)); // 222
+System.out.println(e2.get(2)); // 2
+```
+
+
 
 ## Arrays
-Arrays:针对数组进行操作的工具类。
+Arrays 是针对数组进行操作的工具类。
 
-- Arrays的常用成员方法：
+- Arrays 的常用成员方法：
 ```java
 public static String toString(int[] a) //把数组转成字符串
 
@@ -12,7 +391,7 @@ public static void sort(int[] a) //对数组进行排序
 public static int binarySearch(int[] a,int key) //二分查找
 ```
 
-- toString()源码如下：
+- toString() 源码如下：
 ```java
 public static String toString(int[] a) {
          if (a == null)
@@ -73,30 +452,25 @@ public class ArraysDemo {
     }
 }
 ```
+
+
 ## BigDemical
-BigDecimal类：不可变的、任意精度的有符号十进制数,可以解决数据丢失问题。
+
+BigDecimal类：不可变的、任意精度的有符号十进制数，可以解决数据丢失问题。
 
 看如下程序，写出结果
 ```java
 public static void main(String[] args) {
-    System.out.println(0.09 + 0.01);
-    System.out.println(1.0 - 0.32);
-    System.out.println(1.015 * 100);
-    System.out.println(1.301 / 100);
-    System.out.println(1.0 - 0.12);
+    System.out.println(0.09 + 0.01); // 0.09999999999999999
+    System.out.println(1.0 - 0.32);  // 0.6799999999999999
+    System.out.println(1.015 * 100); // 101.49999999999999
+    System.out.println(1.301 / 100); // 0.013009999999999999
+    System.out.println(1.0 - 0.12); // 0.88
 }
-```
-输出结果
-```html
-0.09999999999999999
-0.6799999999999999
-101.49999999999999
-0.013009999999999999
-0.88
 ```
 结果和我们想的有一点点不一样，这是因为浮点数类型的数据存储和整数不一样导致的。
 它们大部分的时候，都是带有有效数字位。由于在运算的时候，float类型和double很容易丢失精度，
-所以，为了能精确的表示、计算浮点数，Java提供了BigDecimal。
+所以，为了能精确的表示、计算浮点数，Java 提供了 BigDecimal。
 
 - BigDecimal的常用成员方法：
 ```java
@@ -110,10 +484,11 @@ public BigDecimal add(BigDecimal augend) //加
  
  public BigDecimal divide(BigDecimal divisor) //除
  
- public BigDecimal divide(BigDecimal divisor,int scale,int roundingMode)//除法，scale：几位小数，roundingMode：如何舍取
+ public BigDecimal divide(BigDecimal divisor,int scale,int roundingMode)
+    //除法，scale：几位小数，roundingMode：如何舍取
 ```
 
-- 使用BigDecimal改进
+- 使用 BigDecimal 改进
 ```java
 public static void main(String[] args) {
     /*System.out.println(0.09 + 0.01);
@@ -152,7 +527,10 @@ public static void main(String[] args) {
 }
 ```
 
+
+
 ## BigInteger
+
 BigInteger:可以让超过Integer范围内的数据进行运算
 
 ```java
@@ -223,7 +601,10 @@ public class BigIntegerDemo2 {
 }
 ```
 
+
+
 ## Calendar
+
 Calendar为特定瞬间与一组诸如 YEAR、MONTH、DAY_OF_MONTH、HOUR 等日历字段之间的转换提供了一些方法，
 并为操作日历字段（例如获得下星期的日期）提供了一些方法。
 
@@ -309,7 +690,10 @@ public class CalendarTest {
 }
 ```
 
+
+
 ## Character
+
 Character 类在对象中包装一个基本类型 char 的值.此外，该类提供了几种方法，
 以确定字符的类别（小写字母，数字，等等），并将字符从大写转换成小写，反之亦然。
 
@@ -433,10 +817,13 @@ public class CharacterTest {
 }
 ```
 
-## Data_DateFormat
-Date:表示特定的瞬间，精确到毫秒。
 
-- Date常用成员方法：
+
+## Data & DateFormat
+
+Date: 表示特定的瞬间，精确到毫秒。
+
+- Date 常用成员方法：
 ```java
 Date() //根据当前的默认毫秒值创建日期对象
 
@@ -447,7 +834,7 @@ public long getTime() //获取时间，以毫秒为单位
 public void setTime(long time) //设置时间
 ```
 
-- Date使用示例：
+- Date 使用示例：
 ```java
 /**
  * 把一个毫秒值转换为Date，有两种方式：
@@ -482,9 +869,8 @@ public class DateDemo {
 }
 ```
 
-
-DateForamt:可以进行日期和字符串的格式化和解析，但是由于是抽象类，所以使用具体子类SimpleDateFormat。
-SimpleDateFormat的构造方法：
+DateForamt: 可以进行日期和字符串的格式化和解析，但是由于是抽象类，所以使用具体子类SimpleDateFormat。
+SimpleDateFormat 的构造方法：
 
 ```java
 SimpleDateFormat() //默认模式
@@ -492,7 +878,7 @@ SimpleDateFormat() //默认模式
 SimpleDateFormat(String pattern) //给定的模式
 ```
 
-这个模式字符串该如何写呢? 通过查看API，我们就找到了对应的模式:
+这个模式字符串该如何写呢? 通过查看 API，我们就找到了对应的模式:
 
 | 中文说明 | 模式字符 |
 | :--: | :--: |
@@ -503,7 +889,7 @@ SimpleDateFormat(String pattern) //给定的模式
 | 分 | m |
 | 秒 | s |
 
-- Date类型和String类型的相互转换
+- Date 类型和 String 类型的相互转换
 
 ```java
 public class DateFormatDemo {
@@ -573,252 +959,10 @@ public class DateTest {
 }
 ```
 
-## Integer
-Java就针对每一种基本数据类型提供了对应的类类型:
 
-| 基础类型 | 包装类类型 |
-| :--: | :--: |
-| byte | Byte |
-| short | Short |
-| int |	Integer |
-| long | Long |
-| float | Float |
-| double | Double |
-| char | Character |
-| boolean |	Boolean |
-
-用于基本数据类型与字符串之间的转换。
-
-- Integer的常用成员方法：
-```java
-public Integer(int value)
-
-public Integer(String s) //注意：这个字符串必须是由数字字符组成
-```
-
-- int和String的相互转化：
-```java
-String.valueOf(number) //int --> String
-
-Integer.parseInt(s)  //String --> int
-```
-
-```java
-public static void main(String[] args) {
-    System.out.println(intToString(100)); //100
-    System.out.println(stringToInt("100")); //100
-}
-
-//int --> String
-public static String intToString(int number) {
-    //方式一
-    /*String strNumber=""+number;
-    return strNumber;*/
-    //方式二
-    String strNumber=String.valueOf(number);
-    return strNumber;
-}
-
-//String --> int
-public static int stringToInt(String strNumber) {
-    //方式一
-    /*Integer number=new Integer(strNumber);
-    return number;*/
-    //方式二
-    Integer number=Integer.parseInt(strNumber);
-    return number;
-}
-```
-
-- 常用的进制转换：
-```java
-//常用的基本进制转换
-public static String toBinaryString(int i)
-
-public static String toOctalString(int i)
-
-public static String toHexString(int i)
- 
-//十进制到其他进制
-public static String toString(int i,int radix)//进制的范围：2-36,为什么呢?0,...9,a...z(10个数字+26个字母)
-
-//其他进制到十进制
-public static int parseInt(String s,int radix)
-```
-
-```java
-public class IntegerDemo3 {
-    public static void main(String[] args) {
-        //test();
-        //test2();
-        test3();
-    }
-
-    //常用的基本进制转换
-    public static void test(){
-        System.out.println(Integer.toBinaryString(100));//1100100
-        System.out.println(Integer.toOctalString(100));//144
-        System.out.println(Integer.toHexString(100));//64
-        System.out.println("-----------------------------");
-    }
-
-    //十进制到其他进制
-    public static void test2(){
-        System.out.println(Integer.toString(100, 10));//100
-        System.out.println(Integer.toString(100, 2));//1100100
-        System.out.println(Integer.toString(100, 8));//144
-        System.out.println(Integer.toString(100, 16));//64
-        System.out.println(Integer.toString(100, 5));//400
-        System.out.println(Integer.toString(100, 7));//202
-        //进制的范围在2-36之间，超过这个范围，就作为十进制处理
-        System.out.println(Integer.toString(100, -7)); //100
-        System.out.println(Integer.toString(100, 70));//100
-        System.out.println(Integer.toString(100, 1));//100
-        System.out.println(Integer.toString(100, 37));//100
-
-        System.out.println(Integer.toString(100, 17));//5f
-        System.out.println(Integer.toString(100, 32));//34
-        System.out.println(Integer.toString(100, 36));//2s
-        System.out.println("-------------------------");
-    }
-
-    //任意进制转换为十进制
-    public static void test3(){
-        System.out.println(Integer.parseInt("100", 10));//100
-        System.out.println(Integer.parseInt("100", 2));//4
-        System.out.println(Integer.parseInt("100", 8));//64
-        System.out.println(Integer.parseInt("100", 16));//256
-        System.out.println(Integer.parseInt("100", 23));//529
-        //NumberFormatException,因为二进制是不可能存在 123的
-        //System.out.println(Integer.parseInt("123", 2));
-    }
-}
-```
-
-- JDK5的新特性
-
-自动装箱：把基本类型转换为包装类类型
-
-自动拆箱：把包装类类型转换为基本类型
-
-```java
-public class IntegerDemo4 {
-    public static void main(String[] args) {
-        Integer num=null;
-        if(num!=null){
-            num+=100;
-            System.out.println(num);
-        }
-        test(); //num:200
-        test2(); //num:200
-    }
-
-    //自动装箱,拆箱
-    public static void test() {
-        Integer num=100;
-        //自动装箱，实际上就是 Integer num=Integer.valueOf(100)
-        num+=100;
-        //先拆箱再装箱  num.intValue()+100=200 --> Integer num=Integer.valueOf(num.intValue()+100)
-        System.out.println(new StringBuilder("num:").append(num).toString());
-    }
-    
-    //手动拆装箱
-    public static void test2() {
-        Integer num=Integer.valueOf(100); //手动装箱
-        num=Integer.valueOf(num.intValue()+100); //先手动拆箱，进行运算后，再手动装箱
-        System.out.println(new StringBuilder("num:").append(num).toString());
-    }
-}
-```
-
-- 小练习：看程序写结果
-```java
-public class IntegerTest {
-    public static void main(String[] args) {
-        Integer i1 = new Integer(127);
-        Integer i2 = new Integer(127);
-        System.out.println(i1 == i2);
-        System.out.println(i1.equals(i2));
-        System.out.println("-----------");
-
-        Integer i3 = new Integer(128);
-        Integer i4 = new Integer(128);
-        System.out.println(i3 == i4);
-        System.out.println(i3.equals(i4));
-        System.out.println("-----------");
-
-        Integer i5 = 128;
-        Integer i6 = 128;
-        System.out.println(i5 == i6);
-        System.out.println(i5.equals(i6));
-        System.out.println("-----------");
-
-        Integer i7 = 127;
-        Integer i8 = 127;
-        System.out.println(i7 == i8);
-        System.out.println(i7.equals(i8));
-    }
-}
-```
-输出结果：
-```html
-false
-true
------------
-false
-true
------------
-false
-true
------------
-true
-true
-```
-分析：
-Integer的数据直接赋值，如果在-128到127之间，会直接从缓冲池里获取数据。
-通过查看源码，针对-128到127之间的数据，做了一个**数据缓冲池IntegerCache**，
-如果数据是该范围内的，每次并不创建新的空间。
-
-```java
-public static Integer valueOf(int i) {
-            if (i >= IntegerCache.low && i <= IntegerCache.high)
-                    return IntegerCache.cache[i + (-IntegerCache.low)];
-            return new Integer(i);
-     }
-
-     private static class IntegerCache {
-        static final int low = -128; //low=-128
-        static final int high;
-        static final Integer cache[];
-
-     static {
-             // high value may be configured by property
-            int h = 127;
-           //...
-     }
-     high = h; //high=127
-```
-## Object
-Object类是类层次结构的根类。每个类都使用 Object 作为超类。每个类都直接或者间接的继承自Object类。
-
-- Object类的方法:
-```java
-public int hashCode() //返回该对象的哈希码值。
-// 注意：哈希值是根据哈希算法计算出来的一个值，这个值和地址值有关，但是不是实际地址值。
-
-public final Class getClass() //返回此 Object 的运行时类
-
-public String toString() //返回该对象的字符串表示。
-
-protected Object clone() //创建并返回此对象的一个副本。可重写该方法
-
-protected void finalize() 
-//当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。用于垃圾回收，但是什么时候回收不确定。
-```
-
-- [Object的使用 代码示例](https://github.com/DuHouAn/Java/tree/master/JavaBasics/src/code_03_Object)
 
 ## Scanner
+
 Scanner:用于接收键盘录入数据。
 
 - 使用Scanner三部曲：
@@ -897,7 +1041,10 @@ public static void method2() {
     System.out.println("line:"+line);
 }
 ```
+
+
 ## String
+
 字符串：就是由多个字符组成的一串数据。也可以看成是一个字符数组。
 
 - **String的构造方法方法**：
@@ -1375,6 +1522,8 @@ public class StringTest3 {
     }
 }
 ```
+
+
 
 ## StringBuffer
 
