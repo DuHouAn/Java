@@ -770,6 +770,8 @@ public int compareTo(String anotherString) {
 }
 ```
 
+### 练习
+
 练习1：把数组中的数据按照指定个格式拼接成一个字符串。举例：int[] arr = {1,2,3};输出结果：[1, 2, 3]
 
 ```java
@@ -1044,7 +1046,9 @@ public static void main(String[] args) {
 }
 ```
 
-### String 和 StringBuffer 的相互转换
+
+
+## String 和 StringBuffer 的相互转换
 
 ```java
 public class StringBufferDemo7 {
@@ -1080,6 +1084,8 @@ public class StringBufferDemo7 {
     }
 }
 ```
+
+### 练习
 
 练习1：将数组拼接成一个字符串
 
