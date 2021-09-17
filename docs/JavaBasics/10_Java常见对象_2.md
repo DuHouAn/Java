@@ -222,105 +222,6 @@ public class BigIntegerDemo2 {
 
 
 
-## Calendar
-
-Calendar为特定瞬间与一组诸如 YEAR、MONTH、DAY_OF_MONTH、HOUR 等日历字段之间的转换提供了一些方法，
-并为操作日历字段（例如获得下星期的日期）提供了一些方法。
-
-### 常用成员方法
-
-```java
-public int get(int field) 
-//返回给定日历字段的值。日历类中的每个日历字段都是静态的成员变量，并且是int类型。
-
-public void add(int field,int amount)
-//根据给定的日历字段和对应的时间，来对当前的日历进行操作。
-
-public final void set(int year,int month,int date)
-//设置当前日历的年月日
-```
-
-### 使用示例
-
-示例1：
-
-```java
-public class CalendarDemo {
-    public static void main(String[] args) {
-        // 其日历字段已由当前日期和时间初始化：
-        Calendar rightNow = Calendar.getInstance(); // 子类对象
-        int year=rightNow.get(Calendar.YEAR);
-        int month=rightNow.get(Calendar.MONTH);//注意月份是从0开始的
-        int date=rightNow.get(Calendar.DATE);
-        System.out.println(year + "年" + (month + 1) + "月" + date + "日");
-        //2018年12月25日
-    }
-}
-```
-
-示例2：
-
-```java
-public class CalendarDemo2 {
-    public static void main(String[] args) {
-        // 其日历字段已由当前日期和时间初始化：
-        Calendar calendar = Calendar.getInstance(); // 子类对象
-        System.out.println(getYearMonthDay(calendar));//2018年12月25日
-        
-        //三年前的今天
-        calendar.add(Calendar.YEAR,-3);
-        System.out.println(getYearMonthDay(calendar));//2015年12月25日
-
-        //5年后的10天前
-        calendar.add(Calendar.YEAR,5);
-        calendar.add(Calendar.DATE,-10);
-        System.out.println(getYearMonthDay(calendar));//2020年12月15日
-
-        //设置 2011年11月11日
-        calendar.set(2011,10,11);
-        System.out.println(getYearMonthDay(calendar));//2011年11月11日
-    }
-
-    //获取年、月、日
-    public static String getYearMonthDay(Calendar calendar){
-        int year=calendar.get(Calendar.YEAR);
-        int month=calendar.get(Calendar.MONTH);
-        int date=calendar.get(Calendar.DATE);
-        return year + "年" + (month + 1) + "月" + date + "日";
-    }
-}
-```
-
-### 练习
-
-获取任意一年的二月有多少天
-
-```java
-/**
- *获取任意一年的二月有多少天
- *分析：
- * 		A:键盘录入任意的年份
- * 		B:设置日历对象的年月日
- * 			年就是输入的数据
- * 			月是2
- * 			日是1
- * 		C:把时间往前推一天，就是2月的最后一天
- * 		D:获取这一天输出即可
- */
-public class CalendarTest {
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int year=sc.nextInt();
-        Calendar c= Calendar.getInstance();
-        c.set(year,2,1); //得到的就是该年的3月1日
-        c.add(Calendar.DATE,-1);//把时间往前推一天，就是2月的最后一天
-        //public void add(int field,int amount):根据给定的日历字段和对应的时间，来对当前的日历进行操作。
-
-        System.out.println(year+"年，二月有"+c.get(Calendar.DATE)+"天");
-    }
-}
-```
-
 
 
 ## Character
@@ -530,6 +431,107 @@ public static void method2() {
     
     System.out.println("x:"+x);
     System.out.println("line:"+line);
+}
+```
+
+
+
+## Calendar
+
+Calendar为特定瞬间与一组诸如 YEAR、MONTH、DAY_OF_MONTH、HOUR 等日历字段之间的转换提供了一些方法，
+并为操作日历字段（例如获得下星期的日期）提供了一些方法。
+
+### 常用成员方法
+
+```java
+public int get(int field) 
+//返回给定日历字段的值。日历类中的每个日历字段都是静态的成员变量，并且是int类型。
+
+public void add(int field,int amount)
+//根据给定的日历字段和对应的时间，来对当前的日历进行操作。
+
+public final void set(int year,int month,int date)
+//设置当前日历的年月日
+```
+
+### 使用示例
+
+示例1：
+
+```java
+public class CalendarDemo {
+    public static void main(String[] args) {
+        // 其日历字段已由当前日期和时间初始化：
+        Calendar rightNow = Calendar.getInstance(); // 子类对象
+        int year=rightNow.get(Calendar.YEAR);
+        int month=rightNow.get(Calendar.MONTH);//注意月份是从0开始的
+        int date=rightNow.get(Calendar.DATE);
+        System.out.println(year + "年" + (month + 1) + "月" + date + "日");
+        //2018年12月25日
+    }
+}
+```
+
+示例2：
+
+```java
+public class CalendarDemo2 {
+    public static void main(String[] args) {
+        // 其日历字段已由当前日期和时间初始化：
+        Calendar calendar = Calendar.getInstance(); // 子类对象
+        System.out.println(getYearMonthDay(calendar));//2018年12月25日
+        
+        //三年前的今天
+        calendar.add(Calendar.YEAR,-3);
+        System.out.println(getYearMonthDay(calendar));//2015年12月25日
+
+        //5年后的10天前
+        calendar.add(Calendar.YEAR,5);
+        calendar.add(Calendar.DATE,-10);
+        System.out.println(getYearMonthDay(calendar));//2020年12月15日
+
+        //设置 2011年11月11日
+        calendar.set(2011,10,11);
+        System.out.println(getYearMonthDay(calendar));//2011年11月11日
+    }
+
+    //获取年、月、日
+    public static String getYearMonthDay(Calendar calendar){
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int date=calendar.get(Calendar.DATE);
+        return year + "年" + (month + 1) + "月" + date + "日";
+    }
+}
+```
+
+### 练习
+
+获取任意一年的二月有多少天
+
+```java
+/**
+ *获取任意一年的二月有多少天
+ *分析：
+ * 		A:键盘录入任意的年份
+ * 		B:设置日历对象的年月日
+ * 			年就是输入的数据
+ * 			月是2
+ * 			日是1
+ * 		C:把时间往前推一天，就是2月的最后一天
+ * 		D:获取这一天输出即可
+ */
+public class CalendarTest {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int year=sc.nextInt();
+        Calendar c= Calendar.getInstance();
+        c.set(year,2,1); //得到的就是该年的3月1日
+        c.add(Calendar.DATE,-1);//把时间往前推一天，就是2月的最后一天
+        //public void add(int field,int amount):根据给定的日历字段和对应的时间，来对当前的日历进行操作。
+
+        System.out.println(year+"年，二月有"+c.get(Calendar.DATE)+"天");
+    }
 }
 ```
 

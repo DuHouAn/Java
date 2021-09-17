@@ -4,13 +4,11 @@
 
 - [数据类型](JavaBasics/1_数据类型.md)
 - [常见运算](JavaBasics/3_运算.md)
-- [final 和 static 关键字](JavaBasics/5_关键字.md)
+- [final & static](JavaBasics/5_关键字.md)
 - [Java 常见类 I ](JavaBasics/10_Java常见对象.md)
 - [Java 常见类 II](JavaBasics/10_Java常见对象_2.md)
-- [异常](JavaBasics/7_异常.md)
-- [反射](JavaBasics/6_反射.md)
-- [泛型](JavaBasics/8_泛型.md)
-- [注解](JavaBasics/9_注解.md)
+- [异常 & 反射](JavaBasics/6_反射.md)
+- [泛型 & 注解](JavaBasics/8_泛型.md)
 - [正则表达式](JavaBasics/正则表达式.md)
 
 ## Java 容器
