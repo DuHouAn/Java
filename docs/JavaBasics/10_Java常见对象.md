@@ -1,4 +1,4 @@
-# Java 常见类
+# Java 常见类 I
 
 ## Object 
 
@@ -383,116 +383,115 @@ System.out.println(e2.get(2)); // 2
 
 字符串：就是由多个字符组成的一串数据。也可以看成是一个字符数组。
 
-- **String 的构造方法**：
+### 构造方法
 
-  ```java
-  //String的构造方法
-  public String() //空构造
-  
-  public String(byte[] bytes) //把字节数组转成字符串
-  
-  public String(byte[] bytes,int index,int length) //把字节数组的一部分转成字符串
-  
-  public String(char[] value) //把字符数组转成字符串
-  
-  public String(char[] value,int index,int count) //把字符数组的一部分转成字符串,第三个参数表示的是数目
-  
-  public String(String original) //把字符串常量值转成字符串
-  ```
+```java
+public String() //空构造
 
-- 使用示例：
+public String(byte[] bytes) //把字节数组转成字符串
 
-  ```java
-  public class StringDemo {
-      public static void main(String[] args) {
-          //public String():空构造
-          String s=new String();
-          System.out.println("s:"+s);
-          System.out.println("s.length="+s.length());
-          System.out.println("-----------------------");
-  
-          //public String(byte[] bytes):把字节数组转成字符串
-          byte[] bys={97,98,99,100,101};
-  
-          String s2=new String(bys);
-          System.out.println("s2:"+s2);
-          System.out.println("s2.length="+s2.length());
-          System.out.println("-----------------------");
-  
-          //public String(byte[] bytes,int index,int length):把字节数组的一部分转成字符串
-          String s3=new String(bys,0,3); //从0位置开始,3个字符
-          System.out.println("s3:"+s3);//s3:abc
-          System.out.println("s3.length="+s3.length());//s3.length=3
-          System.out.println("-----------------------");
-  
-  
-          //public String(char[] value):把字符数组转成字符串
-          char[] chs={'a','b','c','d','e'};
-          String s4=new String(chs); //从0位置开始,3个字符
-          System.out.println("s4:"+s4);
-          System.out.println("s4.length="+s4.length());
-          System.out.println("-----------------------");
-  
-          //public String(char[] value,int index,int count):把字符数组的一部分转成字符串
-          String s5=new String(chs,0,3); //从0位置开始,3个字符
-          System.out.println("s5:"+s5);
-          System.out.println("s5.length="+s5.length());
-          System.out.println("-----------------------");
-  
-          //public String(String original):把字符串常量值转成字符串
-          String s6=new String("abcde");
-          System.out.println("s6:"+s6);
-          System.out.println("s6.length="+s6.length());
-      }
-  }
-  ```
+public String(byte[] bytes,int index,int length) //把字节数组的一部分转成字符串
 
-- 字符串的特点：一旦被赋值，就不能改变
+public String(char[] value) //把字符数组转成字符串
 
-  ```java
-  public static void test() {
-      String s = "hello";
-      s += "world";
-      System.out.println("s:" + s); // helloworld
-  }
-  ```
+public String(char[] value,int index,int count) //把字符数组的一部分转成字符串,第三个参数表示的是数目
 
-- 小练习：看程序，写结果：
+public String(String original) //把字符串常量值转成字符串
+```
 
-  ```java
-  public static void test2(){
-      String s1 = new String("hello");
-      String s2 = new String("hello");
-      System.out.println(s1 == s2); // false
-      System.out.println(s1.equals(s2)); // true
-  
-      String s3 = new String("hello");
-      String s4 = "hello";
-      System.out.println(s3 == s4); // false
-      System.out.println(s3.equals(s4)); // true
-  
-      String s5 = "hello";
-      String s6 = "hello";
-      System.out.println(s5 == s6); // true
-      System.out.println(s5.equals(s6)); // true
-  }
-  ```
+使用示例：
 
-- **String 类的判断功能**：
+```java
+public class StringDemo {
+    public static void main(String[] args) {
+        //public String():空构造
+        String s=new String();
+        System.out.println("s:"+s);
+        System.out.println("s.length="+s.length());
+        System.out.println("-----------------------");
 
-  ```java
-  boolean equals(Object obj) //比较字符串的内容是否相同,区分大小写
-  
-  boolean equalsIgnoreCase(String str) //比较字符串的内容是否相同,忽略大小写
-  
-  boolean contains(String str) //判断大字符串中是否包含小字符串
-  
-  boolean startsWith(String str) //判断字符串是否以某个指定的字符串开头
-  
-  boolean endsWith(String str) //判断字符串是否以某个指定的字符串结尾
-  
-  boolean isEmpty()// 判断字符串是否为空
-  ```
+        //public String(byte[] bytes):把字节数组转成字符串
+        byte[] bys={97,98,99,100,101};
+
+        String s2=new String(bys);
+        System.out.println("s2:"+s2);
+        System.out.println("s2.length="+s2.length());
+        System.out.println("-----------------------");
+
+        //public String(byte[] bytes,int index,int length):把字节数组的一部分转成字符串
+        String s3=new String(bys,0,3); //从0位置开始,3个字符
+        System.out.println("s3:"+s3);//s3:abc
+        System.out.println("s3.length="+s3.length());//s3.length=3
+        System.out.println("-----------------------");
+
+
+        //public String(char[] value):把字符数组转成字符串
+        char[] chs={'a','b','c','d','e'};
+        String s4=new String(chs); //从0位置开始,3个字符
+        System.out.println("s4:"+s4);
+        System.out.println("s4.length="+s4.length());
+        System.out.println("-----------------------");
+
+        //public String(char[] value,int index,int count):把字符数组的一部分转成字符串
+        String s5=new String(chs,0,3); //从0位置开始,3个字符
+        System.out.println("s5:"+s5);
+        System.out.println("s5.length="+s5.length());
+        System.out.println("-----------------------");
+
+        //public String(String original):把字符串常量值转成字符串
+        String s6=new String("abcde");
+        System.out.println("s6:"+s6);
+        System.out.println("s6.length="+s6.length());
+    }
+}
+```
+
+字符串的特点：一旦被赋值，就不能改变
+
+```java
+public static void test() {
+    String s = "hello";
+    s += "world";
+    System.out.println("s:" + s); // helloworld
+}
+```
+
+小练习：
+
+```java
+public static void test2(){
+    String s1 = new String("hello");
+    String s2 = new String("hello");
+    System.out.println(s1 == s2); // false
+    System.out.println(s1.equals(s2)); // true
+
+    String s3 = new String("hello");
+    String s4 = "hello";
+    System.out.println(s3 == s4); // false
+    System.out.println(s3.equals(s4)); // true
+
+    String s5 = "hello";
+    String s6 = "hello";
+    System.out.println(s5 == s6); // true
+    System.out.println(s5.equals(s6)); // true
+}
+```
+
+### 判断功能
+
+```java
+boolean equals(Object obj) //比较字符串的内容是否相同,区分大小写
+
+boolean equalsIgnoreCase(String str) //比较字符串的内容是否相同,忽略大小写
+
+boolean contains(String str) //判断大字符串中是否包含小字符串
+
+boolean startsWith(String str) //判断字符串是否以某个指定的字符串开头
+
+boolean endsWith(String str) //判断字符串是否以某个指定的字符串结尾
+
+boolean isEmpty()// 判断字符串是否为空
+```
 
 注意：字符串内容为空和字符串对象为空。
 
@@ -500,6 +499,8 @@ System.out.println(e2.get(2)); // 2
 String s = "";//字符串内容为空
 String s = null;//字符串对象为空
 ```
+
+使用示例：
 
 ```java
 public class StringDemo3 {
@@ -549,623 +550,645 @@ public class StringDemo3 {
 }
 ```
 
-- **String类的获取功能**:
+### 获取功能
 
-  ```java
-  int length() //获取字符串的长度。
-  
-  char charAt(int index) //获取指定索引位置的字符
-  
-  int indexOf(int ch) //返回指定字符在此字符串中第一次出现处的索引。为什么这里参数int类型，而不是char类型?原因是：'a'和97其实都可以代表'a'
-  
-  int indexOf(String str) //返回指定字符串在此字符串中第一次出现处的索引。
-  
-  int indexOf(int ch,int fromIndex) //返回指定字符在此字符串中从指定位置后第一次出现处的索引。
-  
-  int indexOf(String str,int fromIndex) //返回指定字符串在此字符串中从指定位置后第一次出现处的索引。
-  
-  String substring(int start) //从指定位置开始截取字符串,默认到末尾。
-  
-  String substring(int start,int end) //从指定位置开始到指定位置结束截取字符串。左闭右开
-  ```
+```java
+int length() //获取字符串的长度。
 
-  ```java
-  public class StringDemo4 {
-      public static void main(String[] args) {
-          // 定义一个字符串对象
-          String s = "helloworld";
-  
-          // int length():获取字符串的长度。
-          System.out.println("s.length:" + s.length());//10
-          System.out.println("----------------------");
-  
-          // char charAt(int index):获取指定索引位置的字符
-          System.out.println("charAt:" + s.charAt(7));//r
-          System.out.println("----------------------");
-  
-          // int indexOf(int ch):返回指定字符在此字符串中第一次出现处的索引。
-          System.out.println("indexOf:" + s.indexOf('l'));//2
-          System.out.println("----------------------");
-  
-          // int indexOf(String str):返回指定字符串在此字符串中第一次出现处的索引。
-          System.out.println("indexOf:" + s.indexOf("owo"));//4
-          System.out.println("----------------------");
-  
-          // int indexOf(int ch,int fromIndex):返回指定字符在此字符串中从指定位置后第一次出现处的索引。
-          System.out.println("indexOf:" + s.indexOf('l', 4));//8
-          System.out.println("indexOf:" + s.indexOf('k', 4)); // -1
-          System.out.println("indexOf:" + s.indexOf('l', 40)); // -1
-          System.out.println("----------------------");
-  
-          // int indexOf(String str,intfromIndex):返回指定字符串在此字符串中从指定位置后第一次出现处的索引。
-          System.out.println("indexOf:" + s.indexOf("owo", 4));//4
-          System.out.println("indexOf:" + s.indexOf("ll", 4)); //-1
-          System.out.println("indexOf:" + s.indexOf("ld", 40)); // -1
-          System.out.println("----------------------");
-  
-          // String substring(int start):从指定位置开始截取字符串,默认到末尾。包含start这个索引
-          System.out.println("substring:" + s.substring(5));//world
-          System.out.println("substring:" + s.substring(0));//helloworld
-          System.out.println("----------------------");
-  
-          // String substring(int start,int
-          // end):从指定位置开始到指定位置结束截取字符串。包括start索引但是不包end索引
-          System.out.println("substring:" + s.substring(3, 8));//lowor
-          System.out.println("substring:" + s.substring(0, s.length()));//helloworld
-  
-          /**
-           * 获取 字符串中的每个字符
-           */
-          for(int i=0;i<s.length();i++){
-              System.out.println(s.charAt(i));
-          }
-      }
-  }
-  ```
+char charAt(int index) //获取指定索引位置的字符
 
-- **String 的转换功能**：
+int indexOf(int ch) //返回指定字符在此字符串中第一次出现处的索引。为什么这里参数int类型，而不是char类型?原因是：'a'和97其实都可以代表'a'
 
-  ```java
-  byte[] getBytes() //字符串转换为字节数组。 
-  
-  char[] toCharArray() //把字符串转换为字符数组。
-  
-  static String valueOf(char[] chs) //把字符数组转成字符串。
-  
-  static String valueOf(int i) //把int类型的数据转成字符串。注意：String类的valueOf方法可以把任意类型的数据转成字符串。
-  
-  String toLowerCase() //把字符串转成小写。
-  
-  String toUpperCase() //把字符串转成大写。
-  
-  String concat(String str) //把字符串拼接。
-  ```
+int indexOf(String str) //返回指定字符串在此字符串中第一次出现处的索引。
 
-  ```java
-  public class StringDemo5 {
-      public static void main(String[] args) {
-          // 定义一个字符串对象
-          String s = "JavaSE";
-  
-          // byte[] getBytes():把字符串转换为字节数组。
-          byte[] bys = s.getBytes();
-          for (int x = 0; x < bys.length; x++) {
-              System.out.println(bys[x]);//74 97 118 97 83 69
-          }
-          System.out.println("----------------");
-  
-          // char[] toCharArray():把字符串转换为字符数组。
-          char[] chs = s.toCharArray();
-          for (int x = 0; x < chs.length; x++) {
-              System.out.println(chs[x]);//J a v a S E
-          }
-          System.out.println("----------------");
-  
-          // static String valueOf(char[] chs):把字符数组转成字符串。
-          String ss = String.valueOf(chs);
-          System.out.println(ss);//JavaSE
-          System.out.println("----------------");
-  
-          // static String valueOf(int i):把int类型的数据转成字符串。
-          int i = 100;
-          String sss = String.valueOf(i);
-          System.out.println(sss);//100 是字符串
-          System.out.println("----------------");
-  
-          // String toLowerCase():把字符串转成小写。
-          System.out.println("toLowerCase:" + s.toLowerCase());//javase
-          System.out.println("s:" + s);
-          // System.out.println("----------------");
-          // String toUpperCase():把字符串转成大写。
-          System.out.println("toUpperCase:" + s.toUpperCase());//JAVASE
-          System.out.println("----------------");
-  
-          // String concat(String str):把字符串拼接。
-          String s1 = "hello";
-          String s2 = "world";
-          String s3 = s1 + s2;
-          String s4 = s1.concat(s2);
-          System.out.println("s3:"+s3);//helloworld
-          System.out.println("s4:"+s4);//helloworld
-      }
-  }
-  ```
+int indexOf(int ch,int fromIndex) //返回指定字符在此字符串中从指定位置后第一次出现处的索引。
 
-- 练习：将一个字符串的首字母转成大写，其余为小写。(只考虑英文大小写字母字符)
+int indexOf(String str,int fromIndex) //返回指定字符串在此字符串中从指定位置后第一次出现处的索引。
 
-  ```java
-  /**
-   * 需求：把一个字符串的首字母转成大写，其余为小写。(只考虑英文大小写字母字符)
-   * 举例：
-   * 		helloWORLD
-   * 结果：
-   * 		Helloworld
-   *
-   * 		A:先获取第一个字符
-   * 		B:获取除了第一个字符以外的字符
-   * 		C:把A转成大写
-   * 		D:把B转成小写
-   * 		E:C拼接D
-   */
-  public class StringTest {
-      public static void main(String[] args) {
-          String str="helloWORLD";
-          str=str.substring(0,1).toUpperCase().
-                  concat(str.substring(1).toLowerCase());
-          System.out.println(str);
-      }
-  }
-  ```
+String substring(int start) //从指定位置开始截取字符串,默认到末尾。
 
-- **String 类的其他功能**:
+String substring(int start,int end) //从指定位置开始到指定位置结束截取字符串。左闭右开
+```
 
-  ```java
-  //替换功能：
-  String replace(char old,char new)
-  
-  String replace(String old,String new)
-  
-  //去除字符串两端空格
-  String trim()
-  
-  //按字典顺序比较两个字符串
-  int compareTo(String str)
-  int compareToIgnoreCase(String str)
-  ```
+使用示例：
 
-  compareTo()方法源码解析：
+```java
+public class StringDemo4 {
+    public static void main(String[] args) {
+        // 定义一个字符串对象
+        String s = "helloworld";
 
-  ```java
-  private final char value[]; //字符串会自动转换为一个字符数组。
-  /**
-  * 举例
-    String s6 = "hello";
-    String s9 = "xyz";
-    System.out.println(s6.compareTo(s9));// -16
-  */
-  public int compareTo(String anotherString) {
-      int len1 = value.length;
-      int len2 = anotherString.value.length;
-  
-      int lim = Math.min(len1, len2); //lim=3
-      char v1[] = value; //v1[h e l l o]
-      char v2[] = anotherString.value;//v2[x y z]
-  
-      int k = 0;
-      while (k < lim) {
-          char c1 = v1[k];//h
-          char c2 = v2[k];//x
-          if (c1 != c2) { //先比较的是对应的字符是否相等
-              return c1 - c2; //h=104  x=120   104-120=-16
-          }
-          k++;
-      }
-      //如果在指定位置，字符都相同，则长度相减
-      return len1 - len2;
-  }
-  ```
+        // int length():获取字符串的长度。
+        System.out.println("s.length:" + s.length());//10
+        System.out.println("----------------------");
 
-- 练习1：把数组中的数据按照指定个格式拼接成一个字符串。举例：int[] arr = {1,2,3};输出结果：[1, 2, 3]
+        // char charAt(int index):获取指定索引位置的字符
+        System.out.println("charAt:" + s.charAt(7));//r
+        System.out.println("----------------------");
 
-  ```java
-  /**
-   *
-   * 需求：把数组中的数据按照指定个格式拼接成一个字符串
-   * 举例：
-   * 		int[] arr = {1,2,3};
-   * 输出结果：
-   *		"[1, 2, 3]"
-   * 分析：
-   * 		A:定义一个字符串对象，只不过内容为空
-   * 		B:先把字符串拼接一个"["
-   * 		C:遍历int数组，得到每一个元素
-   * 		D:先判断该元素是否为最后一个
-   * 			是：就直接拼接元素和"]"
-   * 			不是：就拼接元素和逗号以及空格
-   * 		E:输出拼接后的字符串
-   */
-  public class StringTest2 {
-      public static void main(String[] args) {
-          int[] arr={1,2,3,4};
-          System.out.println(arrayToString(arr));
-      }
-  
-      /**
-       * 把数组中的数据按照指定个格式拼接成一个字符串
-       */
-      public static String arrayToString(int[] arr){
-          String str="[";
-          for(int i=0;i<arr.length;i++){
-              if(i==arr.length-1){
-                  str+=arr[i];
-              }else{
-                  str+=arr[i]+",";
-              }
-          }
-          str+="]";
-          return str;
-      }
-  }
-  ```
+        // int indexOf(int ch):返回指定字符在此字符串中第一次出现处的索引。
+        System.out.println("indexOf:" + s.indexOf('l'));//2
+        System.out.println("----------------------");
 
-- 练习2：统计大串中小串出现的次数
+        // int indexOf(String str):返回指定字符串在此字符串中第一次出现处的索引。
+        System.out.println("indexOf:" + s.indexOf("owo"));//4
+        System.out.println("----------------------");
 
-  ```java
-  /**
-   * 统计大串中小串出现的次数
-   * 举例：
-   * 		在字符串"woaijavawozhenaijavawozhendeaijavawozhendehenaijavaxinbuxinwoaijavagun"
-   * 结果：
-   * 		java出现了5次
-   *
-   * 分析：
-   * 		前提：是已经知道了大串和小串。
-   * 		A:定义一个统计变量，初始化值是0
-   * 		B:先在大串中查找一次小串第一次出现的位置 ( boolean contains(String str):判断大字符串中是否包含小字符串)
-   * 			a:索引是-1，说明不存在了，就返回统计变量
-   * 			b:索引不是-1，说明存在，统计变量++
-   * 		C:把刚才的索引+小串的长度作为开始位置截取上一次的大串，返回一个新的字符串，并把该字符串的值重新赋值给大串
-   * 		D:回到B
-   */
-  public class StringTest3 {
-      public static void main(String[] args) {
-          String s1="woaijavawozhenaijavawozhendeaijavawozhendehenaijavaxinbuxinwoaijavagun";
-          String s2="java";
-          System.out.println(smallCount(s2,s1));
-      }
-  
-      // 统计大串中小串出现的次数
-      public static int smallCount(String smallStr,String bigStr) {
-          int count=0;
-  
-          int index=bigStr.indexOf(smallStr);
-          while(index!=-1){
-              count++;
-              //把刚才的索引+小串的长度作为开始位置截取上一次的大串
-              int startIndex=index+smallStr.length();
-              bigStr=bigStr.substring(startIndex);
-              index=bigStr.indexOf(smallStr);
-          }
-          return count;
-      }
-  }
-  ```
+        // int indexOf(int ch,int fromIndex):返回指定字符在此字符串中从指定位置后第一次出现处的索引。
+        System.out.println("indexOf:" + s.indexOf('l', 4));//8
+        System.out.println("indexOf:" + s.indexOf('k', 4)); // -1
+        System.out.println("indexOf:" + s.indexOf('l', 40)); // -1
+        System.out.println("----------------------");
+
+        // int indexOf(String str,intfromIndex):返回指定字符串在此字符串中从指定位置后第一次出现处的索引。
+        System.out.println("indexOf:" + s.indexOf("owo", 4));//4
+        System.out.println("indexOf:" + s.indexOf("ll", 4)); //-1
+        System.out.println("indexOf:" + s.indexOf("ld", 40)); // -1
+        System.out.println("----------------------");
+
+        // String substring(int start):从指定位置开始截取字符串,默认到末尾。包含start这个索引
+        System.out.println("substring:" + s.substring(5));//world
+        System.out.println("substring:" + s.substring(0));//helloworld
+        System.out.println("----------------------");
+
+        // String substring(int start,int
+        // end):从指定位置开始到指定位置结束截取字符串。包括start索引但是不包end索引
+        System.out.println("substring:" + s.substring(3, 8));//lowor
+        System.out.println("substring:" + s.substring(0, s.length()));//helloworld
+
+        /**
+         * 获取 字符串中的每个字符
+         */
+        for(int i=0;i<s.length();i++){
+            System.out.println(s.charAt(i));
+        }
+    }
+}
+```
+
+### 转换功能
+
+```java
+byte[] getBytes() //字符串转换为字节数组。 
+
+char[] toCharArray() //把字符串转换为字符数组。
+
+static String valueOf(char[] chs) //把字符数组转成字符串。
+
+static String valueOf(int i) //把int类型的数据转成字符串。注意：String类的valueOf方法可以把任意类型的数据转成字符串。
+
+String toLowerCase() //把字符串转成小写。
+
+String toUpperCase() //把字符串转成大写。
+
+String concat(String str) //把字符串拼接。
+```
+
+使用示例：
+
+```java
+public class StringDemo5 {
+    public static void main(String[] args) {
+        // 定义一个字符串对象
+        String s = "JavaSE";
+
+        // byte[] getBytes():把字符串转换为字节数组。
+        byte[] bys = s.getBytes();
+        for (int x = 0; x < bys.length; x++) {
+            System.out.println(bys[x]);//74 97 118 97 83 69
+        }
+        System.out.println("----------------");
+
+        // char[] toCharArray():把字符串转换为字符数组。
+        char[] chs = s.toCharArray();
+        for (int x = 0; x < chs.length; x++) {
+            System.out.println(chs[x]);//J a v a S E
+        }
+        System.out.println("----------------");
+
+        // static String valueOf(char[] chs):把字符数组转成字符串。
+        String ss = String.valueOf(chs);
+        System.out.println(ss);//JavaSE
+        System.out.println("----------------");
+
+        // static String valueOf(int i):把int类型的数据转成字符串。
+        int i = 100;
+        String sss = String.valueOf(i);
+        System.out.println(sss);//100 是字符串
+        System.out.println("----------------");
+
+        // String toLowerCase():把字符串转成小写。
+        System.out.println("toLowerCase:" + s.toLowerCase());//javase
+        System.out.println("s:" + s);
+        // System.out.println("----------------");
+        // String toUpperCase():把字符串转成大写。
+        System.out.println("toUpperCase:" + s.toUpperCase());//JAVASE
+        System.out.println("----------------");
+
+        // String concat(String str):把字符串拼接。
+        String s1 = "hello";
+        String s2 = "world";
+        String s3 = s1 + s2;
+        String s4 = s1.concat(s2);
+        System.out.println("s3:"+s3);//helloworld
+        System.out.println("s4:"+s4);//helloworld
+    }
+}
+```
+
+练习：将一个字符串的首字母转成大写，其余为小写。(只考虑英文大小写字母字符)
+
+```java
+/**
+ * 需求：把一个字符串的首字母转成大写，其余为小写。(只考虑英文大小写字母字符)
+ * 举例：
+ * 		helloWORLD
+ * 结果：
+ * 		Helloworld
+ *
+ * 		A:先获取第一个字符
+ * 		B:获取除了第一个字符以外的字符
+ * 		C:把A转成大写
+ * 		D:把B转成小写
+ * 		E:C拼接D
+ */
+public class StringTest {
+    public static void main(String[] args) {
+        String str="helloWORLD";
+        str=str.substring(0,1).toUpperCase().
+                concat(str.substring(1).toLowerCase());
+        System.out.println(str);
+    }
+}
+```
+
+### 其他功能
+
+```java
+//替换功能：
+String replace(char old,char new)
+
+String replace(String old,String new)
+
+//去除字符串两端空格
+String trim()
+
+//按字典顺序比较两个字符串
+int compareTo(String str)
+int compareToIgnoreCase(String str)
+```
+
+compareTo() 方法源码解析：
+
+```java
+private final char value[]; //字符串会自动转换为一个字符数组。
+/**
+* 举例
+  String s6 = "hello";
+  String s9 = "xyz";
+  System.out.println(s6.compareTo(s9));// -16
+*/
+public int compareTo(String anotherString) {
+    int len1 = value.length;
+    int len2 = anotherString.value.length;
+
+    int lim = Math.min(len1, len2); //lim=3
+    char v1[] = value; //v1[h e l l o]
+    char v2[] = anotherString.value;//v2[x y z]
+
+    int k = 0;
+    while (k < lim) {
+        char c1 = v1[k];//h
+        char c2 = v2[k];//x
+        if (c1 != c2) { //先比较的是对应的字符是否相等
+            return c1 - c2; //h=104  x=120   104-120=-16
+        }
+        k++;
+    }
+    //如果在指定位置，字符都相同，则长度相减
+    return len1 - len2;
+}
+```
+
+练习1：把数组中的数据按照指定个格式拼接成一个字符串。举例：int[] arr = {1,2,3};输出结果：[1, 2, 3]
+
+```java
+/**
+ *
+ * 需求：把数组中的数据按照指定个格式拼接成一个字符串
+ * 举例：
+ * 		int[] arr = {1,2,3};
+ * 输出结果：
+ *		"[1, 2, 3]"
+ * 分析：
+ * 		A:定义一个字符串对象，只不过内容为空
+ * 		B:先把字符串拼接一个"["
+ * 		C:遍历int数组，得到每一个元素
+ * 		D:先判断该元素是否为最后一个
+ * 			是：就直接拼接元素和"]"
+ * 			不是：就拼接元素和逗号以及空格
+ * 		E:输出拼接后的字符串
+ */
+public class StringTest2 {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4};
+        System.out.println(arrayToString(arr));
+    }
+
+    /**
+     * 把数组中的数据按照指定个格式拼接成一个字符串
+     */
+    public static String arrayToString(int[] arr){
+        String str="[";
+        for(int i=0;i<arr.length;i++){
+            if(i==arr.length-1){
+                str+=arr[i];
+            }else{
+                str+=arr[i]+",";
+            }
+        }
+        str+="]";
+        return str;
+    }
+}
+```
+
+练习2：统计大串中小串出现的次数
+
+```java
+/**
+ * 统计大串中小串出现的次数
+ * 举例：
+ * 		在字符串"woaijavawozhenaijavawozhendeaijavawozhendehenaijavaxinbuxinwoaijavagun"
+ * 结果：
+ * 		java出现了5次
+ *
+ * 分析：
+ * 		前提：是已经知道了大串和小串。
+ * 		A:定义一个统计变量，初始化值是0
+ * 		B:先在大串中查找一次小串第一次出现的位置 ( boolean contains(String str):判断大字符串中是否包含小字符串)
+ * 			a:索引是-1，说明不存在了，就返回统计变量
+ * 			b:索引不是-1，说明存在，统计变量++
+ * 		C:把刚才的索引+小串的长度作为开始位置截取上一次的大串，返回一个新的字符串，并把该字符串的值重新赋值给大串
+ * 		D:回到B
+ */
+public class StringTest3 {
+    public static void main(String[] args) {
+        String s1="woaijavawozhenaijavawozhendeaijavawozhendehenaijavaxinbuxinwoaijavagun";
+        String s2="java";
+        System.out.println(smallCount(s2,s1));
+    }
+
+    // 统计大串中小串出现的次数
+    public static int smallCount(String smallStr,String bigStr) {
+        int count=0;
+
+        int index=bigStr.indexOf(smallStr);
+        while(index!=-1){
+            count++;
+            //把刚才的索引+小串的长度作为开始位置截取上一次的大串
+            int startIndex=index+smallStr.length();
+            bigStr=bigStr.substring(startIndex);
+            index=bigStr.indexOf(smallStr);
+        }
+        return count;
+    }
+}
+```
+
 
 
 ## StringBuffer
 
-- **StringBuffer的常用成员方法**：
+### 常用成员方法
 
-  ```java
-  //StirngBuffer的构造方法
-  public StringBuffer() //无参构造方法
-  
-  public StringBuffer(int capacity) //指定容量的字符串缓冲区对象
-  
-  public StringBuffer(String str) //指定字符串内容的字符串缓冲区对象
-  
-  //StringBuffer的方法
-  public int capacity() //返回当前容量。	理论值
-  
-  public int length() //返回长度（字符数）。 实际值
-  ```
+```java
+//StirngBuffer的构造方法
+public StringBuffer() //无参构造方法
 
-  ```java
-  public static void main(String[] args) {
-      // public StringBuffer():无参构造方法
-      StringBuffer sb = new StringBuffer();
-      System.out.println("sb:" + sb);
-      System.out.println("sb.capacity():" + sb.capacity()); //StringBuffer默认的指定容量是16
-      System.out.println("sb.length():" + sb.length());//0
-      System.out.println("--------------------------");
-  
-      // public StringBuffer(int capacity):指定容量的字符串缓冲区对象
-      StringBuffer sb2 = new StringBuffer(50);
-      System.out.println("sb2:" + sb2);//""
-      System.out.println("sb2.capacity():" + sb2.capacity());//50
-      System.out.println("sb2.length():" + sb2.length());//0
-      System.out.println("--------------------------");
-  
-      // public StringBuffer(String str):指定字符串内容的字符串缓冲区对象
-      StringBuffer sb3 = new StringBuffer("hello");
-      System.out.println("sb3:" + sb3);//hello
-      System.out.println("sb3.capacity():" + sb3.capacity());//16+5=21
-      System.out.println("sb3.length():" + sb3.length());//5
-  }
-  ```
+public StringBuffer(int capacity) //指定容量的字符串缓冲区对象
 
-- **StringBuffer的添加功能**:
+public StringBuffer(String str) //指定字符串内容的字符串缓冲区对象
 
-  ```java
-  public StringBuffer append(String str) //可以把任意类型数据添加到字符串缓冲区里面,并返回字符串缓冲区本身
-  
-  public StringBuffer insert(int offset,String str) //在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身
-  ```
+//StringBuffer的方法
+public int capacity() //返回当前容量。	理论值
 
-  ```java
-  public static void main(String[] args) {
-      // 创建字符串缓冲区对象
-      StringBuffer sb = new StringBuffer();
-      
-      // 链式编程
-      sb.append("hello").append(true).append(12).append(34.56);
-      System.out.println("sb:" + sb);
-  
-      // public StringBuffer insert(int offset,String
-      // str):在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身
-      sb.insert(5, "world");
-      System.out.println("sb:" + sb);
-  }
-  ```
+public int length() //返回长度（字符数）。 实际值
+```
 
+使用示例：
 
-- **StringBuffer的删除功能**
+```java
+public static void main(String[] args) {
+    // public StringBuffer():无参构造方法
+    StringBuffer sb = new StringBuffer();
+    System.out.println("sb:" + sb);
+    System.out.println("sb.capacity():" + sb.capacity()); //StringBuffer默认的指定容量是16
+    System.out.println("sb.length():" + sb.length());//0
+    System.out.println("--------------------------");
 
-  ```java
-  public StringBuffer deleteCharAt(int index) //删除指定位置的字符，并返回本身
-  
-  public StringBuffer delete(int start,int end) //删除从指定位置开始指定位置结束的内容，并返回本身
-  ```
+    // public StringBuffer(int capacity):指定容量的字符串缓冲区对象
+    StringBuffer sb2 = new StringBuffer(50);
+    System.out.println("sb2:" + sb2);//""
+    System.out.println("sb2.capacity():" + sb2.capacity());//50
+    System.out.println("sb2.length():" + sb2.length());//0
+    System.out.println("--------------------------");
 
-  ```java
-  public static void main(String[] args) {
-      // 创建对象
-      StringBuffer sb = new StringBuffer();
-  
-      // 添加功能
-      sb.append("hello").append("world").append("java");
-  
-      // public StringBuffer deleteCharAt(int index):删除指定位置的字符，并返回本身
-      // 需求：我要删除e这个字符，肿么办?
-      //sb.deleteCharAt(1);
-      //public StringBuffer delete(int start,int end):删除从指定位置开始指定位置结束的内容，并返回本身
-      // 需求：我要删除world这个字符串，肿么办?
-      //sb.delete(5, 10);
-      //需求:删除所有字符
-      sb.delete(0,sb.length());
-      System.out.println("sb:" + sb);
-  }
-  ```
+    // public StringBuffer(String str):指定字符串内容的字符串缓冲区对象
+    StringBuffer sb3 = new StringBuffer("hello");
+    System.out.println("sb3:" + sb3);//hello
+    System.out.println("sb3.capacity():" + sb3.capacity());//16+5=21
+    System.out.println("sb3.length():" + sb3.length());//5
+}
+```
 
-- **StringBuffer的替换功能**
+### 添加功能
 
-  ```java
-  public StringBuffer replace(int start,int end,String str) //从start开始到end用str替换
-  ```
+```java
+public StringBuffer append(String str) 
+//可以把任意类型数据添加到字符串缓冲区里面,并返回字符串缓冲区本身
 
-  ```java
-  public static void main(String[] args) {
-      // 创建字符串缓冲区对象
-      StringBuffer sb = new StringBuffer();
-  
-      // 添加数据
-      sb.append("hello");
-      sb.append("world");
-      sb.append("java");
-      System.out.println("sb:" + sb);
-  
-      // public StringBuffer replace(int start,int end,String str):从start开始到end用str替换
-      // 需求：我要把world这个数据替换为"节日快乐"
-      sb.replace(5,10,"节日快乐");
-      System.out.println("sb："+sb);
-  }
-  ```
+public StringBuffer insert(int offset,String str) 
+//在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身
+```
 
-- **StringBuffer的反转功能**：
+使用示例：
 
-  ```java
-  public StringBuffer reverse()
-  ```
+```java
+public static void main(String[] args) {
+    // 创建字符串缓冲区对象
+    StringBuffer sb = new StringBuffer();
+    
+    // 链式编程
+    sb.append("hello").append(true).append(12).append(34.56);
+    System.out.println("sb:" + sb);
 
-  ```java
-  public static void main(String[] args) {
-      // 创建字符串缓冲区对象
-      StringBuffer sb = new StringBuffer();
-  
-      // 添加数据
-      sb.append("霞青林爱我");
-      System.out.println("sb:" + sb);//霞青林爱我
-  
-      // public StringBuffer reverse()
-      sb.reverse();
-      System.out.println("sb:" + sb);//我爱林青霞
-  }
-  ```
+    // public StringBuffer insert(int offset,String
+    // str):在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身
+    sb.insert(5, "world");
+    System.out.println("sb:" + sb);
+}
+```
 
-- **StringBuffer的截取功能**:
+### 删除功能
 
-  ```java
-  public String substring(int start) //TODO：注意截取返回的是String,而不是StringBuffer了
-  
-  public String substring(int start,int end)
-  ```
+```java
+public StringBuffer deleteCharAt(int index) 
+//删除指定位置的字符，并返回本身
 
-  ```java
-  public static void main(String[] args) {
-      // 创建字符串缓冲区对象
-      StringBuffer sb = new StringBuffer();
-  
-      // 添加元素
-      sb.append("hello").append("world").append("java");
-      System.out.println("sb:" + sb);//sb:helloworldjava
-  
-      // 截取功能
-      // public String substring(int start)
-      String s = sb.substring(5);
-      System.out.println("s:" + s);//s:worldjava
-      System.out.println("sb:" + sb);//sb:helloworldjava
-  
-      // public String substring(int start,int end)
-      String ss = sb.substring(5, 10);//左闭右开
-      System.out.println("ss:" + ss);//ss:world
-      System.out.println("sb:" + sb);//sb:helloworldjava
-  }
-  ```
+public StringBuffer delete(int start,int end) 
+//删除从指定位置开始指定位置结束的内容，并返回本身
+```
 
-- **String和StringBuffer的相互转换**:
+使用示例：
 
-  ```java
-  public class StringBufferDemo7 {
-      public static void main(String[] args) {
-          String s="hello";
-          System.out.println(stringToStringBuffer(s)); //hello
-          System.out.println(stringBufferToString(stringToStringBuffer(s)));//hello
-      }
-  
-      // String -->StringBuffer
-      public static StringBuffer stringToStringBuffer(String s) {
-          // 注意：不能把字符串的值直接赋值给StringBuffer
-          // StringBuffer sb = "hello";
-          // StringBuffer sb = s;
-  
-          // 方式1:通过构造方法
-        /*  StringBuffer sb = new StringBuffer(s);
-          return sb;*/
-          // 方式2：通过append()方法
-          StringBuffer sb2 = new StringBuffer();
-          sb2.append(s);
-          return sb2;
-      }
-  
-      //StringBuffer -->String
-      public static String stringBufferToString(StringBuffer buffer){
-          // 方式1:通过构造方法
-         /* String str = new String(buffer);
-          return str;*/
-          // 方式2：通过toString()方法
-          String str2 = buffer.toString();
-          return str2;
-      }
-  }
-  ```
+```java
+public static void main(String[] args) {
+    // 创建对象
+    StringBuffer sb = new StringBuffer();
 
-- 练习1：将数组拼接成一个字符串
+    // 添加功能
+    sb.append("hello").append("world").append("java");
 
-  ```java
-  public class StringBufferTest {
-      public static void main(String[] args) {
-          int[] arr={1,2,3,4};
-          System.out.println(arrToString(arr));//[1,2,3,4]
-      }
-  
-      public static String arrToString(int[] arr){
-          StringBuffer buffer=new StringBuffer();
-          buffer.append("[");
-          for(int i=0;i<arr.length;i++){
-              if(i==arr.length-1){
-                  buffer.append(arr[i]);
-              }else{
-                  buffer.append(arr[i]).append(",");
-              }
-          }
-          buffer.append("]");
-          return buffer.toString();
-      }
-  }
-  ```
+    // public StringBuffer deleteCharAt(int index):删除指定位置的字符，并返回本身
+    // 需求：我要删除e这个字符，肿么办?
+    //sb.deleteCharAt(1);
+    //public StringBuffer delete(int start,int end):删除从指定位置开始指定位置结束的内容，并返回本身
+    // 需求：我要删除world这个字符串，肿么办?
+    //sb.delete(5, 10);
+    //需求:删除所有字符
+    sb.delete(0,sb.length());
+    System.out.println("sb:" + sb);
+}
+```
 
-- 练习2：判断一个字符串是否是对称字符串
+### 替换功能
 
-  ```java
-  /**
-   *  判断一个字符串是否是对称字符串
-   * 例如"abc"不是对称字符串，"aba"、"abba"、"aaa"、"mnanm"是对称字符串
-   *
-   * 分析：
-   * 		判断一个字符串是否是对称的字符串，我只需要把
-   * 			第一个和最后一个比较
-   * 			第二个和倒数第二个比较
-   * 			...
-   * 		比较的次数是长度除以2。
-   */
-  public class StringBufferTest2 {
-      public static void main(String[] args) {
-          System.out.println(isSymmetry("aba")); //true
-          System.out.println(isSymmetry2("aabbaa"));//true
-      }
-  
-      //通过字符数组的方式来比较
-      public static boolean isSymmetry(String s){
-          boolean flag=true;
-          char[] chs=s.toCharArray();
-          int len=chs.length;
-          for(int start=0,end=chs.length-1;start<=end;start++,end--){
-              if(chs[start]!=chs[end]){
-                  flag=false;
-                  break;
-              }
-          }
-          return flag;
-      }
-  
-       //通过StringBuffer的reverse
-      public static boolean isSymmetry2(String s){
-          //通过StringBuffer的reverse获取反转字符串s2
-          String s2=new StringBuffer(s).reverse().toString();
-          return s2.equals(s);
-      }
-  }
-  ```
+```java
+public StringBuffer replace(int start,int end,String str) 
+//从start开始到end用str替换
+```
 
-- 练习3：看程序写结果
+使用示例：
 
-  ```java
-  public class StringBufferTest3 {
-      public static void main(String[] args) {
-          String s1 = "hello";
-          String s2 = "world";
-          System.out.println(s1 + "---" + s2);
-          change(s1, s2);
-          System.out.println(s1 + "---" + s2);
-  
-          StringBuffer sb1 = new StringBuffer("hello");
-          StringBuffer sb2 = new StringBuffer("world");
-          System.out.println(sb1 + "---" + sb2);
-          change(sb1, sb2);
-          System.out.println(sb1 + "---" + sb2);
-      }
-  
-      //StringBuffer作为参数传递
-      public static void change(StringBuffer sb1, StringBuffer sb2) {
-          sb1 = sb2;
-          sb2.append(sb1);
-      }
-  
-      //String作为参数传递
-      public static void change(String s1, String s2) {
-          s1 = s2;
-          s2 = s1 + s2;
-      }
-  }
-  ```
+```java
+public static void main(String[] args) {
+    // 创建字符串缓冲区对象
+    StringBuffer sb = new StringBuffer();
 
-  输出结果：
+    // 添加数据
+    sb.append("hello");
+    sb.append("world");
+    sb.append("java");
+    System.out.println("sb:" + sb);
 
-  ```html
-  hello---world
-  hello---world
-  hello---world
-  hello---worldworld
-  ```
+    // public StringBuffer replace(int start,int end,String str):从start开始到end用str替换
+    // 需求：我要把world这个数据替换为"节日快乐"
+    sb.replace(5,10,"节日快乐");
+    System.out.println("sb："+sb);
+}
+```
 
-  String作为参数传递，效果和基本类型作为参数传递是一样的。
+### 反转功能
+
+```java
+public StringBuffer reverse()
+```
+
+使用示例：
+
+```java
+public static void main(String[] args) {
+    // 创建字符串缓冲区对象
+    StringBuffer sb = new StringBuffer();
+
+    // 添加数据
+    sb.append("霞青林爱我");
+    System.out.println("sb:" + sb);//霞青林爱我
+
+    // public StringBuffer reverse()
+    sb.reverse();
+    System.out.println("sb:" + sb);//我爱林青霞
+}
+```
+
+### 截取功能
+
+```java
+public String substring(int start) // 注意截取返回的是String,而不是StringBuffer了
+
+public String substring(int start,int end)
+```
+
+使用示例：
+
+```java
+public static void main(String[] args) {
+    // 创建字符串缓冲区对象
+    StringBuffer sb = new StringBuffer();
+
+    // 添加元素
+    sb.append("hello").append("world").append("java");
+    System.out.println("sb:" + sb);//sb:helloworldjava
+
+    // 截取功能
+    // public String substring(int start)
+    String s = sb.substring(5);
+    System.out.println("s:" + s);//s:worldjava
+    System.out.println("sb:" + sb);//sb:helloworldjava
+
+    // public String substring(int start,int end)
+    String ss = sb.substring(5, 10);//左闭右开
+    System.out.println("ss:" + ss);//ss:world
+    System.out.println("sb:" + sb);//sb:helloworldjava
+}
+```
+
+### String 和 StringBuffer 的相互转换
+
+```java
+public class StringBufferDemo7 {
+    public static void main(String[] args) {
+        String s="hello";
+        System.out.println(stringToStringBuffer(s)); //hello
+        System.out.println(stringBufferToString(stringToStringBuffer(s)));//hello
+    }
+
+    // String -->StringBuffer
+    public static StringBuffer stringToStringBuffer(String s) {
+        // 注意：不能把字符串的值直接赋值给StringBuffer
+        // StringBuffer sb = "hello";
+        // StringBuffer sb = s;
+
+        // 方式1:通过构造方法
+      /*  StringBuffer sb = new StringBuffer(s);
+        return sb;*/
+        // 方式2：通过append()方法
+        StringBuffer sb2 = new StringBuffer();
+        sb2.append(s);
+        return sb2;
+    }
+
+    //StringBuffer -->String
+    public static String stringBufferToString(StringBuffer buffer){
+        // 方式1:通过构造方法
+       /* String str = new String(buffer);
+        return str;*/
+        // 方式2：通过toString()方法
+        String str2 = buffer.toString();
+        return str2;
+    }
+}
+```
+
+练习1：将数组拼接成一个字符串
+
+```java
+public class StringBufferTest {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4};
+        System.out.println(arrToString(arr));//[1,2,3,4]
+    }
+
+    public static String arrToString(int[] arr){
+        StringBuffer buffer=new StringBuffer();
+        buffer.append("[");
+        for(int i=0;i<arr.length;i++){
+            if(i==arr.length-1){
+                buffer.append(arr[i]);
+            }else{
+                buffer.append(arr[i]).append(",");
+            }
+        }
+        buffer.append("]");
+        return buffer.toString();
+    }
+}
+```
+
+练习2：判断一个字符串是否是对称字符串
+
+```java
+/**
+ *  判断一个字符串是否是对称字符串
+ * 例如"abc"不是对称字符串，"aba"、"abba"、"aaa"、"mnanm"是对称字符串
+ *
+ * 分析：
+ * 		判断一个字符串是否是对称的字符串，我只需要把
+ * 			第一个和最后一个比较
+ * 			第二个和倒数第二个比较
+ * 			...
+ * 		比较的次数是长度除以2。
+ */
+public class StringBufferTest2 {
+    public static void main(String[] args) {
+        System.out.println(isSymmetry("aba")); //true
+        System.out.println(isSymmetry2("aabbaa"));//true
+    }
+
+    //通过字符数组的方式来比较
+    public static boolean isSymmetry(String s){
+        boolean flag=true;
+        char[] chs=s.toCharArray();
+        int len=chs.length;
+        for(int start=0,end=chs.length-1;start<=end;start++,end--){
+            if(chs[start]!=chs[end]){
+                flag=false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+     //通过StringBuffer的reverse
+    public static boolean isSymmetry2(String s){
+        //通过StringBuffer的reverse获取反转字符串s2
+        String s2=new StringBuffer(s).reverse().toString();
+        return s2.equals(s);
+    }
+}
+```
+
+练习3：看程序写结果
+
+```java
+public class StringBufferTest3 {
+    public static void main(String[] args) {
+        String s1 = "hello";
+        String s2 = "world";
+        System.out.println(s1 + "---" + s2);
+        change(s1, s2);
+        System.out.println(s1 + "---" + s2);
+
+        StringBuffer sb1 = new StringBuffer("hello");
+        StringBuffer sb2 = new StringBuffer("world");
+        System.out.println(sb1 + "---" + sb2);
+        change(sb1, sb2);
+        System.out.println(sb1 + "---" + sb2);
+    }
+
+    //StringBuffer作为参数传递
+    public static void change(StringBuffer sb1, StringBuffer sb2) {
+        sb1 = sb2;
+        sb2.append(sb1);
+    }
+
+    //String作为参数传递
+    public static void change(String s1, String s2) {
+        s1 = s2;
+        s2 = s1 + s2;
+    }
+}
+```
+
+输出结果：
+
+```html
+hello---world
+hello---world
+hello---world
+hello---worldworld
+```
+
+String作为参数传递，效果和基本类型作为参数传递是一样的。
+
