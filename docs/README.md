@@ -19,16 +19,6 @@
 - [容器源码分析 - Map](JavaContainer/4_容器源码分析%20-%20Map.md)
 - [容器源码分析 - 并发容器](JavaContainer/5_容器源码分析%20-%20并发容器.md)
 
-##  Java 虚拟机
-
-- [运行时数据区域](JVM/1_JVM.md) 
-- [HotSpot 虚拟机对象](JVM/2_JVM.md) 
-- [String 类和常量池](JVM/3_JVM.md) 
-- [8 种基本类型的包装类和常量池](JVM/4_JVM.md)
-- [垃圾收集](JVM/5_JVM.md) 
-- [内存分配与回收策略](JVM/6_JVM.md) 
-- [类加载机制](JVM/7_JVM.md) 
-
 ## Java 并发
 
 - [基础知识](Java_Concurrency/1_基础知识.md)
@@ -40,6 +30,15 @@
 - [并发工具](Java_Concurrency/7_并发工具.md)
 - [线程池](Java_Concurrency/8_线程池.md)
 - [并发实践](Java_Concurrency/9_并发实践.md)
+
+##  Java 虚拟机
+
+- [Java 内存区域](JVM/1_Java内存区域.md)
+- [垃圾收集](JVM/2_垃圾收集.md)
+- [内存分配与回收策略](JVM/3_内存分配与回收策略.md) 
+- [JVM 调优](JVM/4_JVM 调优.md)
+- [类文件结构](JVM/5_类文件结构.md)
+- [类加载机制](JVM/6_类加载机制.md)
 
 ## Java IO
 

@@ -381,7 +381,18 @@ System.out.println(e2.get(2)); // 2
 
 ## String
 
-字符串：就是由多个字符组成的一串数据。也可以看成是一个字符数组。
+String 被声明为 final，因此它不可被继承。
+
+**内部使用 char 数组存储数据，该数组被声明为 final**，
+这意味着 value 数组初始化之后就不能再引用其它数组。
+并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
+
+```java
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final char value[];
+```
 
 ### 构造方法
 
@@ -1198,3 +1209,28 @@ hello---worldworld
 
 String作为参数传递，效果和基本类型作为参数传递是一样的。
 
+## String, StringBuffer and StringBuilder
+
+**1. 可变性** 
+
+- String 不可变
+- StringBuffer 和 StringBuilder 可变
+
+**2. 线程安全** 
+
+- String 不可变，因此是线程安全的
+- StringBuilder 不是线程安全的
+- StringBuffer 是线程安全的，内部使用 synchronized 进行同步
+
+**3. 性能**
+
+- Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢
+- StringBuffer每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并改变对象引用
+- StringBuilder每次都会对StringBuilder对象本身进行操作，而不是生成新的对象并改变对象引用。
+  相同情况下使用StirngBuilder相比使用 StringBuffer 仅能获得 10%~15% 左右的性能提升，但却冒多线程不安全的风险。
+
+> **三者使用的总结**
+
+- 操作少量的数据，使用String
+- 单线程操作字符串缓冲区下操作大量数据，使用StringBuilder
+- 多线程操作字符串缓冲区下操作大量数据，使用StringBuffer
