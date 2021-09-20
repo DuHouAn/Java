@@ -19,9 +19,18 @@
 - [容器源码分析 - Map](JavaContainer/4_容器源码分析%20-%20Map.md)
 - [容器源码分析 - 并发容器](JavaContainer/5_容器源码分析%20-%20并发容器.md)
 
+## Java 虚拟机
+
+- [Java 内存区域](JVM/1_Java内存区域.md)
+- [垃圾收集](JVM/2_垃圾收集.md)
+- [内存分配与回收策略](JVM/3_内存分配与回收策略.md) 
+- [JVM 调优](JVM/4_JVM调优.md)
+- [类文件结构](JVM/5_类文件结构.md)
+- [类加载机制](JVM/6_类加载机制.md)
+
 ## Java 并发
 
-- [基础知识](Java_Concurrency/1_基础知识.md)
+- [进程和线程](Java_Concurrency/1_基础知识.md)
 - [并发理论](Java_Concurrency/2_并发理论.md)
 - [并发关键字](Java_Concurrency/3_并发关键字.md)
 - [Lock 体系](Java_Concurrency/4_Lock%20体系.md)
@@ -30,15 +39,6 @@
 - [并发工具](Java_Concurrency/7_并发工具.md)
 - [线程池](Java_Concurrency/8_线程池.md)
 - [并发实践](Java_Concurrency/9_并发实践.md)
-
-##  Java 虚拟机
-
-- [Java 内存区域](JVM/1_Java内存区域.md)
-- [垃圾收集](JVM/2_垃圾收集.md)
-- [内存分配与回收策略](JVM/3_内存分配与回收策略.md) 
-- [JVM 调优](JVM/4_JVM调优.md)
-- [类文件结构](JVM/5_类文件结构.md)
-- [类加载机制](JVM/6_类加载机制.md)
 
 ## Java IO
 
