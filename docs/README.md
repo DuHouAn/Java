@@ -35,8 +35,7 @@
 - [并发关键字](Java_Concurrency/3_并发关键字.md)
 - [Lock 体系](Java_Concurrency/4_Lock%20体系.md)
 - [原子操作类](Java_Concurrency/5_原子操作类.md)
-- [并发容器](Java_Concurrency/6_并发容器.md)
-- [并发工具](Java_Concurrency/7_并发工具.md)
+- [并发容器 & 并发工具](Java_Concurrency/7_并发工具.md)
 - [线程池](Java_Concurrency/8_线程池.md)
 - [并发实践](Java_Concurrency/9_并发实践.md)
 
