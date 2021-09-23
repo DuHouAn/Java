@@ -1,0 +1,240 @@
+# 键的过期时间 & 内存淘汰机制
+
+## 键的过期时间
+
+Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。
+
+对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。
+
+### 设置键的过期时间
+
+内存是有限的，所以缓存中的数据不能一直保存在内存中，通过为键设置过期时间的方式有助于缓解内存的消耗。此外，在有些业务场景中要求数据只能在某一时间段内有效，比如要求用户登录的 token 只在当天有效，我们只需要将 token 的过期时间设置为 1 天后过期。
+
+Redis 中 STRING 类型可以通过 `setex` 命令设置键的过期时间，其他类型需要使用 `expire` 命令来设置键的过期时间。
+
+```html
+> setex key 60 value   # 设置 key 在 60s 后过期(setex:[set] + [ex]pire)
+OK
+> expire key 60
+(integer) 1
+127.0.0.1:6379> ttl key #  ttl 即 time to live，用于查看数据还有多久过期
+(integer) 56
+```
+
+### 过期数据删除策略
+
+#### 定期删除
+
+Redis 默认是每隔 100ms 就**随机抽取一些**设置了过期时间的 key，检查其是否过期，如果过期就删除。
+
+Redis 底层会通过限制删除操作执行的时长和频率来减少删除操作对 CPU 时间的影响。但是定期删除可能会导致很多过期 key 到了时间并没有被删除掉。
+
+#### 惰性删除
+
+获取某个 key 时，Redis 进行过期检查，key 已经过期，就删除。
+
+这样对 CPU 最友好，但是也有可能会造成太多过期 key 没有被删除。
+
+定期删除对内存更加友好，惰性删除对 CPU 更加友好，所以 Redis 采用的是定期删除+惰性删除。实际上这还是有问题的，如果定期删除漏掉了很多过期 key，又没有及时去获取 key 值，也就没走惰性删除，大量过期 key 堆积在内存里，导致 Redis 内存块耗尽了。为了解决这个问题，Redis 引入**内存淘汰机制**。
+
+
+
+## 内存淘汰机制
+
+### LRU（Least Recently Used）
+
+LRU（Least Recently Used）即最近最久未使用策略，优先淘汰最久未使用的数据，也就是上次被访问时间距离现在最久的数据。该策略可以**保证内存中的数据都是热点数据，也就是经常被访问的数据，从而保证缓存命中率**。
+
+#### 双向链表 + HashMap 实现 LRU 算法
+
+以下是基于 `双向链表 + HashMap` 的 LRU 算法实现，对算法的解释如下：
+
+- 访问某个节点时，将其从原来的位置删除，并重新插入到链表头部。这样就能保证链表尾部存储的就是最近最久未使用的节点，当节点数量大于缓存最大空间时就淘汰链表尾部的节点。
+- 为了使删除操作时间复杂度为 O(1)，就不能采用遍历的方式找到某个节点。HashMap 存储着 Key 到节点的映射，通过 Key 就能以 O(1) 的时间得到节点，然后再以 O(1) 的时间将其从双向队列中删除。
+
+```java
+public class LRU<K, V> implements Iterable<K> {
+
+    private Node head;
+    private Node tail;
+    private HashMap<K, Node> map;
+    private int maxSize;
+
+    private class Node {
+
+        Node pre;
+        Node next;
+        K k;
+        V v;
+
+        public Node(K k, V v) {
+            this.k = k;
+            this.v = v;
+        }
+    }
+
+
+    public LRU(int maxSize) {
+
+        this.maxSize = maxSize;
+        this.map = new HashMap<>(maxSize * 4 / 3);
+
+        head = new Node(null, null);
+        tail = new Node(null, null);
+
+        head.next = tail;
+        tail.pre = head;
+    }
+
+
+    public V get(K key) {
+
+        if (!map.containsKey(key)) {
+            return null;
+        }
+
+        Node node = map.get(key);
+        unlink(node);
+        appendHead(node);
+
+        return node.v;
+    }
+
+
+    public void put(K key, V value) {
+
+        if (map.containsKey(key)) {
+            Node node = map.get(key);
+            unlink(node);
+        }
+
+        Node node = new Node(key, value);
+        map.put(key, node);
+        appendHead(node);
+
+        if (map.size() > maxSize) {
+            Node toRemove = removeTail();
+            map.remove(toRemove.k);
+        }
+    }
+
+
+    private void unlink(Node node) {
+
+        Node pre = node.pre;
+        Node next = node.next;
+
+        pre.next = next;
+        next.pre = pre;
+
+        node.pre = null;
+        node.next = null;
+    }
+
+
+    private void appendHead(Node node) {
+        Node next = head.next;
+        node.next = next;
+        next.pre = node;
+        node.pre = head;
+        head.next = node;
+    }
+
+
+    private Node removeTail() {
+
+        Node node = tail.pre;
+
+        Node pre = node.pre;
+        tail.pre = pre;
+        pre.next = tail;
+
+        node.pre = null;
+        node.next = null;
+
+        return node;
+    }
+
+
+    @Override
+    public Iterator<K> iterator() {
+
+        return new Iterator<K>() {
+            private Node cur = head.next;
+
+            @Override
+            public boolean hasNext() {
+                return cur != tail;
+            }
+
+            @Override
+            public K next() {
+                Node node = cur;
+                cur = cur.next;
+                return node.k;
+            }
+        };
+    }
+}
+```
+
+#### LinkedHashMap 实现 LRU 算法
+
+基于 `LinkedHashMap` ，因为  `LinkedHashMap` 的底层就是双向链表，只需要重写 removeEldestEntry 方法即可。
+
+```java
+public class LRUCache<K, V> extends LinkedHashMap<K, V> {
+    
+    private int maxSize;
+    
+    /**
+     * 传递进来最多能缓存多少数据
+     *
+     * @param maxSize 缓存大小
+     */
+    public LRUCache(int maxSize) {
+        super(maxSize, 0.75f, true);
+        this.maxSize = maxSize;
+    }
+
+    /**
+     * 如果 map 中的数据量大于设定的最大容量，返回true，
+     * 再新加入对象时删除最老的数据
+     *
+     * @param eldest 最老的数据项
+     * @return true-移除最老的数据
+     */
+    @Override
+    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+        // 当 map中的数据量大于指定的缓存个数的时候，自动移除最老的数据
+        return size() > capacity;
+    }
+}
+```
+
+
+
+### LFU（Least Frequently Used）
+
+LFU（Least Frequently Used）即最不经常使用策略，优先淘汰一段时间内使用次数最少的数据。
+
+
+
+### Redis 数据淘汰策略
+
+当内存使用量超出设置时，会施行数据淘汰策略。Redis 具体有 6 种数据淘汰策略：
+
+| 策略            | 描述                                                 |
+| :-------------- | :--------------------------------------------------- |
+| volatile-lru    | 从已设置过期时间的数据集中挑选最近最少使用的数据淘汰 |
+| volatile-ttl    | 从已设置过期时间的数据集中挑选将要过期的数据淘汰     |
+| volatile-random | 从已设置过期时间的数据集中任意选择数据淘汰           |
+| allkeys-lru     | 从所有数据集中挑选最近最少使用的数据淘汰             |
+| allkeys-random  | 从所有数据集中任意选择数据进行淘汰                   |
+| noeviction      | 禁止驱逐数据                                         |
+
+作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法实际实现上并非针对所有 key，而是抽样一小部分并且从中选出被淘汰的 key。
+
+使用 Redis 缓存数据时，为了提高缓存命中率，需要保证缓存数据都是**热点数据**。可以将内存最大使用量设置为热点数据占用的内存量，然后启用 **allkeys-lru** 淘汰策略，将最近最少使用的数据淘汰。
+
+Redis 4.0 引入了 volatile-lfu 和 allkeys-lfu 淘汰策略，LFU 策略通过统计访问频率，将访问频率最少的键值对淘汰。
