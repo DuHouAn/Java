@@ -109,11 +109,12 @@
 - [索引](MySQL/3_索引.md)
 - [MySQL架构](MySQL/4_MySQL架构.md)
 - [MySQL优化](MySQL/5_MySQL优化.md)
+- [MySQL数据类型](MySQL/6_MySQL数据类型.md)
 - [补充知识](MySQL/6_补充知识.md)
 
-# ☎️ 常用框架
-
 ## Redis
+
+# ☎️ 常用框架
 
 ## Spring
 
