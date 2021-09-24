@@ -114,6 +114,14 @@
 
 ## Redis
 
+- [Redis 概述](Redis/1_概述.md)
+- [Redis 数据类型](Redis/2_数据类型.md)
+- [Redis 单线程模型](Redis/3_单线程模型.md)
+- [键的过期时间 & 内存淘汰机制](Redis/4_键的过期时间和内存淘汰机制.md)
+- [Redis 持久化机制](Redis/5_持久化机制.md)
+- [Redis 事务](Redis/6_事务.md)
+- [缓存问题](Redis/7_缓存问题.md)
+
 # ☎️ 常用框架
 
 ## Spring
