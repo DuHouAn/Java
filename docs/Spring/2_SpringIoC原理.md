@@ -325,7 +325,7 @@ globalSession 作用域**类似于标准的 HTTP session** 作用域， 不过�
 
 Spring bean 的生命周期执行如下图：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/spring_1.png" width="200px"/></div>
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/spring_1.png" width='450px'/></div>
 
 1、Spring 对 Bean 进行实例化。
 
