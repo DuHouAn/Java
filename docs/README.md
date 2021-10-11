@@ -133,6 +133,8 @@
 - [Spring IoC 原理](Spring/2_SpringIoC原理.md)
 - [Spring AOP 原理](Spring/3_SpringAOP原理.md)
 - [Spring MVC 原理](Spring/4_SpringMVC原理.md)
+- [Spring 事务管理](Spring/5_Spring事务管理.md)
+- [Spring 中用到的设计模式](Spring/6_Spring中用到的设计模式.md)
 
 ## SpringCloud
 
