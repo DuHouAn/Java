@@ -122,7 +122,8 @@
 - [Redis 持久化机制](Redis/5_持久化机制.md)
 - [Redis 事务](Redis/6_事务.md)
 - [缓存问题](Redis/7_缓存问题.md)
-- [Redis 实战](Redis/8_实战.md)
+- [Redis 部署方式](Redis/8_部署方式.md)
+- [Redis 实战](Redis/9_实战.md)
 
 # ☎️ 常用框架
 
