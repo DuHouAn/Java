@@ -95,11 +95,27 @@ Mapper 接口的实例是从 SqlSession 中获取，作用是发送 SQL，然后
 
 ## 缓存机制
 
-参考：https://hadyang.com/interview/docs/fromwork/mybatis/cache/
+MyBatis 的缓存分为一级缓存和二级缓存。默认情况下一级缓存是开启的。
 
-## 动态代理
+<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/mybatis_3.png"/></div>
 
-参考：https://hadyang.com/interview/docs/fromwork/mybatis/proxy/
+### 一级缓存
+
+一级缓存指 SqlSession 级别的缓存，在同一个 SqlSession 中执行相同的 SQL 语句查询时将查询结果集缓存。一级缓存最多能缓存 1024 条 SQL 语句。
+
+当客户端第一次发出一个 SQL 查询语句时，MyBatis 执行 SQL 查询并将查询结果写入 SqlSession 的一级缓存，当第二次有相同的 SQL 查询语句时，则直接从缓存中获取。当同一个 SqlSession 多次发出相同的 SQL 查询语句时，MyBatis 直接从缓存中获取数据。如果两次查询中出现 commit 操作（新增、删除、修改），则认为数据发生了变化，Mybaits 会把该 SqlSession 中的一级缓存区域全部清空，当下次再到缓存中查找时将找不到对应的缓存数据，因此需要再次从数据库中查询数据并将查询的结果写入缓存。
+
+### 二级缓存
+
+二级缓存指跨 SqlSession 的缓存，即 Mapper 级别的缓存。在 Mapper 级别的缓存内，不同的 SqlSession 缓存可以共享。
+
+Mapper 以命名空间为单位创建缓存数据结构，数据结构是 Map 类型，Map 中 Key 为`MapperId + Offset + Limit + SQL + 所有入参`。开启二级缓存后，会使用 CachingExecutor 装饰 Executor ，在进入一级缓存的查询流程前，先在 CachingExecutor 进行二级缓存的查询。
+
+开启二级缓存需要做一下配置：
+
+- 在全局配置中启用二级缓存配置。
+- 在对应的 Mappper.xml 中配置 Cache 节点。
+- 在对应的 select 查询节点中添加 userCache=true。
 
 # MyBatis 面试题
 
