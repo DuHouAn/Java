@@ -135,6 +135,7 @@
 - [Spring MVC 原理](Spring/4_SpringMVC原理.md)
 - [Spring 事务管理](Spring/5_Spring事务管理.md)
 - [Spring 中用到的设计模式](Spring/6_Spring中用到的设计模式.md)
+- [MyBatis](Spring/7_MyBatis.md)
 
 ## SpringCloud
 
