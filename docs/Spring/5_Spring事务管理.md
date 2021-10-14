@@ -332,7 +332,9 @@ public @interface Transactional {
 
 ### 事务失效问题
 
-事务失效问题指的是在同一个类中的其他没有被 @Transactional 注解的方法内部调用 @Transactional 注解的方法，则 @Transactional 注解的方法的事务会失效。
+#### 1. 同一个类中方法调用
+
+在同一个类中的其他没有被 @Transactional 注解的方法内部调用 @Transactional 注解的方法，则 @Transactional 注解的方法的事务会失效。
 
 这是因为Spring AOP 代理造成的，因为只有当 @Transactional`注解的方法在类以外被调用的时候，Spring 事务管理才生效。
 
@@ -351,13 +353,51 @@ public class StudentService {
     public void insertB() {
         // ... 
     }
-}
+}Copy to clipboardErrorCopied
 ```
 
 可以采用以下 2 种方式解决事务失效问题：
 
 - 避免同一类中自调用
 - 使用 AspectJ 取代 Spring AOP 代理
+
+#### 2. try-catch 导致事务失效
+
+```java
+StudentServiceImplA implements StudentService{
+    @Autowired
+    studentDao;
+
+    @Autowired
+    studentService;
+
+    @Transactional
+    insertA(){
+        try {
+           // 对数据库操作，插入 A 数据
+           studentService.insertB(); // 插入 B 数据
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+如果 insertB() 内部抛了异常，被 insertA() 方法 catch 了该异常，则该事务不能正常回滚。
+
+这是因为当 ServiceB 中抛出异常后，ServiceB 标识当前事务需要 rollback 。但是ServiceA 中由于捕获这个异常并进行处理，ServiceA 认为当前事务应该正常commit ，会抛出UnexpectedRollbackException 异常。
+
+Spring 的事务是在调用业务方法之前开始的，业务方法执行完毕之后才执行 commit 或者 rollback，事务是否执行取决于是否抛出运行时异常。如果抛出运行时异常并在业务方法中没有 catch 到的话，事务会回滚。
+
+解决该事务失效问题：
+
+在业务方法中一般不需要 catch 异常，如果非要 catch 则一定要抛出运行时异常，或者注解中指定抛异常类 @Transactional(rollbackFor=Exception.class)。
+
+#### 3. 数据库引擎不支持事务
+
+事务能否生效数据库引擎是否支持事务是关键。
+
+常用的 MySQL 数据库默认使用支持事务的InnoDB 存储引擎。如果数据库引擎切换成不支持事务的 MyIsam，那么事务就从根本上失效了。
 
 ### 使用注意事项
 
