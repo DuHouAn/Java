@@ -138,11 +138,14 @@
 - [MyBatis](Spring/7_MyBatis.md)
 - [SpringBoot](Spring/8_SpringBoot.md)
 
-## SpringCloud
-
 ## Zookeeper
 
-## Kafka
+- [Zookeeper 概述](Zookeeper/1_概述.md)
+- [Zookeeper 数据模型](Zookeeper/2_数据模型.md)
+- [Zookeeper 的原理](Zookeeper/3_原理.md)
+- [Zookeeper 的应用](Zookeeper/4_应用.md)
+
+## Kafka & RabbitMQ
 
 ## ElasticSearch
 
