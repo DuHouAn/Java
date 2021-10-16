@@ -325,3 +325,7 @@ Kafka 消息存储时依赖于**文件系统**。为了利用数据的**局部�
 <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_10.png" width="450px"/></div>
 
 显然，使用 mmap 替代 read 很明显减少了 1 次拷贝，当拷贝数据量很大时，无疑提升了效率。
+
+# 补充
+
+- [Kafka史上最详细原理总结](https://blog.csdn.net/lingbo229/article/details/80761778?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.no_search_link&spm=1001.2101.3001.4242)
