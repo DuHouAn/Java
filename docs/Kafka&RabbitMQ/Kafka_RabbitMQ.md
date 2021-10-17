@@ -10,7 +10,9 @@
 
 - Topic 数量对吞吐量影响
 
-  Kafka 的 Topic 可达百/千级，吞吐量下降幅度小，在同等机器下，可以支撑大量的 Topic。RabbitMQ 无 Topic 概念。
+  Kafka 的 Topic 可达百/千级，吞吐量下降幅度小，在同等机器下，可以支撑大量的 Topic。
+
+  RabbitMQ 无 Topic 概念。
 
 - 时效性
 
