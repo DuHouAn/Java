@@ -146,7 +146,7 @@
 - [Zookeeper 的原理](Zookeeper/3_原理.md)
 - [Zookeeper 的应用](Zookeeper/4_应用.md)
 
-## Kafka & RabbitMQ
+## MessageQueue
 
 - [Kafka 原理及应用](Kafka&RabbitMQ/Kafka.md)
 - [RabbitMQ 原理及应用](Kafka&RabbitMQ/RabbitMQ.md)
