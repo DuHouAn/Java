@@ -129,6 +129,7 @@
 # 🎓 系统设计
 
 - [系统设计基础](1_基础.md)
+- [消息队列](1_消息队列.md)
 
 ## 安全性
 
@@ -142,6 +143,17 @@
 - [分布式锁](distribution/3_分布式锁.md)
 - [分布式事务](distribution/4_分布式事务.md)
 - [Paxos 算法 & Raft 算法](distribution/5_Paxos算法.md)
+
+## 集群
+
+- [负载均衡](cluster/1_负载均衡.md)
+- [集群下的 Session 管理](cluster/2_集群下的Session管理.md)
+
+## 缓存
+
+- [缓存需要考虑的问题](cache/1_缓存需要考虑的问题.md)
+- [缓存常见问题](cache/2_缓存常见问题.md)
+- [数据分布](cache/3_数据分布.md)
 
 # ☎️ 常用框架
 
