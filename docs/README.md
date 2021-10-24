@@ -129,7 +129,6 @@
 # 🎓 系统设计
 
 - [系统设计基础](1_基础.md)
-- [消息队列](1_消息队列.md)
 
 ## 安全性
 
@@ -155,6 +154,14 @@
 - [缓存常见问题](cache/2_缓存常见问题.md)
 - [数据分布](cache/3_数据分布.md)
 
+## 消息队列
+
+- [消息队列](1_消息队列.md)
+
+- [Kafka 原理及应用](Kafka&RabbitMQ/Kafka.md)
+- [RabbitMQ 原理及应用](Kafka&RabbitMQ/RabbitMQ.md)
+- [Kafka & RabbitMQ 比较](Kafka&RabbitMQ/Kafka_RabbitMQ.md)
+
 # ☎️ 常用框架
 
 ## Spring
@@ -168,18 +175,21 @@
 - [SpringBoot](Spring/8_SpringBoot.md)
 - [MyBatis](Spring/7_MyBatis.md)
 
+## SpringBoot
+
+- [SpringBoot 概述](SpringBoot/1_SpringBoot概述.md)
+- [配置文件](SpringBoot/2_配置文件.md)
+- [常用注解](SpringBoot/3_常用注解.md)
+- [请求参数校验](SpringBoot/4_请求参数校验.md)
+- [全局异常处理](SpringBoot/5_全局异常处理.md)
+- [实现定时任务](SpringBoot/6_实现定时任务.md)
+
 ## Zookeeper
 
 - [Zookeeper 概述](Zookeeper/1_概述.md)
 - [Zookeeper 数据模型](Zookeeper/2_数据模型.md)
 - [Zookeeper 的原理](Zookeeper/3_原理.md)
 - [Zookeeper 的应用](Zookeeper/4_应用.md)
-
-## Kafka & RabbitMQ
-
-- [Kafka 原理及应用](Kafka&RabbitMQ/Kafka.md)
-- [RabbitMQ 原理及应用](Kafka&RabbitMQ/RabbitMQ.md)
-- [Kafka & RabbitMQ 比较](Kafka&RabbitMQ/Kafka_RabbitMQ.md)
 
 ## SpringCloud
 
