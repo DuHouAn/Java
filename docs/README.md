@@ -157,7 +157,6 @@
 ## 消息队列
 
 - [消息队列](1_消息队列.md)
-
 - [Kafka 原理及应用](Kafka&RabbitMQ/Kafka.md)
 - [RabbitMQ 原理及应用](Kafka&RabbitMQ/RabbitMQ.md)
 - [Kafka & RabbitMQ 比较](Kafka&RabbitMQ/Kafka_RabbitMQ.md)
