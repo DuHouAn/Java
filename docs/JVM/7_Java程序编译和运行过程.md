@@ -75,7 +75,7 @@ JVM 以一个直接指向方法区 Person 类的指针替换了常量池中第�
 执行 p.sayHello()，JVM 根据栈中 p 的引用找到 Person 对象，然后根据 Person 对象持有的引用定位到方法区中 Person 类类信息的**方法表**，获得 sayHello 方法的字节码地址，然后开始运行方法。
 
 <div align="center">
-   <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png" width="700px"/>
+   <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png" width="700px"/>
 </div>
 
 

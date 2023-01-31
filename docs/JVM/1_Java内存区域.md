@@ -8,7 +8,7 @@ JDK 1.8 和之前的版本略有不同：
 - JDK 1.7 字符串常量池被从方法区中拿到了堆，运行时常量池剩下的内容还在方法区
 - JDK1.8 HotSpot  虚拟机**移除了永久代**，采用**元空间(Metaspace)** 代替方法区，这时候**字符串常量池还在堆**，运行时常量池还在方法区，只不过方法区的实现从永久代变成了元空间。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/5778d113-8e13-4c53-b5bf-801e58080b97.png"> </div>
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/5778d113-8e13-4c53-b5bf-801e58080b97.png"> </div>
 
 ## 程序计数器
 
@@ -28,7 +28,7 @@ JDK 1.8 和之前的版本略有不同：
 
 每个 Java 方法在执行的同时会创建一个栈帧用于存储**局部变量表**、**操作数栈**、动态链接、方法出口信息等。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/8442519f-0b4d-48f4-8229-56f984363c69.png" width="300px"> </div>
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/8442519f-0b4d-48f4-8229-56f984363c69.png" width="300px"> </div>
 
 从方法调用直至执行完成的过程，就对应着**一个栈帧在 Java 虚拟机栈中入栈和出栈的过程**。Java 方法有两种返回方式：
 
@@ -121,7 +121,7 @@ javap -verbose JVMTest
 - 执行 iload_2，将 2 位置元素（数值 3）push 进操作数栈
 - 执行 ireturn，返回操作数栈栈顶元素
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_2.png">
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/j_2.png">
 </div>
 
 ## 本地方法栈
@@ -157,11 +157,11 @@ JDK 7 版本及 JDK 7 版本之前，Hotspot 虚拟机的堆结构如下：
 - 老年代 (Old Generation)
 - 永久代 (Permanent Generation)
 
-<div align='center'><img src='https://gitee.com/duhouan/ImagePro/raw/master/JVM/4cf711a8-7ab2-4152-b85c-d5c226733807.png'></div>
+<div align='center'><img src='https://github.com/DuHouAn/ImagePro/raw/master/JVM/4cf711a8-7ab2-4152-b85c-d5c226733807.png'></div>
 
 JDK 8 版本之后 HotSpot 虚拟机的永久代被彻底移除了，取而代之是元空间，元空间使用的是直接内存。
 
-<div align='center'><img src='https://gitee.com/duhouan/ImagePro/raw/master/JVM/66a6899d-c6b0-4a47-8569-9d08f0baf86c.png' width='412px'></div>
+<div align='center'><img src='https://github.com/DuHouAn/ImagePro/raw/master/JVM/66a6899d-c6b0-4a47-8569-9d08f0baf86c.png' width='412px'></div>
 
 ## 堆和栈的关系
 
@@ -333,7 +333,7 @@ str1、str2 是从字符串常量池中获取的对象。
 
 对于 str5，字符串常量池已有 "helloworld" 对象，str5 直接引用该对象。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_3.png" > </div>
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/j_3.png" > </div>
 
 所以，尽量避免多个字符串拼接，因为这样会重新创建新的对象。如果需要改变字符串的话，可以使用 StringBuilder 或者 StringBuffer。
 
@@ -353,7 +353,7 @@ str1、str2 是从字符串常量池中获取的对象。
 - 实例数据
 - 对齐填充
 
-<div align='center'><img src='https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_5.png'></div>
+<div align='center'><img src='https://github.com/DuHouAn/ImagePro/raw/master/JVM/j_5.png'></div>
 
 ### 对象头
 
@@ -444,13 +444,13 @@ Java 对象的创建过程分为以下5步：
 
 如果使用句柄的话，那么 Java 堆中将会划分出一块内存来作为句柄池，reference 中存储的就是**对象的句柄地址**，而句柄中包含了对象实例数据与类型数据各自的具体地址信息 。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_6.png" > </div>
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/j_6.png" > </div>
 
 ### 直接指针
 
 如果使用直接指针访问，那么 Java 堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，而 reference 中存储的直接就是**对象的地址**。
 
-<div align="center"> <img src="https://gitee.com/duhouan/ImagePro/raw/master/JVM/j_7.png" > </div>
+<div align="center"> <img src="https://github.com/DuHouAn/ImagePro/raw/master/JVM/j_7.png" > </div>
 
 这两种对象访问方式各有优势：
 
