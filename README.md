@@ -1,7 +1,7 @@
 本仓库是对 Java 的一些基础知识、数据库知识、以及框架知识进行收集、整理（持续更新中）。<br/>
 仓库对应 WebSite：https://duhouan.github.io/Java/#/
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/logo.png" width="250px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/logo.png" width="250px"/></div>
 
 <div align="center">
 <a href="https://duhouan.github.io/Java/#/"><img src="https://badgen.net/github/watchers/DuHouAn/Java?icon=github&color=4ab8a1"/></a>
