@@ -1,4 +1,4 @@
-<div align="center"><img src="../logo.png" width="250px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/logo.png" width="250px"/></div>
 
 
 
