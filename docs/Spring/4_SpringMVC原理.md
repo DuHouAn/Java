@@ -36,7 +36,7 @@ Spring MVC 框架是以请求为驱动，围绕  **DispatcherServlet** 设计，
 
 原理图如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/springmvc_1.png" width="750px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/springmvc_1.png" width="750px"/></div>
 
 - 客户端发起 HTTP 请求，将请求提交到 DispatcherServlet。
 - 寻找处理器：由 DispatcherServlet 查询一个或多个 HandlerMapping，找到处理该请求的 Contoller。

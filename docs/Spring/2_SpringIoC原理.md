@@ -19,25 +19,25 @@ IOC，即控制反转（Inverse of Control）是一种**设计思想**，并不�
 
 可这样表示：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_1.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_1.png" width="700px"/></div>
 
 相应代码代码：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_2.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_2.png" width="700px"/></div>
 
 size 是固定值，可以进行相应的改进：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_3.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_3.png" width="700px"/></div>
 
 **依赖注入设计思路**：
 
 先设计行李箱的大概样子，再根据行李箱的样子设计箱体，根据箱体去设计底盘，然后去设计轮子。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_4.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_4.png" width="700px"/></div>
 
 相应代码如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_5.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_5.png" width="700px"/></div>
 
 不难理解，依赖注入就是**将底层类作为参数传递给上层类，实现上层对下层的控制**。
 
@@ -145,7 +145,7 @@ public class ExampleBean {
 
 依赖倒置原则、IoC、DI 和 IoC 容器的关系：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_7.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_7.png" width="700px"/></div>
 
 补充：[控制反转-知乎解答](https://www.zhihu.com/question/23277575/answer/169698662)
 
@@ -173,7 +173,7 @@ Spring IoC 容器的代表就是 `org.springframework.beans` 包下的 **BeanFac
 
 ### IoC 容器初始化过程
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/01_1.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/01_1.png" width="700px"/></div>
 
 - Resource 定位：即 BeanDefinition 的资源定位，Resource 为各种形式的 BeanDefinition 的使用都提供了统一的接口
 - BeanDefinition 的载入
@@ -181,7 +181,7 @@ Spring IoC 容器的代表就是 `org.springframework.beans` 包下的 **BeanFac
 
 ### Spring Bean 的装配流程
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/ioc_11.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/ioc_11.png" width="700px"/></div>
 
 IoC 容器其实就是一个大工厂，它用来管理我们所有的对象以及依赖关系：
 
@@ -325,7 +325,7 @@ globalSession 作用域**类似于标准的 HTTP session** 作用域， 不过�
 
 Spring bean 的生命周期执行如下图：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/spring_1.png" width='450px'/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/spring_1.png" width='450px'/></div>
 
 1、Spring 对 Bean 进行实例化。
 

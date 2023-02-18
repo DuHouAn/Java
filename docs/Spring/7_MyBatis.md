@@ -52,7 +52,7 @@ Mapper 接口的实例是从 SqlSession 中获取，作用是发送 SQL，然后
 
 ## 功能架构
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/mybatis_1.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/mybatis_1.png"/></div>
 
 ### 接口层
 
@@ -91,13 +91,13 @@ Mapper 接口的实例是从 SqlSession 中获取，作用是发送 SQL，然后
 
 - MappedStatement 对 SQL 执行输出结果进行定义，包括 HashMap、基本类型、pojo，Executor 通过MappedStatement 在执行 SQL 后将输出结果映射至 Java对象中，输出结果映射过程相当于 jdbc 编程中对结果的解析处理过程。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/mybatis_2.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/mybatis_2.png"/></div>
 
 ## 缓存机制
 
 MyBatis 的缓存分为一级缓存和二级缓存。默认情况下一级缓存是开启的。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/spring/mybatis_3.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/spring/mybatis_3.png"/></div>
 
 ### 一级缓存
 
