@@ -25,7 +25,7 @@ AMQP (Advanced Message Queuing Protocol) 即高级消息队列协议，是一个
 
 ## AMQP 模型
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_12.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_12.png"/></div>
 
 工作过程如下：首先发布者（Publisher）发布消息（Message），经由交换机 Exchange。交换机根据**路由规则**将收到的消息分发给与该交换机绑定的 Queue。最后 AMQP 代理会将消息投递给订阅了此队列的消费者，或者消费者按照需求自行获取。
 
@@ -66,7 +66,7 @@ Exchange 有以下 4 种类型，不同的类型对应着不同的路由策略�
 
 Exchange 默认类型。**路由规则是把消息路由到 Bindingkey 与 RoutingKey 完全匹配的 Queue 中**。direct 类型常用在**处理有优先级的任务**，根据任务的优先级把消息发送到对应的队列，这样可以指派更多的资源去处理高优先级的队列。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_13.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_13.png"/></div>
 
 以上图为例，如果发送消息的时候 RoutingKey="booking"，那么消息会路由到 Queue1 和 Queue2。如果在发送消息的时候设置 RoutingKey="create" 或 "confirm"，消息只会路由到Queue2。如果以其他的 RoutingKey 发送消息，则消息不会路由到这两个队列中。
 
@@ -84,7 +84,7 @@ topic 类型的 Exchange 在匹配规则上进行了扩展，它与 direct 类�
 - BindingKey 和 RoutingKey 一样也是点号 `.` 分隔的字符串;
 - BindingKey 中可以存在两种特殊字符串 `*` 和 `#`，用于做模糊匹配，其中 `*`  用于匹配一个单词， `#` 用于匹配零个或多个单词。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_14.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_14.png"/></div>
 
 以上图为例，如果发送消息的时候 RoutingKey 为
 
@@ -181,7 +181,7 @@ AMQP 的消息除属性外，也含有一个有效载荷 Payload（消息实际�
 
 # 三、RabbitMQ 命令行操作
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_1.png" width="600px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_1.png" width="600px"/></div>
 
 ## 启动 & 停止服务器
 
@@ -939,7 +939,7 @@ public class Consumer {
 
 消息落库，对消息状态进行打标。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_8.png" width="725px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_8.png" width="725px"/></div>
 
 
 
@@ -947,7 +947,7 @@ public class Consumer {
 
 消息的延迟投递，做二次确认，回调检查。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_9.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_9.png" width="700px"/></div>
 
 
 
@@ -967,7 +967,7 @@ public class Consumer {
 
 消息的确认是指生产者投递消息后，如果 Broker 收到消息，则会给生产者一个应答，生产者进行接收应答，用来确定这条消息是否正常地发送到 Broker。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_10.png" width="500px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_10.png" width="500px"/></div>
 
 实现机制：
 
@@ -1122,7 +1122,7 @@ public class Consumer {
 
  
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/rabbitMQ/rm_11.png" width="500px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/rabbitMQ/rm_11.png" width="500px"/></div>
 
 
 

@@ -2,7 +2,7 @@
 
 分布式系统不可能同时满足一致性（C：Consistency）、可用性（A：Availability）和分区容忍性（P：Partition Tolerance），最多只能同时满足其中两项。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/java-notes/distribution/cap.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/java-notes/distribution/cap.png"/></div>
 
 ## 一致性（Consistency）
 

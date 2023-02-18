@@ -26,7 +26,7 @@ Partition 即分区，每个 Topic 包含一个或多个分区。
 
 消息发送时都被发送到一个 Topic 中，其本质就是一个目录，而 Topic 由是由一些 Partition Logs（分区日志）组成，其组织结构如下：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_4.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_4.png"/></div>
 
 **每个 Partition 中的消息都是有序的**，生产的消息被不断追加到 Partition Log 上，其中的每一个消息都被赋予了一个唯一的 offset 值，Kafka 通过 **offset 保证消息在分区内的顺序**，offset 的顺序性不跨分区，即 Kafka 只保证在同一个分区内的消息是有序的；同一 Topic 的多个分区内的消息，Kafka 并不保证其顺序性。
 
@@ -52,7 +52,7 @@ Kafka 中每个 Partition 可以有多个副本（Replication），每个副本�
 
 一般情况下，同一分区的多个副本会被分配到不同的 Broker上。当 Leader 所在的 Broker 宕机之后，可以重新选举新的 Leader，继续对外提供服务。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_1.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_1.png"/></div>
 
 ## Producer
 
@@ -98,7 +98,7 @@ Kafka 提供了两套 Consumer Api，分为 Simple Api 和 High-Level Api。
 
   High-Level API 还支持以组的形式消费 Topic，如果 Consumers 有同一个组名，那么 Kafka 就相当于一个队列消息服务，而各个 Consumer 均衡地消费相应 Partition 中的数据。若 Consumers 有不同的组名，那么此时 Kafka 就相当于一个广播服务，会把 Topic 中的所有消息广播到每个 Consumer。
 
-  <div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_5.png"/></div>
+  <div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_5.png"/></div>
 
 ## Consumer Group
 
@@ -108,7 +108,7 @@ Consumer Group 即消费者组，多个 Consumer 可以组成一个 Consumer Gro
 
 Producer、Consumer 和 Consumer Group 之间的关系如下图：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_8.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_8.png"/></div>
 
 
 
@@ -132,7 +132,7 @@ Zookeeper 为 Kafka 提供集群的管理。不仅保存着集群的 Broker、To
 
 ## 典型拓扑结构
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_6.png" width="700px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_6.png" width="700px"/></div>
 
 Kafka 集群包含若干个 Producer，若干个 Broker （Kafka 集群支持水平扩展，一般 Broker 数量越多，整个 Kafka 集群的吞吐量也就越高），若干个 Consumer Group，以及一个 Zookeeper 集群。
 
@@ -142,7 +142,7 @@ Producer 使用 Push 模式将消息发布到 Broker 上，Consumer 使用 Pull 
 
 ## Kafka 数据流
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_3.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_3.png"/></div>
 
 Producers 往 Brokers 中指定的 Topic Push 消息，Consumers 从 Brokers 里面 Pull 指定 Topic 的消息，然后进行业务处理。 
 
@@ -165,13 +165,13 @@ Segment 数据文件会首先被存储在内存中，当 Segment 上的消息条
 
 Kafka 为每个 Segment 数据文件都建立了索引文件，索引文件的文件名与数据文件的文件名一致，不同的是索引文件的扩展名为 .index。比如：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_12.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_12.png"/></div>
 
 Segment 索引文件索引文件并不会为数据文件中的每条 Message 都建立索引，而是采用系数索引的方式，每个一定字节建立一条索引。这样可有效降低索引文件大小，方便将索引文件加载到内存中，提高集群的吞吐量。
 
 如下图所示，000000000000036869.index 文件中记录了 (3,497) ，在数据文件中表示第 3 个 Message（在全局Partition 表示第 368772 个 Message)，该 Message 的物理偏移地址为 497。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_11.png"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_11.png"/></div>
 
 ## Partition 中通过 Offset 查找 Message
 
@@ -316,13 +316,13 @@ Kafka 消息存储时依赖于**文件系统**。为了利用数据的**局部�
 
 普通的数据拷贝 read & write：
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_9.png" width="450px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_9.png" width="450px"/></div>
 
 零拷贝主要的任务是**避免 CPU 做大量的数据拷贝任务，减少不必要的拷贝**。
 
 **内存映射文件（Memory Mapped Files，mmap）**在 64 位操作系统中一般可以表示 20G 的数据文件，它的工作原理是直接利用操作系统的页缓存来实现文件到物理内存的直接映射。
 
-<div align="center"><img src="https://gitee.com/duhouan/ImagePro/raw/master/kafka/k_10.png" width="450px"/></div>
+<div align="center"><img src="https://github.com/DuHouAn/ImagePro/raw/master/kafka/k_10.png" width="450px"/></div>
 
 显然，使用 mmap 替代 read 很明显减少了 1 次拷贝，当拷贝数据量很大时，无疑提升了效率。
 
