@@ -1,4 +1,4 @@
-# MySQL 优化
+# MySQL 调优
 
 ## SQL 语句优化
 
